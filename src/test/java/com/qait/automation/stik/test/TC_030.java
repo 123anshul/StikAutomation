@@ -12,7 +12,7 @@ import com.qait.automation.stik.actionfixtures.ReferralPageFixture;
 // Verify whether referrals provided by reviewer appear correctly in user profile i.e., on referral page
 public class TC_030 {
 
-	private boolean newUserFlag= false;
+	private boolean newUserFlag= true;
 	public String newUserName="";
 	public String newPassword="";
 	ReferralPageFixture test = new ReferralPageFixture();
@@ -26,7 +26,7 @@ public class TC_030 {
 	@Test
 	@Parameters({"BROWSER"})
 	public void setup(@Optional("")String browser) {
-		if(newUserFlag) {assert test.createUsersOnFacebook(test.getYamlVal("liveUrl"));}
+		if(newUserFlag) {assert test.createUsersOnFacebook(test.getYamlVal("appUrl"));}
 		newUserName=test.getTestUserName();
 		newPassword=test.getTestPassword();
 		test.startBrowser(browser);
@@ -35,7 +35,7 @@ public class TC_030 {
 	//Launch Stick URL
 	@Test(dependsOnMethods={"setup"})
 	public void A_launch_URL_Navgiate_to_Stick_HomePage() {
-		test.launchUrl(test.getYamlVal("liveUrl"));
+		test.launchUrl(test.getYamlVal("appUrl"));
 	}
 
 	@Test(dependsOnMethods={"A_launch_URL_Navgiate_to_Stick_HomePage"})
