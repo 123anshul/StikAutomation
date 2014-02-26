@@ -9,15 +9,29 @@ Steps For Executing Test
 ========================
 A) Click on startTest.bat file in the StikProject.
 
-	Will start test Suite with default setting.
+	Will start test Suite with default setting on staging server.
 
 B) Execute Test cases: Open command prompt and move to the directory where the Stik Project is available.  
-	a) Use the following command to Execute single test:
+	a) Use the following command to execute the entire test suite on a particular environment
+		
+		mvn clean verify -Dname=<<name of environment>>
+		Example: mvn clean verify -Dname=qa
+		
+		Currently available environment to execute the test suite are:
+		ben
+		craig
+		dylan
+		eric
+		matt
+		nathan
+		qa
+		
+	b) Use the following command to Execute single test:
 
            	mvn clean verify -Dtest=<<TestClassName>>
            	Example: mvn clean verify -Dtest=TC_001
 
-	b) Use the following command to Execute whole suite using testNg.xml:
+	c) Use the following command to Execute whole suite using testNg.xml:
 
                 mvn clean verify
 
