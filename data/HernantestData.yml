@@ -1,0 +1,48 @@
+environment: local
+AJAX_WAIT: 25
+selenium_remote_server: "http://172.16.3.214:3012/wd"
+ajax_timeout: 5
+browser: firefox
+appUrl: "http://hernan.knewbies.com"
+liveUrl: "http://stik.com"
+simpleReviewWizardUrl: "http://hernan.knewbies.com/recommend/screenName?AB_20130507_kahn_recommendation_wizard_type=simple"
+combinedReviewWizardUrl: "http://hernan.knewbies.com/recommend/screenName?AB_20130507_kahn_recommendation_wizard_type=combined"
+runScriptWithNewUser: no
+userName: testautomationone_rqmjhzm_testautomationone@tfbnw.net
+password: 123mayank
+userName_for_Search_With_Existing_Seesion: anshul@stik.com
+password_for_Search_With_Existing_Seesion: qainfotech123
+signup:
+       phoneNo: 9910234567
+       company: QAInfotech
+       title: Test Engineer
+       zipcode: 20130
+update:
+       firstName: Mayank
+       lastName: Joshi
+       phoneNo: 9910234567
+       company: QAInfotech
+       title: Test Engineer
+       website: "http://qainfotech.net"
+       Address: Sector 22 Noida
+       City: Noida
+       industryTitle: Financial Planning
+       zipcode: 20130
+otherprofile:
+       username: automationone.automationone
+       reviewComment: "Good to be a part of Stik team...."
+       starRating: 5
+searchTerm: "Real Estate"
+mailPage:
+         gmailUsername: first.stik.test.2013
+         gmailPassword: 123mayank
+         verifyEmail1: nitin@stik.com
+         verifyEmail2: Sanjay Sodhi
+         verifyEmail3: Mayank Stik
+customizeWidgetEnteries:
+         height: 500
+         width: 500
+sendToMyWebMasterEmailAddress: testautomation.0123@gmail.com
+fbPostMessageOnClick: "Posting your reviews to Facebook"
+fbPostAfterClick: "Done!"
+addToProfielPageMessageOnFacebookProfilePage: Now go to this Facebook page and click "Add To Profile" to finish this process

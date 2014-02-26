@@ -1,0 +1,122 @@
+environment: local
+AJAX_WAIT: 25
+selenium_remote_server: "http://172.16.3.214:3012/wd"
+ajax_timeout: 5
+browser: firefox
+appUrl: "http://www.knewdeal.com"
+liveUrl: "http://www.stik.com"
+combinedReviewWizardUrl: "http://www.knewdeal.com/recommend/screenName"
+runScriptWithNewUser: no
+userName: automationtwo_vshkkdn_automationtwo@tfbnw.net
+password: 123mayank
+userNameLinkedIn: testerAutomation0207@gmail.com
+passwordLinkedIn: qainfotech
+userName_for_Search_With_Existing_Seesion: anshul@stik.com
+password_for_Search_With_Existing_Seesion: qainfotech123
+signup:
+       name: Tester
+       email: tester123@test.com
+       importerEmail: testImport
+       phoneNo: 9910234567
+       company: QAInfotech
+       title: Test Engineer
+       zipcode: 20130
+update:
+       firstName: Mayank
+       lastName: Joshi
+       phoneNo: 9910234567
+       company: QAInfotech
+       title: Test Engineer
+       license: 900123456
+       website: "http://qainfotech.net"
+       Address: Sector 22 Noida
+       City: Noida
+       industryTitle: Financial Planning
+       zipcode: 20131
+otherprofile:
+       username: automationthree.automationthree
+       reviewComment: "Good to be a part of Stik team...."
+       starRating: 5
+       reviewTextOnProfile: "Review submission on profile.... Good to be a part of Stik team."
+searchTerm: "Mortgage"
+mailPage:
+         gmailUsername: first.stik.test.2013
+         gmailPassword: 123mayank
+         verifyEmail1: nitin@stik.com
+         verifyEmail2: Sanjay Sodhi
+         verifyEmail3: Mayank Stik
+customizeWidgetEnteries:
+         height: 500
+         width: 500
+sendToMyWebMasterEmailAddress: anshul@stik.com
+fbPostMessageOnClick: "Posting your reviews to Facebook"
+fbPostAfterClick: "Done!"
+addToProfielPageMessageOnFacebookProfilePage: Now go to this Facebook page and click "Add To Profile" to finish this process
+businessSummary: "[Test. Please ignore] Good at the business. Passionate for work... "
+importEmailId: testImport
+importFirstName: Stik
+importLastName: Automation
+messageForCollectingReview: Test- Plz Ignore..... Hi, I would like you to review me. Thanks
+recommendFriendList:
+         email1: anshul@stik.com
+         email2: qatest.auto123@gmail.com
+         email3: testerAutomation0207@gmail.com
+reviewerDetails:
+         email: automationtwo_vshkkdn_automationtwo@tfbnw.net
+         name: Mayank Joshi
+referURL: http://www.knewdeal.com/refer/automationone.automationone?rev_id=16299938
+demoPage:
+         url: "/demo"
+         splashSectionText: "Stik makes it so easy to collect client reviews and turn them into referrals"
+         referralText:
+                      step1: "1. Collect and Showcase Great Client Reviews"
+                      step2: "2. Stik Turns Reviews Into Referrals"
+                      step3: "3. You Convert Referrals Into New Clients"
+         staySafeImage: /images/landing-pages/enterprise/feature-protect.png
+         stikPremiumText: We take our clients as seriously as you do
+         companyPageImage: /images/landing-pages/enterprise/animations/companyPage/quicken-loans.png
+menuPage:
+         url: "/menu"
+userHomePage:
+        getMoreReviewsURL: "/clients#facebook"
+        completeProfileURL: "/zf/profile/settings"
+        profileURL: "/automationtwo.automationtwo"
+        onMyWebsiteURL: "/zf/widget/builder"
+        inMyEmailURL: "/zf/showcase-email/index"
+        onFacebookPage: "/zf/facebook/tab-tool"
+        onFacebookProfile: "/zf/facebook/add-collection"
+        callMeNumber: 9001234567
+        callUsNumber: "(313) 373-7844"
+        referralPage: "/referrals"
+        shareText: "[Test]... Sharing my leaderboard position..."
+        userName: Mayank Joshi
+referralPage:
+        freshUserReferralText: "Oh no! It looks like you don't have any referrals."
+        noReferralImageURL: "/images/referral/ui-referrals-ad-sad.png"
+        startCollectingReviewsURL: "/clients#facebook"
+        callMeNumber: 9001234567
+        callUsNumber: "(313) 373-7844"
+        userNameOfSupporter: "automationtwo automationtwo"
+        settingsPageURL: "/zf/profile/settings#referrals"
+        emailBoyTextOnSettingsPage: "[Test-Please Ignore]... You've been the best reviewer. Could you continue?"
+featuresPage:
+        tab1: WHY STIK
+        tab2: REVIEWS
+        tab3: REFERRALS
+        tab4: STAND OUT ONLINE
+        tab5: ROI
+        whyStikURL: /features
+        reviewsURL: /features/reviews
+        referralURL: /features/referrals
+        standoutURL: /features/online-presence
+        getStartedURL: /professional#signup
+companyPage:
+        contactNumber: "(313) 373-7844"
+directory:
+        baiscText: All Professionals
+        industry: Accounting
+        zipCode: 38122
+        matchingHeading: Accountants
+        url: http://www.stik.com/accountant/
+        state: Alaska
+        city: Anchorage

@@ -1,0 +1,111 @@
+environment: local
+AJAX_WAIT: 25
+selenium_remote_server: "http://172.16.3.214:3012/wd"
+ajax_timeout: 5
+browser: firefox
+liveUrl: "http://stik.com"
+appUrl: "http://rob.knewbies.com"
+combinedReviewWizardUrl: "http://rob.knewbies.com/recommend/screenName"
+runScriptWithNewUser: no
+userName: testerAutomation0207@gmail.com
+password: qainfotech
+userNameLinkedIn: anshul@stik.com
+passwordLinkedIn: qainfotech
+userName_for_Search_With_Existing_Seesion: anshul@stik.com
+password_for_Search_With_Existing_Seesion: qainfotech123
+signup:
+       name: Tester
+       email: tester123@test.com
+       importerEmail: testImport
+       phoneNo: 9910234567
+       company: QAInfotech
+       title: Test Engineer
+       zipcode: 20130
+update:
+       firstName: Tester
+       lastName: Automation
+       phoneNo: 9910234567
+       company: QAInfotech
+       title: Test Engineer
+       website: "http://qainfotech.net"
+       Address: Sector 22 Noida
+       City: Noida
+       industryTitle: Financial Planning
+       zipcode: 20130
+otherprofile:
+       username: tester.tester 
+       reviewComment: "Good to be a part of Stik team...."
+       starRating: 5
+       reviewTextOnProfile: "Review submission on profile.... Good to be a part of Stik team."
+searchTerm: "Mortgage"
+mailPage:
+         gmailUsername: first.stik.test.2013
+         gmailPassword: 123mayank
+         verifyEmail1: qa@stik.com
+         verifyEmail2: Sanjay Sodhi
+         verifyEmail3: Mayank Stik
+customizeWidgetEnteries:
+         height: 500
+         width: 500
+sendToMyWebMasterEmailAddress: testautomation.0123@gmail.com
+fbPostMessageOnClick: "Posting your reviews to Facebook"
+fbPostAfterClick: "Done!"
+addToProfielPageMessageOnFacebookProfilePage: Now go to this Facebook page and click "Add To Profile" to finish this process
+businessSummary: "[Test. Please ignore] Good at the business. Passionate for work"
+importEmailId: testImport
+importFirstName: Stik
+importLastName: Automation
+messageForCollectingReview: Test- Plz Ignore..... Hi, I would like you to review me. Thanks
+recommendFriendList:
+         email1: anshul@stik.com
+         email2: qatest.auto123@gmail.com
+         email3: tester.auto@gmail.com
+reviewerDetails:
+         email: testerAutomation0207@gmail.com
+         name: Tester Automation
+demoPage:
+         url: "/demo"
+         splashSectionText: "Stik makes it so easy to collect client reviews and turn them into referrals"
+         referralText:
+                      step1: "1. Collect and Showcase Great Client Reviews"
+                      step2: "2. Stik Turns Reviews Into Referrals"
+                      step3: "3. You Convert Referrals Into New Clients"
+         staySafeImage: /images/landing-pages/enterprise/feature-protect.png
+         stikPremiumText: We take our clients as seriously as you do
+         companyPageImage: /images/landing-pages/enterprise/animations/companyPage/quicken-loans.png
+menuPage:
+         url: "/menu"
+userHomePage:
+        getMoreReviewsURL: "/clients#facebook"
+        completeProfileURL: "/zf/profile/settings"
+        profileURL: "/tester.automation"
+        onMyWebsiteURL: "/zf/widget/builder"
+        inMyEmailURL: "/zf/showcase-email/index"
+        onFacebookPage: "/zf/facebook/tab-tool"
+        onFacebookProfile: "/zf/facebook/add-collection"
+        callMeNumber: 9001234567
+        callUsNumber: "(313) 373-7844"
+        referralPage: "/referrals"
+        shareText: "[Test]... Sharing my leaderboard position..."
+        userName: Tester Automation
+referralPage:
+        freshUserReferralText: "Oh no! It looks like you don't have any referrals."
+        noReferralImageURL: "/images/referral/ui-referrals-ad-sad.png"
+        startCollectingReviewsURL: "/clients#facebook"
+        callMeNumber: 9001234567
+        callUsNumber: "(313) 373-7844"
+        userNameOfSupporter: "Tester Automation"
+        settingsPageURL: "/zf/profile/settings#referrals"
+        emailBoyTextOnSettingsPage: "[Test-Please Ignore]... You've been the best reviewer. Could you continue?"
+featuresPage:
+        tab1: WHY STIK
+        tab2: REVIEWS
+        tab3: REFERRALS
+        tab4: STAND OUT ONLINE
+        whyStikURL: /features
+        reviewsURL: /features/reviews
+        referralURL: /features/referrals
+        standoutURL: /features/online-presence
+        getStartedURL: /professional#signup 
+companyPage:
+        contactNumber: "(313) 373-7844"        
