@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Default test</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>4/1/10</td>
+<td>Tests passed/Failed/Skipped:</td><td>13/1/1</td>
 </tr><tr>
-<td>Started on:</td><td>Wed Feb 26 11:18:16 IST 2014</td>
+<td>Started on:</td><td>Wed Feb 26 12:24:53 IST 2014</td>
 </tr>
-<tr><td>Total time:</td><td>220 seconds (220278 ms)</td>
+<tr><td>Total time:</td><td>405 seconds (405188 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -68,134 +68,6 @@ function toggleAllBoxes() {
 </table><p/>
 <small><i>(Hover the method name to see the test class name)</i></small><p/>
 <table width='100%' border='1' class='invocation-failed'>
-<tr><td colspan='4' align='center'><b>FAILED CONFIGURATIONS</b></td></tr>
-<tr><td><b>Test method</b></td>
-<td width="30%"><b>Exception</b></td>
-<td width="10%"><b>Time (seconds)</b></td>
-<td><b>Instance</b></td>
-</tr>
-<tr>
-<td title='com.qait.automation.stik.test.TC_030.afterClass()'><b>afterClass</b><br>Test class: com.qait.automation.stik.test.TC_030</td>
-<td><div><pre>org.openqa.selenium.remote.UnreachableBrowserException: Error communicating with the remote browser. It may have died.
-Build info: version: &apos;2.37.0&apos;, revision: &apos;a7c61cbd68657e133ae96672cf995890bad2ee42&apos;, time: &apos;2013-10-18 09:51:02&apos;
-System info: host: &apos;HPDA0161&apos;, ip: &apos;172.16.8.151&apos;, os.name: &apos;Windows 7&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.1&apos;, java.version: &apos;1.7.0_45&apos;
-Driver info: driver.version: RemoteWebDriver
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:548)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:569)
-	at org.openqa.selenium.remote.RemoteWebDriver.getCurrentUrl(RemoteWebDriver.java:291)
-	at com.qait.automation.stik.actionfixtures.FacebookAppFixture.deleteUserOnFacebook(FacebookAppFixture.java:94)
-	at com.qait.automation.stik.test.TC_030.afterClass(TC_030.java:128)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:80)
-	at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:564)
-	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:213)
-	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:138)
-	at org.testng.internal.TestMethodWorker.invokeAfterClassMethods(TestMethodWorker.java:225)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:114)
-	at org.testng.TestRunner.privateRun(TestRunner.java:767)
-	at org.testng.TestRunner.run(TestRunner.java:617)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1197)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1122)
-	at org.testng.TestNG.run(TestNG.java:1030)
-	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:111)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:204)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:175)
-Caused by: java.net.ConnectException: Connection refused: connect
-	at java.net.DualStackPlainSocketImpl.waitForConnect(Native Method)
-	at java.net.DualStackPlainSocketImpl.socketConnect(Unknown Source)
-	at java.net.AbstractPlainSocketImpl.doConnect(Unknown Source)
-	at java.net.AbstractPlainSocketImpl.connectToAddress(Unknown Source)
-	at java.net.AbstractPlainSocketImpl.connect(Unknown Source)
-	at java.net.PlainSocketImpl.connect(Unknown Source)
-	at java.net.SocksSocketImpl.connect(Unknown Source)
-	at java.net.Socket.connect(Unknown Source)
-	at org.apache.http.conn.scheme.PlainSocketFactory.connectSocket(PlainSocketFactory.java:117)
-	at org.apache.http.impl.conn.DefaultClientConnectionOperator.openConnection(DefaultClientConnectionOperator.java:178)
-	at org.apache.http.impl.conn.AbstractPoolEntry.open(AbstractPoolEntry.java:144)
-	at org.apache.http.impl.conn.AbstractPooledConnAdapter.open(AbstractPooledConnAdapter.java:131)
-	at org.apache.http.impl.client.DefaultRequestDirector.tryConnect(DefaultRequestDirector.java:610)
-	at org.apache.http.impl.client.DefaultRequestDirector.execute(DefaultRequestDirector.java:445)
-	at org.apache.http.impl.client.AbstractHttpClient.doExecute(AbstractHttpClient.java:863)
-	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:72)
-	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:57)
-	at org.openqa.selenium.remote.HttpCommandExecutor.fallBackExecute(HttpCommandExecutor.java:319)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:298)
-	at org.openqa.selenium.firefox.internal.NewProfileExtensionConnection.execute(NewProfileExtensionConnection.java:145)
-	at org.openqa.selenium.firefox.FirefoxDriver$LazyCommandExecutor.execute(FirefoxDriver.java:366)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:527)
-	... 28 more
-</pre></div><a href='#' onClick='toggleBox("stack-trace1091720815", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1091720815'><pre>org.openqa.selenium.remote.UnreachableBrowserException: Error communicating with the remote browser. It may have died.
-Build info: version: &apos;2.37.0&apos;, revision: &apos;a7c61cbd68657e133ae96672cf995890bad2ee42&apos;, time: &apos;2013-10-18 09:51:02&apos;
-System info: host: &apos;HPDA0161&apos;, ip: &apos;172.16.8.151&apos;, os.name: &apos;Windows 7&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.1&apos;, java.version: &apos;1.7.0_45&apos;
-Driver info: driver.version: RemoteWebDriver
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:548)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:569)
-	at org.openqa.selenium.remote.RemoteWebDriver.getCurrentUrl(RemoteWebDriver.java:291)
-	at com.qait.automation.stik.actionfixtures.FacebookAppFixture.deleteUserOnFacebook(FacebookAppFixture.java:94)
-	at com.qait.automation.stik.test.TC_030.afterClass(TC_030.java:128)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:80)
-	at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:564)
-	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:213)
-	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:138)
-	at org.testng.internal.TestMethodWorker.invokeAfterClassMethods(TestMethodWorker.java:225)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:114)
-	at org.testng.TestRunner.privateRun(TestRunner.java:767)
-	at org.testng.TestRunner.run(TestRunner.java:617)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1197)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1122)
-	at org.testng.TestNG.run(TestNG.java:1030)
-	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:111)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:204)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:175)
-Caused by: java.net.ConnectException: Connection refused: connect
-	at java.net.DualStackPlainSocketImpl.waitForConnect(Native Method)
-	at java.net.DualStackPlainSocketImpl.socketConnect(Unknown Source)
-	at java.net.AbstractPlainSocketImpl.doConnect(Unknown Source)
-	at java.net.AbstractPlainSocketImpl.connectToAddress(Unknown Source)
-	at java.net.AbstractPlainSocketImpl.connect(Unknown Source)
-	at java.net.PlainSocketImpl.connect(Unknown Source)
-	at java.net.SocksSocketImpl.connect(Unknown Source)
-	at java.net.Socket.connect(Unknown Source)
-	at org.apache.http.conn.scheme.PlainSocketFactory.connectSocket(PlainSocketFactory.java:117)
-	at org.apache.http.impl.conn.DefaultClientConnectionOperator.openConnection(DefaultClientConnectionOperator.java:178)
-	at org.apache.http.impl.conn.AbstractPoolEntry.open(AbstractPoolEntry.java:144)
-	at org.apache.http.impl.conn.AbstractPooledConnAdapter.open(AbstractPooledConnAdapter.java:131)
-	at org.apache.http.impl.client.DefaultRequestDirector.tryConnect(DefaultRequestDirector.java:610)
-	at org.apache.http.impl.client.DefaultRequestDirector.execute(DefaultRequestDirector.java:445)
-	at org.apache.http.impl.client.AbstractHttpClient.doExecute(AbstractHttpClient.java:863)
-	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:72)
-	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:57)
-	at org.openqa.selenium.remote.HttpCommandExecutor.fallBackExecute(HttpCommandExecutor.java:319)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:298)
-	at org.openqa.selenium.firefox.internal.NewProfileExtensionConnection.execute(NewProfileExtensionConnection.java:145)
-	at org.openqa.selenium.firefox.FirefoxDriver$LazyCommandExecutor.execute(FirefoxDriver.java:366)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:527)
-	... 28 more
-</pre></div></td>
-<td>0</td>
-<td>com.qait.automation.stik.test.TC_030@2e71207</td></tr>
-</table><p>
-<table width='100%' border='1' class='invocation-failed'>
 <tr><td colspan='4' align='center'><b>FAILED TESTS</b></td></tr>
 <tr><td><b>Test method</b></td>
 <td width="30%"><b>Exception</b></td>
@@ -203,25 +75,13 @@ Caused by: java.net.ConnectException: Connection refused: connect
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='com.qait.automation.stik.test.TC_030.C_Verify_Referral_Page_For_fresh_User()'><b>C_Verify_Referral_Page_For_fresh_User</b><br>Test class: com.qait.automation.stik.test.TC_030</td>
-<td><div><pre>org.openqa.selenium.remote.UnreachableBrowserException: Error communicating with the remote browser. It may have died.
-Build info: version: &apos;2.37.0&apos;, revision: &apos;a7c61cbd68657e133ae96672cf995890bad2ee42&apos;, time: &apos;2013-10-18 09:51:02&apos;
-System info: host: &apos;HPDA0161&apos;, ip: &apos;172.16.8.151&apos;, os.name: &apos;Windows 7&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.1&apos;, java.version: &apos;1.7.0_45&apos;
-Driver info: driver.version: RemoteWebDriver
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:548)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:307)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:404)
-	at org.openqa.selenium.By$ByXPath.findElement(By.java:363)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:299)
-	at org.openqa.selenium.support.ui.ExpectedConditions.findElement(ExpectedConditions.java:579)
-	at org.openqa.selenium.support.ui.ExpectedConditions.access$000(ExpectedConditions.java:39)
-	at org.openqa.selenium.support.ui.ExpectedConditions$4.apply(ExpectedConditions.java:130)
-	at org.openqa.selenium.support.ui.ExpectedConditions$4.apply(ExpectedConditions.java:126)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:208)
-	at com.qait.automation.stik.util.Utilities.explicitWait(Utilities.java:77)
-	at com.qait.automation.stik.actionfixtures.HomePageFixture.navigateToReferralPage(HomePageFixture.java:360)
-	at com.qait.automation.stik.actionfixtures.ReferralPageFixture.checkProspectsForNewUser(ReferralPageFixture.java:39)
-	at com.qait.automation.stik.test.TC_030.C_Verify_Referral_Page_For_fresh_User(TC_030.java:58)
+<td title='com.qait.automation.stik.test.TC_030.M_Referral_Settings()'><b>M_Referral_Settings</b><br>Test class: com.qait.automation.stik.test.TC_030</td>
+<td><div><pre>java.lang.AssertionError: Email body still visible after selecting &apos;No&apos; Checkbox expected [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:89)
+	at org.testng.Assert.failNotEquals(Assert.java:489)
+	at org.testng.Assert.assertTrue(Assert.java:37)
+	at com.qait.automation.stik.actionfixtures.ReferralPageFixture.checkSettingsButton(ReferralPageFixture.java:130)
+	at com.qait.automation.stik.test.TC_030.M_Referral_Settings(TC_030.java:117)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -246,49 +106,13 @@ Driver info: driver.version: RemoteWebDriver
 	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:111)
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:204)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:175)
-Caused by: java.net.ConnectException: Connection refused: connect
-	at java.net.DualStackPlainSocketImpl.waitForConnect(Native Method)
-	at java.net.DualStackPlainSocketImpl.socketConnect(Unknown Source)
-	at java.net.AbstractPlainSocketImpl.doConnect(Unknown Source)
-	at java.net.AbstractPlainSocketImpl.connectToAddress(Unknown Source)
-	at java.net.AbstractPlainSocketImpl.connect(Unknown Source)
-	at java.net.PlainSocketImpl.connect(Unknown Source)
-	at java.net.SocksSocketImpl.connect(Unknown Source)
-	at java.net.Socket.connect(Unknown Source)
-	at org.apache.http.conn.scheme.PlainSocketFactory.connectSocket(PlainSocketFactory.java:117)
-	at org.apache.http.impl.conn.DefaultClientConnectionOperator.openConnection(DefaultClientConnectionOperator.java:178)
-	at org.apache.http.impl.conn.AbstractPoolEntry.open(AbstractPoolEntry.java:144)
-	at org.apache.http.impl.conn.AbstractPooledConnAdapter.open(AbstractPooledConnAdapter.java:131)
-	at org.apache.http.impl.client.DefaultRequestDirector.tryConnect(DefaultRequestDirector.java:610)
-	at org.apache.http.impl.client.DefaultRequestDirector.execute(DefaultRequestDirector.java:445)
-	at org.apache.http.impl.client.AbstractHttpClient.doExecute(AbstractHttpClient.java:863)
-	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:72)
-	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:57)
-	at org.openqa.selenium.remote.HttpCommandExecutor.fallBackExecute(HttpCommandExecutor.java:319)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:298)
-	at org.openqa.selenium.firefox.internal.NewProfileExtensionConnection.execute(NewProfileExtensionConnection.java:145)
-	at org.openqa.selenium.firefox.FirefoxDriver$LazyCommandExecutor.execute(FirefoxDriver.java:366)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:527)
-	... 37 more
-</pre></div><a href='#' onClick='toggleBox("stack-trace2087481845", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace2087481845'><pre>org.openqa.selenium.remote.UnreachableBrowserException: Error communicating with the remote browser. It may have died.
-Build info: version: &apos;2.37.0&apos;, revision: &apos;a7c61cbd68657e133ae96672cf995890bad2ee42&apos;, time: &apos;2013-10-18 09:51:02&apos;
-System info: host: &apos;HPDA0161&apos;, ip: &apos;172.16.8.151&apos;, os.name: &apos;Windows 7&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.1&apos;, java.version: &apos;1.7.0_45&apos;
-Driver info: driver.version: RemoteWebDriver
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:548)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:307)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:404)
-	at org.openqa.selenium.By$ByXPath.findElement(By.java:363)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:299)
-	at org.openqa.selenium.support.ui.ExpectedConditions.findElement(ExpectedConditions.java:579)
-	at org.openqa.selenium.support.ui.ExpectedConditions.access$000(ExpectedConditions.java:39)
-	at org.openqa.selenium.support.ui.ExpectedConditions$4.apply(ExpectedConditions.java:130)
-	at org.openqa.selenium.support.ui.ExpectedConditions$4.apply(ExpectedConditions.java:126)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:208)
-	at com.qait.automation.stik.util.Utilities.explicitWait(Utilities.java:77)
-	at com.qait.automation.stik.actionfixtures.HomePageFixture.navigateToReferralPage(HomePageFixture.java:360)
-	at com.qait.automation.stik.actionfixtures.ReferralPageFixture.checkProspectsForNewUser(ReferralPageFixture.java:39)
-	at com.qait.automation.stik.test.TC_030.C_Verify_Referral_Page_For_fresh_User(TC_030.java:58)
+</pre></div><a href='#' onClick='toggleBox("stack-trace1987590935", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1987590935'><pre>java.lang.AssertionError: Email body still visible after selecting &apos;No&apos; Checkbox expected [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:89)
+	at org.testng.Assert.failNotEquals(Assert.java:489)
+	at org.testng.Assert.assertTrue(Assert.java:37)
+	at com.qait.automation.stik.actionfixtures.ReferralPageFixture.checkSettingsButton(ReferralPageFixture.java:130)
+	at com.qait.automation.stik.test.TC_030.M_Referral_Settings(TC_030.java:117)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -313,32 +137,8 @@ Driver info: driver.version: RemoteWebDriver
 	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:111)
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:204)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:175)
-Caused by: java.net.ConnectException: Connection refused: connect
-	at java.net.DualStackPlainSocketImpl.waitForConnect(Native Method)
-	at java.net.DualStackPlainSocketImpl.socketConnect(Unknown Source)
-	at java.net.AbstractPlainSocketImpl.doConnect(Unknown Source)
-	at java.net.AbstractPlainSocketImpl.connectToAddress(Unknown Source)
-	at java.net.AbstractPlainSocketImpl.connect(Unknown Source)
-	at java.net.PlainSocketImpl.connect(Unknown Source)
-	at java.net.SocksSocketImpl.connect(Unknown Source)
-	at java.net.Socket.connect(Unknown Source)
-	at org.apache.http.conn.scheme.PlainSocketFactory.connectSocket(PlainSocketFactory.java:117)
-	at org.apache.http.impl.conn.DefaultClientConnectionOperator.openConnection(DefaultClientConnectionOperator.java:178)
-	at org.apache.http.impl.conn.AbstractPoolEntry.open(AbstractPoolEntry.java:144)
-	at org.apache.http.impl.conn.AbstractPooledConnAdapter.open(AbstractPooledConnAdapter.java:131)
-	at org.apache.http.impl.client.DefaultRequestDirector.tryConnect(DefaultRequestDirector.java:610)
-	at org.apache.http.impl.client.DefaultRequestDirector.execute(DefaultRequestDirector.java:445)
-	at org.apache.http.impl.client.AbstractHttpClient.doExecute(AbstractHttpClient.java:863)
-	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:72)
-	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:57)
-	at org.openqa.selenium.remote.HttpCommandExecutor.fallBackExecute(HttpCommandExecutor.java:319)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:298)
-	at org.openqa.selenium.firefox.internal.NewProfileExtensionConnection.execute(NewProfileExtensionConnection.java:145)
-	at org.openqa.selenium.firefox.FirefoxDriver$LazyCommandExecutor.execute(FirefoxDriver.java:366)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:527)
-	... 37 more
 </pre></div></td>
-<td>15</td>
+<td>18</td>
 <td>com.qait.automation.stik.test.TC_030@2e71207</td></tr>
 </table><p>
 <table width='100%' border='1' class='invocation-passed'>
@@ -350,22 +150,22 @@ Caused by: java.net.ConnectException: Connection refused: connect
 </tr>
 <tr>
 <td title='com.qait.automation.stik.test.TC_030.A_launch_URL_Navgiate_to_Stick_HomePage()'><b>A_launch_URL_Navgiate_to_Stick_HomePage</b><br>Test class: com.qait.automation.stik.test.TC_030<br/>
-<a href="#Output-971644752" onClick='toggleBox("Output-971644752", this, "Show output", "Hide output");'>Show output</a>
+<a href="#Output-428325418" onClick='toggleBox("Output-428325418", this, "Show output", "Hide output");'>Show output</a>
 
-<a href="#Output-971644752" onClick="toggleAllBoxes();">Show all outputs</a>
-<div class='log' id="Output-971644752">
+<a href="#Output-428325418" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-428325418">
 Launched URL and verified that title contains Stik.com...<br><br/>
 </div>
 </td>
 <td></td>
-<td>12</td>
+<td>10</td>
 <td>com.qait.automation.stik.test.TC_030@2e71207</td></tr>
 <tr>
 <td title='com.qait.automation.stik.test.TC_030.B_Sign_Up_Using_With_FaceBook()'><b>B_Sign_Up_Using_With_FaceBook</b><br>Test class: com.qait.automation.stik.test.TC_030<br/>
-<a href="#Output-1344265467" onClick='toggleBox("Output-1344265467", this, "Show output", "Hide output");'>Show output</a>
+<a href="#Output-1017090474" onClick='toggleBox("Output-1017090474", this, "Show output", "Hide output");'>Show output</a>
 
-<a href="#Output-1344265467" onClick="toggleAllBoxes();">Show all outputs</a>
-<div class='log' id="Output-1344265467">
+<a href="#Output-1017090474" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1017090474">
 Switching to FaceBook Window...<br><br/>
 Switched to FaceBook Window...<br><br/>
 Typed keys username<br><br/>
@@ -376,32 +176,151 @@ Switched back to main window<br><br/>
 </div>
 </td>
 <td></td>
-<td>117</td>
+<td>71</td>
 <td>com.qait.automation.stik.test.TC_030@2e71207</td></tr>
 <tr>
 <td title='com.qait.automation.stik.test.TC_030.C_Navigate_To_Referral_Page()'><b>C_Navigate_To_Referral_Page</b><br>Test class: com.qait.automation.stik.test.TC_030<br/>
-<a href="#Output-1712270464" onClick='toggleBox("Output-1712270464", this, "Show output", "Hide output");'>Show output</a>
+<a href="#Output-1382738602" onClick='toggleBox("Output-1382738602", this, "Show output", "Hide output");'>Show output</a>
 
-<a href="#Output-1712270464" onClick="toggleAllBoxes();">Show all outputs</a>
-<div class='log' id="Output-1712270464">
+<a href="#Output-1382738602" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1382738602">
 Navigate to Referral Page<br><br/>
 </div>
 </td>
 <td></td>
-<td>61</td>
+<td>63</td>
 <td>com.qait.automation.stik.test.TC_030@2e71207</td></tr>
 <tr>
-<td title='com.qait.automation.stik.test.TC_030.setup()'><b>setup</b><br>Test class: com.qait.automation.stik.test.TC_030<br>Parameters: <br/>
-<a href="#Output-883444303" onClick='toggleBox("Output-883444303", this, "Show output", "Hide output");'>Show output</a>
+<td title='com.qait.automation.stik.test.TC_030.C_Verify_Referral_Page_For_fresh_User()'><b>C_Verify_Referral_Page_For_fresh_User</b><br>Test class: com.qait.automation.stik.test.TC_030<br/>
+<a href="#Output-324521258" onClick='toggleBox("Output-324521258", this, "Show output", "Hide output");'>Show output</a>
 
-<a href="#Output-883444303" onClick="toggleAllBoxes();">Show all outputs</a>
-<div class='log' id="Output-883444303">
-Email & Password: automation_njlwntj_automation@tfbnw.net;96583750<br><br/>
+<a href="#Output-324521258" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-324521258">
+Navigate to Referral Page<br><br/>
+</div>
+</td>
+<td></td>
+<td>56</td>
+<td>com.qait.automation.stik.test.TC_030@2e71207</td></tr>
+<tr>
+<td title='com.qait.automation.stik.test.TC_030.D_signOut_New_User()'><b>D_signOut_New_User</b><br>Test class: com.qait.automation.stik.test.TC_030<br/>
+<a href="#Output-1755522366" onClick='toggleBox("Output-1755522366", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-1755522366" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1755522366">
+Sign Out button clicked....<br><br/>
+</div>
+</td>
+<td></td>
+<td>10</td>
+<td>com.qait.automation.stik.test.TC_030@2e71207</td></tr>
+<tr>
+<td title='com.qait.automation.stik.test.TC_030.F_closeBrowser()'><b>F_closeBrowser</b><br>Test class: com.qait.automation.stik.test.TC_030<br/>
+<a href="#Output-1011870322" onClick='toggleBox("Output-1011870322", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-1011870322" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1011870322">
+Closed Browser session...<br><br/>
+</div>
+</td>
+<td></td>
+<td>0</td>
+<td>com.qait.automation.stik.test.TC_030@2e71207</td></tr>
+<tr>
+<td title='com.qait.automation.stik.test.TC_030.G_setup_Again()'><b>G_setup_Again</b><br>Test class: com.qait.automation.stik.test.TC_030<br>Parameters: <br/>
+<a href="#Output-1698619048" onClick='toggleBox("Output-1698619048", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-1698619048" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1698619048">
 Started Local firefox...<br><br/>
 </div>
 </td>
 <td></td>
-<td>11</td>
+<td>6</td>
+<td>com.qait.automation.stik.test.TC_030@2e71207</td></tr>
+<tr>
+<td title='com.qait.automation.stik.test.TC_030.H_launch_URL_Navgiate_to_Stick_HomePage()'><b>H_launch_URL_Navgiate_to_Stick_HomePage</b><br>Test class: com.qait.automation.stik.test.TC_030<br/>
+<a href="#Output-116948084" onClick='toggleBox("Output-116948084", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-116948084" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-116948084">
+Launched URL and verified that title contains Stik.com...<br><br/>
+</div>
+</td>
+<td></td>
+<td>14</td>
+<td>com.qait.automation.stik.test.TC_030@2e71207</td></tr>
+<tr>
+<td title='com.qait.automation.stik.test.TC_030.I_Provide_Review_And_Referral()'><b>I_Provide_Review_And_Referral</b><br>Test class: com.qait.automation.stik.test.TC_030<br/>
+<a href="#Output-184732654" onClick='toggleBox("Output-184732654", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-184732654" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-184732654">
+Not signed in...<br><br/>
+</div>
+</td>
+<td></td>
+<td>7</td>
+<td>com.qait.automation.stik.test.TC_030@2e71207</td></tr>
+<tr>
+<td title='com.qait.automation.stik.test.TC_030.J_Sign_In_With_New_User_Again()'><b>J_Sign_In_With_New_User_Again</b><br>Test class: com.qait.automation.stik.test.TC_030<br/>
+<a href="#Output-1565417975" onClick='toggleBox("Output-1565417975", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-1565417975" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1565417975">
+Verified that login Link is displayed<br><br/>
+Login Link on Home Page clicked..<br><br/>
+Switching to FaceBook Window...<br><br/>
+Switched to FaceBook Window...<br><br/>
+Typed keys username<br><br/>
+Typed keys password<br><br/>
+Clicked facebook login button...<br><br/>
+Switched back to main window<br><br/>
+</div>
+</td>
+<td></td>
+<td>49</td>
+<td>com.qait.automation.stik.test.TC_030@2e71207</td></tr>
+<tr>
+<td title='com.qait.automation.stik.test.TC_030.K_Navigate_To_ReferralPage_Again()'><b>K_Navigate_To_ReferralPage_Again</b><br>Test class: com.qait.automation.stik.test.TC_030<br/>
+<a href="#Output-2127996014" onClick='toggleBox("Output-2127996014", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-2127996014" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-2127996014">
+Navigate to Referral Page<br><br/>
+</div>
+</td>
+<td></td>
+<td>3</td>
+<td>com.qait.automation.stik.test.TC_030@2e71207</td></tr>
+<tr>
+<td title='com.qait.automation.stik.test.TC_030.L_Verify_Referral_Page_Again()'><b>L_Verify_Referral_Page_Again</b><br>Test class: com.qait.automation.stik.test.TC_030<br/>
+<a href="#Output-746490206" onClick='toggleBox("Output-746490206", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-746490206" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-746490206">
+Navigate to Referral Page<br><br/>
+Count of Prospects is correct...<br><br/>
+Email Ids on referral page are correct as provided by the reviewer...<br><br/>
+Supporter Name is correctly displayed...<br><br/>
+Dates of referral are correct...<br><br/>
+</div>
+</td>
+<td></td>
+<td>80</td>
+<td>com.qait.automation.stik.test.TC_030@2e71207</td></tr>
+<tr>
+<td title='com.qait.automation.stik.test.TC_030.setup()'><b>setup</b><br>Test class: com.qait.automation.stik.test.TC_030<br>Parameters: <br/>
+<a href="#Output-346465163" onClick='toggleBox("Output-346465163", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-346465163" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-346465163">
+Email & Password: automation_niiniyg_automation@tfbnw.net;1942737704<br><br/>
+Started Local firefox...<br><br/>
+</div>
+</td>
+<td></td>
+<td>10</td>
 <td>com.qait.automation.stik.test.TC_030@2e71207</td></tr>
 </table><p>
 <table width='100%' border='1' class='invocation-skipped'>
@@ -411,51 +330,6 @@ Started Local firefox...<br><br/>
 <td width="10%"><b>Time (seconds)</b></td>
 <td><b>Instance</b></td>
 </tr>
-<tr>
-<td title='com.qait.automation.stik.test.TC_030.D_signOut_New_User()'><b>D_signOut_New_User</b><br>Test class: com.qait.automation.stik.test.TC_030</td>
-<td></td>
-<td>0</td>
-<td>null</td></tr>
-<tr>
-<td title='com.qait.automation.stik.test.TC_030.F_closeBrowser()'><b>F_closeBrowser</b><br>Test class: com.qait.automation.stik.test.TC_030</td>
-<td></td>
-<td>0</td>
-<td>null</td></tr>
-<tr>
-<td title='com.qait.automation.stik.test.TC_030.G_setup_Again()'><b>G_setup_Again</b><br>Test class: com.qait.automation.stik.test.TC_030</td>
-<td></td>
-<td>0</td>
-<td>null</td></tr>
-<tr>
-<td title='com.qait.automation.stik.test.TC_030.H_launch_URL_Navgiate_to_Stick_HomePage()'><b>H_launch_URL_Navgiate_to_Stick_HomePage</b><br>Test class: com.qait.automation.stik.test.TC_030</td>
-<td></td>
-<td>0</td>
-<td>null</td></tr>
-<tr>
-<td title='com.qait.automation.stik.test.TC_030.I_Provide_Review_And_Referral()'><b>I_Provide_Review_And_Referral</b><br>Test class: com.qait.automation.stik.test.TC_030</td>
-<td></td>
-<td>0</td>
-<td>null</td></tr>
-<tr>
-<td title='com.qait.automation.stik.test.TC_030.J_Sign_In_With_New_User_Again()'><b>J_Sign_In_With_New_User_Again</b><br>Test class: com.qait.automation.stik.test.TC_030</td>
-<td></td>
-<td>0</td>
-<td>null</td></tr>
-<tr>
-<td title='com.qait.automation.stik.test.TC_030.K_Navigate_To_ReferralPage_Again()'><b>K_Navigate_To_ReferralPage_Again</b><br>Test class: com.qait.automation.stik.test.TC_030</td>
-<td></td>
-<td>0</td>
-<td>null</td></tr>
-<tr>
-<td title='com.qait.automation.stik.test.TC_030.L_Verify_Referral_Page_Again()'><b>L_Verify_Referral_Page_Again</b><br>Test class: com.qait.automation.stik.test.TC_030</td>
-<td></td>
-<td>0</td>
-<td>null</td></tr>
-<tr>
-<td title='com.qait.automation.stik.test.TC_030.M_Referral_Settings()'><b>M_Referral_Settings</b><br>Test class: com.qait.automation.stik.test.TC_030</td>
-<td></td>
-<td>0</td>
-<td>null</td></tr>
 <tr>
 <td title='com.qait.automation.stik.test.TC_030.N_signOut()'><b>N_signOut</b><br>Test class: com.qait.automation.stik.test.TC_030</td>
 <td></td>

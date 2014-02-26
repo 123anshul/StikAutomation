@@ -1,0 +1,1 @@
+mvn clean verify -Dname=qa

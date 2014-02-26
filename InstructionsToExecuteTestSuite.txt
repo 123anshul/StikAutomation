@@ -1,0 +1,85 @@
+This is QA InfoTech Stik Test Automation Suite
+
+#################################################################################
+Test Folder location on Remote Machine: C:\Users\Administrator\Desktop\StikProject 
+#################################################################################
+
+========================
+Steps For Executing Test
+========================
+A) Click on startTest.bat file in the StikProject.
+
+	Will start test Suite with default setting.
+
+B) Execute Test cases: Open command prompt and move to the directory where the Stik Project is available.  
+	a) Use the following command to Execute single test:
+
+           	mvn clean verify -Dtest=<<TestClassName>>
+           	Example: mvn clean verify -Dtest=TC_001
+
+	b) Use the following command to Execute whole suite using testNg.xml:
+
+                mvn clean verify
+
+
+Note: Path variable needs to be set before executing mvn command if maven is not installed.
+      Test class are located in package com.qait.automation.stik.test.
+
+========================
+Jenkins URL
+========================
+http://54.241.47.8:8080/
+UserName: testautomation
+Password: 123mayank
+
+
+========================
+Reports
+=======================
+
+A) Emailable Reports: Once test/s is/are finished automatically created reports are available inside folder:
+	a) Single Test Report
+			./target/surefire-reports/emailable-report.html
+	b) Whole Suite Report
+        	        ./target/test-output/emailable-report.html
+
+
+
+=============================================
+Steps to configure Test_Controller_Config.xml
+=============================================
+
+1. Adding more tests to the existing Test_Controller_Config.XML:
+
+      Modify the following strings from the xml code snippet below and append it to the existing xml:
+	 a. [testname] to a String literal specifying the name.
+	 b. [browserName] to the specific browser value ie. either chrome, firefox, safari, iexplore.
+	 c. [packagename.Testclass] to com.qait.automation.stik.test.NameOfTestClassToBeExecuted.
+
+	XML code snippet:
+		<test name=[testname] preserve-order="true">
+			<parameter name="BROWSER" value=[browserName] />
+			<parameter name="filepath" value="data/testData.yml" />
+			<classes>
+				<class name=[packagename.Testclass] />
+			</classes>
+		</test>
+
+
+==================================================
+Adding more recipients to the test execution email
+==================================================
+Location: \StikProject\data\addRecipientList.txt
+
+1. Add recipient email address in new line to addRecipientList.txt
+
+
+===============================
+Changing values in test Data
+===============================
+StikProject\data\testdata.yml
+
+1. User can change appurl, simpleReviewWizardUrl, combinedReviewWizardUrl, loginusername and password.
+2. Update values for profile updation.
+3. Values for reviews (eg. review comment and star rating)
+4. Values of browser (Internet Explorer : iexplore, Google Chrome: chrome, Firefox: firefox)
