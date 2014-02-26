@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="Stik Test" parallel="tests" thread-count="1">
+	
+<test name="Basic login from homepage and account update verification TC_001" preserve-order="true">
+		<parameter name="BROWSER" value="" />
+		<parameter name="filepath" value="" />
+		<classes>
+			<class name="com.qait.automation.stik.test.TC_001" />
+		</classes>
+	</test>
+	<test name="Combined Review Wizard existing Stik session TC_002" preserve-order="true">
+		<parameter name="BROWSER" value="" />
+		<parameter name="filepath" value="" />
+		<classes>
+			<class name="com.qait.automation.stik.test.TC_002" />
+		</classes>
+	</test>
+	<test name="Combined Review Wizard without Stik session TC_003" preserve-order="true">
+		<parameter name="BROWSER" value="" />
+		<parameter name="filepath" value="" />
+		<classes>
+			<class name="com.qait.automation.stik.test.TC_003" />
+		</classes>
+	</test>
+<test name="Verify Meta-data on MyProfile Page and OthersProfile Page TC_004" preserve-order="true">
+		<parameter name="BROWSER" value="" />
+		<parameter name="filepath" value="" />
+		<classes>
+			<class name="com.qait.automation.stik.test.TC_004" />
+		</classes>
+	</test>
+	<test name="Verify Review count on MyProfile and OthersProfile with existing session TC_006" preserve-order="true">
+		<parameter name="BROWSER" value="" />
+		<parameter name="filepath" value="" />
+		<classes>
+			<class name="com.qait.automation.stik.test.TC_006" />
+		</classes>
+	</test>
+	<test name="Verify Review count on OthersProfile without existing session TC_007" preserve-order="true">
+		<parameter name="BROWSER" value="" />
+		<parameter name="filepath" value="" />
+		<classes>
+			<class name="com.qait.automation.stik.test.TC_007" />
+		</classes>
+	</test>
+	<test name="Verify that Facebook, Linkedin and Google Plus links are appearing on Myprofile, OthersProfile page TC_008" preserve-order="true">
+		<parameter name="BROWSER" value="" />
+		<parameter name="filepath" value="" />
+		<classes>
+			<class name="com.qait.automation.stik.test.TC_008" />
+		</classes>
+	</test>
+	<test name="Verify Home Page Header without existing session TC_009" preserve-order="true"> -->
+		<parameter name="BROWSER" value="" />
+		<parameter name="filepath" value="" />
+		<classes>
+			<class name="com.qait.automation.stik.test.TC_009" />
+		</classes>
+	</test>
+	<test name="Verify Home Page Footer without existing session on stik.com TC_010" preserve-order="true"> -->
+		<parameter name="BROWSER" value="" />
+		<parameter name="filepath" value="" />
+		<classes>
+			<class name="com.qait.automation.stik.test.TC_010" />
+		</classes>
+	</test>
+	
+	<test name="Find a Professional : Directory page TC_011" preserve-order="true"> -->
+		<parameter name="BROWSER" value="" />
+		<parameter name="filepath" value="" />
+		<classes>
+			<class name="com.qait.automation.stik.test.TC_011" />
+		</classes>
+	</test>
+	
+	<test name="Professional page : Verify Import using Gmail account TC_014" preserve-order="true"> -->
+		<parameter name="BROWSER" value="" />
+		<parameter name="filepath" value="" />
+		<classes>
+			<class name="com.qait.automation.stik.test.TC_014" />
+		</classes>
+	</test>
+	
+	<test name="Clients page : Import using Gmail account TC_015" preserve-order="true"> -->
+		<parameter name="BROWSER" value="" />
+		<parameter name="filepath" value="" />
+		<classes>
+			<class name="com.qait.automation.stik.test.TC_015" />
+		</classes>
+	</test>
+	<test name="Verify that the preview contains emails on ShowCase Email Page TC_016" preserve-order="true"> -->
+		<parameter name="BROWSER" value="" />
+		<parameter name="filepath" value="" />
+		<classes>
+			<class name="com.qait.automation.stik.test.TC_016" />
+		</classes>
+	</test>
+	<test name="Verify the content of IFrame on http://www.stik.com/zf/widget/builder TC_017" preserve-order="true"> -->
+		<parameter name="BROWSER" value="" />
+		<parameter name="filepath" value="" />
+		<classes>
+			<class name="com.qait.automation.stik.test.TC_017" />
+		</classes>
+	</test>
+	<test name="Verify that a Facebook tab can be successfully installed to a Page TC_018" preserve-order="true"> -->
+		<parameter name="BROWSER" value="" />
+		<parameter name="filepath" value="" />
+		<classes>
+			<class name="com.qait.automation.stik.test.TC_018" />
+		</classes>
+	</test>
+	<test name="Verify that reviews can be posted to facebook on http://www.stik.com/zf/facebook/add-collection TC_019" preserve-order="true"> -->
+		<parameter name="BROWSER" value="" />
+		<parameter name="filepath" value="" />
+		<classes>
+			<class name="com.qait.automation.stik.test.TC_019" />
+		</classes>
+	</test>
+	
+	<test name="Login through Facebook Account and Fill Information on Business Info Page TC_020" preserve-order="true"> -->
+		<parameter name="BROWSER" value="" />
+		<parameter name="filepath" value="" />
+		<classes>
+			<class name="com.qait.automation.stik.test.TC_020" />
+		</classes>
+	</test>
+	<test name="Verify appropriate links appear on Profile Page in case account details are not provided and that these links work fine TC_021" preserve-order="true"> -->
+		<parameter name="BROWSER" value="" />
+		<parameter name="filepath" value="" />
+		<classes>
+			<class name="com.qait.automation.stik.test.TC_021" />
+		</classes>
+	</test>
+	<test name="Professional Sign Up process for a fresh account through Facebook TC_022" preserve-order="true"> -->
+		<parameter name="BROWSER" value="" />
+		<parameter name="filepath" value="" />
+		<classes>
+			<class name="com.qait.automation.stik.test.TC_022" />
+		</classes>
+	</test>
+	<test name="Submission of Review on Profile Page without existing session TC_023" preserve-order="true"> -->
+		<parameter name="BROWSER" value="" />
+		<parameter name="filepath" value="" />
+		<classes>
+			<class name="com.qait.automation.stik.test.TC_023" />
+		</classes>
+	</test>
+	<test name="Submission of Review on Profile Page with existing session TC_024" preserve-order="true"> -->
+		<parameter name="BROWSER" value="" />
+		<parameter name="filepath" value="" />
+		<classes>
+			<class name="com.qait.automation.stik.test.TC_024" />
+		</classes>
+	</test>
+	
+	<test name="Verify that appropriate hyperlink appears in accordance with selected Email Provider on Showcase Email page TC_026" preserve-order="true"> -->
+		<parameter name="BROWSER" value="" />
+		<parameter name="filepath" value="" />
+		<classes>
+			<class name="com.qait.automation.stik.test.TC_026" />
+		</classes>
+	</test>
+	<test name="Verify Referral Collection Workflow on URL:- http://www.knewdeal.com/refer/automationone.automationone?rev_id=16299938 TC_027" preserve-order="true"> -->
+		<parameter name="BROWSER" value="" />
+		<parameter name="filepath" value="" />
+		<classes>
+			<class name="com.qait.automation.stik.test.TC_027" />
+		</classes>
+	</test>
+	<test name="Verify complete UI and features on existing user's home page after log in TC_029" preserve-order="true"> -->
+		<parameter name="BROWSER" value="" />
+		<parameter name="filepath" value="" />
+		<classes>
+			<class name="com.qait.automation.stik.test.TC_029" />
+		</classes>
+	</test>
+	<test name="Verify Referral Page and Referral Settings for a new user in TC_030" preserve-order="true"> -->
+		<parameter name="BROWSER" value="" />
+		<parameter name="filepath" value="" />
+		<classes>
+			<class name="com.qait.automation.stik.test.TC_030" />
+		</classes>
+	</test>		
+	<test name="Verify the content and functionality of the Company Page in Online TC_032" preserve-order="true"> -->
+		<parameter name="BROWSER" value="" />
+		<parameter name="filepath" value="" />
+		<classes>
+			<class name="com.qait.automation.stik.test.TC_032" />
+		</classes>
+	</test>	
+	<test name="Verify the content and functionality of the Profile Page in Online TC_033" preserve-order="true"> -->
+		<parameter name="BROWSER" value="" />
+		<parameter name="filepath" value="" />
+		<classes>
+			<class name="com.qait.automation.stik.test.TC_033" />
+		</classes>
+	</test>	
+		</suite>		
+

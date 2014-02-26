@@ -1,0 +1,43 @@
+This is QA InfoTech Stik Test Automation Suite
+
+========================
+Steps For Executing Test
+========================
+1. Execute Test cases: Open command prompt and move to the directory where the Stik Project is available.  
+	a) Use the following command to Execute single test:
+           	mvn clean verify -Dtest=<<TestClassName>>
+           	Example: mvn clean verify -Dtest=TC_001
+
+	b) Use the following command to Execute whole suite using testNg.xml:
+           mvn clean verify
+
+Note: Path variable needs to be set before executing mvn command. The test class are located in package  
+com.qait.automation.stik.test
+
+2. Emailable Reports: Once test/s is/are finished automatically created reports are available inside folder:
+	a) Single Test Report
+			./target/surefire-reports/emailable-report.html
+	b) Whole Suite Report
+        	./target/test-output/emailable-report.html
+
+
+
+=============================================
+Steps to configure Test_Controller_Config.xml
+=============================================
+
+1. Adding more tests to the existing XML:
+
+      Modify the following strings from the xml code snippet below and append it to the existing xml:
+	 a. [testname] to a String literal specifying the name.
+	 b. [browserName] to the specific browser value ie. either chrome, firefox, safari, iexplore.
+	 c. [packagename.Testclass] to com.qait.automation.stik.test.NameOfTestClassToBeExecuted.
+
+	XML code snippet:
+		<test name=[testname] preserve-order="true">
+			<parameter name="BROWSER" value=[browserName] />
+			<parameter name="filepath" value="data/testData.yml" />
+			<classes>
+				<class name=[packagename.Testclass] />
+			</classes>
+		</test>

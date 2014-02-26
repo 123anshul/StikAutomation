@@ -1,0 +1,47 @@
+[0.013][INFO]:      ChromeDriver 23.0.1240.0 C:\My DATA\Workspace\StikProject\DriverServer\chromedriver.exe
+[0.792][FINE]:      Initializing session with capabilities {
+   "browserName": "chrome",
+   "chrome.switches": [  ],
+   "chromeOptions": {
+      "args": [  ],
+      "extensions": [  ]
+   },
+   "platform": "ANY",
+   "version": ""
+}
+
+[0.792][INFO]:      Launching chrome: "C:\Program Files (x86)\Google\Chrome\Application\chrome.exe" --enable-logging --log-level=1 --disable-hang-monitor --disable-prompt-on-repost --dom-automation --full-memory-crash-report --no-default-browser-check --no-first-run --disable-background-networking --disable-sync --disable-translate --disable-web-resources --safebrowsing-disable-auto-update --safebrowsing-disable-download-protection --disable-client-side-phishing-detection --disable-component-update --disable-default-apps --ignore-certificate-errors about:blank
+[2.586][INFO]:      Connected to Chrome successfully. Version: 30.0.1599.69
+[2.679][FINE]:      Command received (/session/d72c3b3f91c72cbc953ff52900de47c8)
+[2.680][FINE]:      Command finished (/session/d72c3b3f91c72cbc953ff52900de47c8) with response {
+   "sessionId": "d72c3b3f91c72cbc953ff52900de47c8",
+   "status": 0,
+   "value": {
+      "acceptSslCerts": false,
+      "applicationCacheEnabled": false,
+      "browserConnectionEnabled": false,
+      "browserName": "chrome",
+      "chrome.chromedriverVersion": "23.0.1240.0",
+      "chrome.nativeEvents": false,
+      "cssSelectorsEnabled": true,
+      "databaseEnabled": false,
+      "handlesAlerts": true,
+      "javascriptEnabled": true,
+      "locationContextEnabled": false,
+      "nativeEvents": true,
+      "platform": "windows",
+      "rotatable": false,
+      "takesScreenshot": true,
+      "version": "30.0.1599.69",
+      "webStorageEnabled": true
+   }
+}
+
+[2.700][FINE]:      Command received (/session/d72c3b3f91c72cbc953ff52900de47c8/timeouts/implicit_wait) with params {
+   "ms": 25000
+}
+
+[2.700][FINER]:     Waiting for all views to stop loading...
+[2.701][FINER]:     Done waiting for all views to stop loading
+[2.719][FINE]:      Command received (/session/d72c3b3f91c72cbc953ff52900de47c8)
+[3.151][INFO]:      Chrome shutdown

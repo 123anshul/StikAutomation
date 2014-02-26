@@ -1,0 +1,151 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>TestNG:  Unit Test</title>
+<style type="text/css">
+table caption,table.info_table,table.param,table.passed,table.failed {margin-bottom:10px;border:1px solid #000099;border-collapse:collapse;empty-cells:show;}
+table.info_table td,table.info_table th,table.param td,table.param th,table.passed td,table.passed th,table.failed td,table.failed th {
+border:1px solid #000099;padding:.25em .5em .25em .5em
+}
+table.param th {vertical-align:bottom}
+td.numi,th.numi,td.numi_attn {
+text-align:right
+}
+tr.total td {font-weight:bold}
+table caption {
+text-align:center;font-weight:bold;
+}
+table.passed tr.stripe td,table tr.passedodd td {background-color: #00AA00;}
+table.passed td,table tr.passedeven td {background-color: #33FF33;}
+table.passed tr.stripe td,table tr.skippedodd td {background-color: #cccccc;}
+table.passed td,table tr.skippedodd td {background-color: #dddddd;}
+table.failed tr.stripe td,table tr.failedodd td,table.param td.numi_attn {background-color: #FF3333;}
+table.failed td,table tr.failedeven td,table.param tr.stripe td.numi_attn {background-color: #DD0000;}
+tr.stripe td,tr.stripe th {background-color: #E6EBF9;}
+p.totop {font-size:85%;text-align:center;border-bottom:2px black solid}
+div.shootout {padding:2em;border:3px #4854A8 solid}
+</style>
+</head>
+<body>
+<table cellspacing=0 cellpadding=0 class="param">
+<tr><th>Test</th><th class="numi">Methods<br/>Passed</th><th class="numi">Scenarios<br/>Passed</th><th class="numi"># skipped</th><th class="numi"># failed</th><th class="numi">Total<br/>Time</th><th class="numi">Included<br/>Groups</th><th class="numi">Excluded<br/>Groups</th></tr>
+<tr><td style="text-align:left;padding-right:2em">Default test</td><td class="numi">13</td><td class="numi">13</td><td class="numi_attn">1</td><td class="numi_attn">1</td><td class="numi">388.2 seconds</td><td class="numi"></td><td class="numi"></td></tr>
+</table>
+<a id="summary"></a>
+<table cellspacing=0 cellpadding=0 class="passed">
+<tr><th>Class</th><th>Method</th><th># of<br/>Scenarios</th><th>Start</th><th>Time<br/>(ms)</th></tr>
+<tr><th colspan="4">Default test &#8212; failed</th></tr>
+<tr class="failedodd"><td rowspan="1">com.qait.automation.stik.test.TC_030<td><a href="#m1"><b>M_Referral_Settings</b>  </a></td><td class="numi">1</td><td>1393393362745</td><td class="numi">14813</td></tr>
+<tr><th colspan="4">Default test &#8212; skipped</th></tr>
+<tr class="skippedodd"><td rowspan="1">com.qait.automation.stik.test.TC_030<td><a href="#m2"><b>N_signOut</b>  </a></td><td class="numi">1</td><td>1393393377559</td><td class="numi">0</td></tr>
+<tr><th colspan="4">Default test &#8212; passed</th></tr>
+<tr class="passedodd"><td rowspan="13">com.qait.automation.stik.test.TC_030<td><a href="#m3"><b>setup</b>  </a></td><td class="numi">1</td><td>1393392991233</td><td class="numi">10304</td></tr><tr class="passedodd"><td><a href="#m4"><b>A_launch_URL_Navgiate_to_Stick_HomePage</b>  </a></td><td class="numi">1</td><td>1393393001545</td><td class="numi">11507</td></tr><tr class="passedodd"><td><a href="#m5"><b>B_Sign_Up_Using_With_FaceBook</b>  </a></td><td class="numi">1</td><td>1393393013053</td><td class="numi">75935</td></tr><tr class="passedodd"><td><a href="#m6"><b>C_Navigate_To_Referral_Page</b>  </a></td><td class="numi">1</td><td>1393393088994</td><td class="numi">58169</td></tr><tr class="passedodd"><td><a href="#m7"><b>C_Verify_Referral_Page_For_fresh_User</b>  </a></td><td class="numi">1</td><td>1393393147165</td><td class="numi">45617</td></tr><tr class="passedodd"><td><a href="#m8"><b>D_signOut_New_User</b>  </a></td><td class="numi">1</td><td>1393393192783</td><td class="numi">10084</td></tr><tr class="passedodd"><td><a href="#m9"><b>F_closeBrowser</b>  </a></td><td class="numi">1</td><td>1393393202868</td><td class="numi">722</td></tr><tr class="passedodd"><td><a href="#m10"><b>G_setup_Again</b>  </a></td><td class="numi">1</td><td>1393393203591</td><td class="numi">8196</td></tr><tr class="passedodd"><td><a href="#m11"><b>H_launch_URL_Navgiate_to_Stick_HomePage</b>  </a></td><td class="numi">1</td><td>1393393211789</td><td class="numi">13668</td></tr><tr class="passedodd"><td><a href="#m12"><b>I_Provide_Review_And_Referral</b>  </a></td><td class="numi">1</td><td>1393393225458</td><td class="numi">7133</td></tr><tr class="passedodd"><td><a href="#m13"><b>J_Sign_In_With_New_User_Again</b>  </a></td><td class="numi">1</td><td>1393393232594</td><td class="numi">46874</td></tr><tr class="passedodd"><td><a href="#m14"><b>K_Navigate_To_ReferralPage_Again</b>  </a></td><td class="numi">1</td><td>1393393279469</td><td class="numi">3588</td></tr><tr class="passedodd"><td><a href="#m15"><b>L_Verify_Referral_Page_Again</b>  </a></td><td class="numi">1</td><td>1393393283059</td><td class="numi">79683</td></tr>
+</table>
+<h1>Default test</h1>
+<a id="m1"></a><h2>com.qait.automation.stik.test.TC_030:M_Referral_Settings</h2>
+<div style="padding-left:3em">
+<p>Email body still visible after selecting &apos;No&apos; Checkbox expected [true] but found [false]</p>
+org.testng.Assert.fail(Assert.java:89)
+<br/>at org.testng.Assert.failNotEquals(Assert.java:489)
+<br/>at org.testng.Assert.assertTrue(Assert.java:37)
+<br/>at com.qait.automation.stik.actionfixtures.ReferralPageFixture.checkSettingsButton(ReferralPageFixture.java:130)
+<br/>at com.qait.automation.stik.test.TC_030.M_Referral_Settings(TC_030.java:117)
+<br/>25 lines not shown
+</div>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m2"></a><h2>com.qait.automation.stik.test.TC_030:N_signOut</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m3"></a><h2>com.qait.automation.stik.test.TC_030:I_Provide_Review_And_Referral</h2>
+<div style="padding-left:3em">
+Not signed in...<br><br/>
+</div>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m4"></a><h2>com.qait.automation.stik.test.TC_030:K_Navigate_To_ReferralPage_Again</h2>
+<div style="padding-left:3em">
+Navigate to Referral Page<br><br/>
+</div>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m5"></a><h2>com.qait.automation.stik.test.TC_030:F_closeBrowser</h2>
+<div style="padding-left:3em">
+Closed Browser session...<br><br/>
+</div>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m6"></a><h2>com.qait.automation.stik.test.TC_030:D_signOut_New_User</h2>
+<div style="padding-left:3em">
+Sign Out button clicked....<br><br/>
+</div>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m7"></a><h2>com.qait.automation.stik.test.TC_030:A_launch_URL_Navgiate_to_Stick_HomePage</h2>
+<div style="padding-left:3em">
+Launched URL and verified that title contains Stik.com...<br><br/>
+</div>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m8"></a><h2>com.qait.automation.stik.test.TC_030:J_Sign_In_With_New_User_Again</h2>
+<div style="padding-left:3em">
+Verified that login Link is displayed<br><br/>
+Login Link on Home Page clicked..<br><br/>
+Switching to FaceBook Window...<br><br/>
+Switched to FaceBook Window...<br><br/>
+Typed keys username<br><br/>
+Typed keys password<br><br/>
+Clicked facebook login button...<br><br/>
+Switched back to main window<br><br/>
+</div>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m9"></a><h2>com.qait.automation.stik.test.TC_030:C_Navigate_To_Referral_Page</h2>
+<div style="padding-left:3em">
+Navigate to Referral Page<br><br/>
+</div>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m10"></a><h2>com.qait.automation.stik.test.TC_030:G_setup_Again</h2>
+<table cellspacing=0 cellpadding=0 class="param">
+<tr><th style="padding-left:1em;padding-right:1em">Parameter #1</th></tr>
+<tr><td style="padding-left:.5em;padding-right:2em"></td>
+</tr>
+<tr><td style="padding-left:3em" colspan="1">
+Started Local firefox...<br><br/>
+</td></tr>
+</table>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m11"></a><h2>com.qait.automation.stik.test.TC_030:B_Sign_Up_Using_With_FaceBook</h2>
+<div style="padding-left:3em">
+Switching to FaceBook Window...<br><br/>
+Switched to FaceBook Window...<br><br/>
+Typed keys username<br><br/>
+Typed keys password<br><br/>
+Clicked facebook login button...<br><br/>
+Clicked facebook Okay button...<br><br/>
+Switched back to main window<br><br/>
+</div>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m12"></a><h2>com.qait.automation.stik.test.TC_030:L_Verify_Referral_Page_Again</h2>
+<div style="padding-left:3em">
+Navigate to Referral Page<br><br/>
+Count of Prospects is correct...<br><br/>
+Email Ids on referral page are correct as provided by the reviewer...<br><br/>
+Supporter Name is correctly displayed...<br><br/>
+Dates of referral are correct...<br><br/>
+</div>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m13"></a><h2>com.qait.automation.stik.test.TC_030:H_launch_URL_Navgiate_to_Stick_HomePage</h2>
+<div style="padding-left:3em">
+Launched URL and verified that title contains Stik.com...<br><br/>
+</div>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m14"></a><h2>com.qait.automation.stik.test.TC_030:C_Verify_Referral_Page_For_fresh_User</h2>
+<div style="padding-left:3em">
+Navigate to Referral Page<br><br/>
+</div>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m15"></a><h2>com.qait.automation.stik.test.TC_030:setup</h2>
+<table cellspacing=0 cellpadding=0 class="param">
+<tr><th style="padding-left:1em;padding-right:1em">Parameter #1</th></tr>
+<tr><td style="padding-left:.5em;padding-right:2em"></td>
+</tr>
+<tr><td style="padding-left:3em" colspan="1">
+Email & Password: automation_xjkuopj_automation@tfbnw.net;1760966356<br><br/>
+Started Local firefox...<br><br/>
+</td></tr>
+</table>
+<p class="totop"><a href="#summary">back to summary</a></p>
+</body></html>

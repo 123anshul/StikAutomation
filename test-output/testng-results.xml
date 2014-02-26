@@ -1,0 +1,332 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="1" failed="1" total="15" passed="13">
+  <reporter-output>
+    <line>
+      <![CDATA[Email & Password: automation_xjkuopj_automation@tfbnw.net;1760966356<br>]]>
+    </line>
+    <line>
+      <![CDATA[Started Local firefox...<br>]]>
+    </line>
+    <line>
+      <![CDATA[Launched URL and verified that title contains Stik.com...<br>]]>
+    </line>
+    <line>
+      <![CDATA[Switching to FaceBook Window...<br>]]>
+    </line>
+    <line>
+      <![CDATA[Switched to FaceBook Window...<br>]]>
+    </line>
+    <line>
+      <![CDATA[Typed keys username<br>]]>
+    </line>
+    <line>
+      <![CDATA[Typed keys password<br>]]>
+    </line>
+    <line>
+      <![CDATA[Clicked facebook login button...<br>]]>
+    </line>
+    <line>
+      <![CDATA[Clicked facebook Okay button...<br>]]>
+    </line>
+    <line>
+      <![CDATA[Switched back to main window<br>]]>
+    </line>
+    <line>
+      <![CDATA[Navigate to Referral Page<br>]]>
+    </line>
+    <line>
+      <![CDATA[Navigate to Referral Page<br>]]>
+    </line>
+    <line>
+      <![CDATA[Sign Out button clicked....<br>]]>
+    </line>
+    <line>
+      <![CDATA[Closed Browser session...<br>]]>
+    </line>
+    <line>
+      <![CDATA[Started Local firefox...<br>]]>
+    </line>
+    <line>
+      <![CDATA[Launched URL and verified that title contains Stik.com...<br>]]>
+    </line>
+    <line>
+      <![CDATA[Not signed in...<br>]]>
+    </line>
+    <line>
+      <![CDATA[Verified that login Link is displayed<br>]]>
+    </line>
+    <line>
+      <![CDATA[Login Link on Home Page clicked..<br>]]>
+    </line>
+    <line>
+      <![CDATA[Switching to FaceBook Window...<br>]]>
+    </line>
+    <line>
+      <![CDATA[Switched to FaceBook Window...<br>]]>
+    </line>
+    <line>
+      <![CDATA[Typed keys username<br>]]>
+    </line>
+    <line>
+      <![CDATA[Typed keys password<br>]]>
+    </line>
+    <line>
+      <![CDATA[Clicked facebook login button...<br>]]>
+    </line>
+    <line>
+      <![CDATA[Switched back to main window<br>]]>
+    </line>
+    <line>
+      <![CDATA[Navigate to Referral Page<br>]]>
+    </line>
+    <line>
+      <![CDATA[Navigate to Referral Page<br>]]>
+    </line>
+    <line>
+      <![CDATA[Count of Prospects is correct...<br>]]>
+    </line>
+    <line>
+      <![CDATA[Email Ids on referral page are correct as provided by the reviewer...<br>]]>
+    </line>
+    <line>
+      <![CDATA[Supporter Name is correctly displayed...<br>]]>
+    </line>
+    <line>
+      <![CDATA[Dates of referral are correct...<br>]]>
+    </line>
+    <line>
+      <![CDATA[Closed Browser session...<br>]]>
+    </line>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="388167" started-at="2014-02-26T05:36:31Z" finished-at="2014-02-26T05:42:59Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="388167" started-at="2014-02-26T05:36:31Z" finished-at="2014-02-26T05:42:59Z">
+      <class name="com.qait.automation.stik.test.TC_030">
+        <test-method status="PASS" signature="beforeClass(java.lang.String)[pri:0, instance:com.qait.automation.stik.test.TC_030@2e71207]" name="beforeClass" is-config="true" duration-ms="108" started-at="2014-02-26T11:06:31Z" finished-at="2014-02-26T11:06:31Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[data/qatestdata.yml]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeClass -->
+        <test-method status="PASS" signature="setup(java.lang.String)[pri:0, instance:com.qait.automation.stik.test.TC_030@2e71207]" name="setup" duration-ms="10304" started-at="2014-02-26T11:06:31Z" finished-at="2014-02-26T11:06:41Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+            <line>
+              <![CDATA[Email & Password: automation_xjkuopj_automation@tfbnw.net;1760966356<br>]]>
+            </line>
+            <line>
+              <![CDATA[Started Local firefox...<br>]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method status="PASS" signature="A_launch_URL_Navgiate_to_Stick_HomePage()[pri:0, instance:com.qait.automation.stik.test.TC_030@2e71207]" name="A_launch_URL_Navgiate_to_Stick_HomePage" duration-ms="11507" started-at="2014-02-26T11:06:41Z" depends-on-methods="com.qait.automation.stik.test.TC_030.setup" finished-at="2014-02-26T11:06:53Z">
+          <reporter-output>
+            <line>
+              <![CDATA[Launched URL and verified that title contains Stik.com...<br>]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- A_launch_URL_Navgiate_to_Stick_HomePage -->
+        <test-method status="PASS" signature="B_Sign_Up_Using_With_FaceBook()[pri:0, instance:com.qait.automation.stik.test.TC_030@2e71207]" name="B_Sign_Up_Using_With_FaceBook" duration-ms="75935" started-at="2014-02-26T11:06:53Z" depends-on-methods="com.qait.automation.stik.test.TC_030.A_launch_URL_Navgiate_to_Stick_HomePage" finished-at="2014-02-26T11:08:08Z">
+          <reporter-output>
+            <line>
+              <![CDATA[Switching to FaceBook Window...<br>]]>
+            </line>
+            <line>
+              <![CDATA[Switched to FaceBook Window...<br>]]>
+            </line>
+            <line>
+              <![CDATA[Typed keys username<br>]]>
+            </line>
+            <line>
+              <![CDATA[Typed keys password<br>]]>
+            </line>
+            <line>
+              <![CDATA[Clicked facebook login button...<br>]]>
+            </line>
+            <line>
+              <![CDATA[Clicked facebook Okay button...<br>]]>
+            </line>
+            <line>
+              <![CDATA[Switched back to main window<br>]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- B_Sign_Up_Using_With_FaceBook -->
+        <test-method status="PASS" signature="C_Navigate_To_Referral_Page()[pri:0, instance:com.qait.automation.stik.test.TC_030@2e71207]" name="C_Navigate_To_Referral_Page" duration-ms="58169" started-at="2014-02-26T11:08:08Z" depends-on-methods="com.qait.automation.stik.test.TC_030.B_Sign_Up_Using_With_FaceBook" finished-at="2014-02-26T11:09:07Z">
+          <reporter-output>
+            <line>
+              <![CDATA[Navigate to Referral Page<br>]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- C_Navigate_To_Referral_Page -->
+        <test-method status="PASS" signature="C_Verify_Referral_Page_For_fresh_User()[pri:0, instance:com.qait.automation.stik.test.TC_030@2e71207]" name="C_Verify_Referral_Page_For_fresh_User" duration-ms="45617" started-at="2014-02-26T11:09:07Z" depends-on-methods="com.qait.automation.stik.test.TC_030.C_Navigate_To_Referral_Page" finished-at="2014-02-26T11:09:52Z">
+          <reporter-output>
+            <line>
+              <![CDATA[Navigate to Referral Page<br>]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- C_Verify_Referral_Page_For_fresh_User -->
+        <test-method status="PASS" signature="D_signOut_New_User()[pri:0, instance:com.qait.automation.stik.test.TC_030@2e71207]" name="D_signOut_New_User" duration-ms="10084" started-at="2014-02-26T11:09:52Z" depends-on-methods="com.qait.automation.stik.test.TC_030.C_Verify_Referral_Page_For_fresh_User" finished-at="2014-02-26T11:10:02Z">
+          <reporter-output>
+            <line>
+              <![CDATA[Sign Out button clicked....<br>]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- D_signOut_New_User -->
+        <test-method status="PASS" signature="F_closeBrowser()[pri:0, instance:com.qait.automation.stik.test.TC_030@2e71207]" name="F_closeBrowser" duration-ms="722" started-at="2014-02-26T11:10:02Z" depends-on-methods="com.qait.automation.stik.test.TC_030.D_signOut_New_User" finished-at="2014-02-26T11:10:03Z">
+          <reporter-output>
+            <line>
+              <![CDATA[Closed Browser session...<br>]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- F_closeBrowser -->
+        <test-method status="PASS" signature="G_setup_Again(java.lang.String)[pri:0, instance:com.qait.automation.stik.test.TC_030@2e71207]" name="G_setup_Again" duration-ms="8196" started-at="2014-02-26T11:10:03Z" depends-on-methods="com.qait.automation.stik.test.TC_030.F_closeBrowser" finished-at="2014-02-26T11:10:11Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+            <line>
+              <![CDATA[Started Local firefox...<br>]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- G_setup_Again -->
+        <test-method status="PASS" signature="H_launch_URL_Navgiate_to_Stick_HomePage()[pri:0, instance:com.qait.automation.stik.test.TC_030@2e71207]" name="H_launch_URL_Navgiate_to_Stick_HomePage" duration-ms="13668" started-at="2014-02-26T11:10:11Z" depends-on-methods="com.qait.automation.stik.test.TC_030.G_setup_Again" finished-at="2014-02-26T11:10:25Z">
+          <reporter-output>
+            <line>
+              <![CDATA[Launched URL and verified that title contains Stik.com...<br>]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- H_launch_URL_Navgiate_to_Stick_HomePage -->
+        <test-method status="PASS" signature="I_Provide_Review_And_Referral()[pri:0, instance:com.qait.automation.stik.test.TC_030@2e71207]" name="I_Provide_Review_And_Referral" duration-ms="7133" started-at="2014-02-26T11:10:25Z" depends-on-methods="com.qait.automation.stik.test.TC_030.H_launch_URL_Navgiate_to_Stick_HomePage" finished-at="2014-02-26T11:10:32Z">
+          <reporter-output>
+            <line>
+              <![CDATA[Not signed in...<br>]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- I_Provide_Review_And_Referral -->
+        <test-method status="PASS" signature="J_Sign_In_With_New_User_Again()[pri:0, instance:com.qait.automation.stik.test.TC_030@2e71207]" name="J_Sign_In_With_New_User_Again" duration-ms="46874" started-at="2014-02-26T11:10:32Z" depends-on-methods="com.qait.automation.stik.test.TC_030.I_Provide_Review_And_Referral" finished-at="2014-02-26T11:11:19Z">
+          <reporter-output>
+            <line>
+              <![CDATA[Verified that login Link is displayed<br>]]>
+            </line>
+            <line>
+              <![CDATA[Login Link on Home Page clicked..<br>]]>
+            </line>
+            <line>
+              <![CDATA[Switching to FaceBook Window...<br>]]>
+            </line>
+            <line>
+              <![CDATA[Switched to FaceBook Window...<br>]]>
+            </line>
+            <line>
+              <![CDATA[Typed keys username<br>]]>
+            </line>
+            <line>
+              <![CDATA[Typed keys password<br>]]>
+            </line>
+            <line>
+              <![CDATA[Clicked facebook login button...<br>]]>
+            </line>
+            <line>
+              <![CDATA[Switched back to main window<br>]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- J_Sign_In_With_New_User_Again -->
+        <test-method status="PASS" signature="K_Navigate_To_ReferralPage_Again()[pri:0, instance:com.qait.automation.stik.test.TC_030@2e71207]" name="K_Navigate_To_ReferralPage_Again" duration-ms="3588" started-at="2014-02-26T11:11:19Z" depends-on-methods="com.qait.automation.stik.test.TC_030.J_Sign_In_With_New_User_Again" finished-at="2014-02-26T11:11:23Z">
+          <reporter-output>
+            <line>
+              <![CDATA[Navigate to Referral Page<br>]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- K_Navigate_To_ReferralPage_Again -->
+        <test-method status="PASS" signature="L_Verify_Referral_Page_Again()[pri:0, instance:com.qait.automation.stik.test.TC_030@2e71207]" name="L_Verify_Referral_Page_Again" duration-ms="79683" started-at="2014-02-26T11:11:23Z" depends-on-methods="com.qait.automation.stik.test.TC_030.K_Navigate_To_ReferralPage_Again" finished-at="2014-02-26T11:12:42Z">
+          <reporter-output>
+            <line>
+              <![CDATA[Navigate to Referral Page<br>]]>
+            </line>
+            <line>
+              <![CDATA[Count of Prospects is correct...<br>]]>
+            </line>
+            <line>
+              <![CDATA[Email Ids on referral page are correct as provided by the reviewer...<br>]]>
+            </line>
+            <line>
+              <![CDATA[Supporter Name is correctly displayed...<br>]]>
+            </line>
+            <line>
+              <![CDATA[Dates of referral are correct...<br>]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- L_Verify_Referral_Page_Again -->
+        <test-method status="FAIL" signature="M_Referral_Settings()[pri:0, instance:com.qait.automation.stik.test.TC_030@2e71207]" name="M_Referral_Settings" duration-ms="14813" started-at="2014-02-26T11:12:42Z" depends-on-methods="com.qait.automation.stik.test.TC_030.L_Verify_Referral_Page_Again" finished-at="2014-02-26T11:12:57Z">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[Email body still visible after selecting 'No' Checkbox expected [true] but found [false]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: Email body still visible after selecting 'No' Checkbox expected [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:89)
+	at org.testng.Assert.failNotEquals(Assert.java:489)
+	at org.testng.Assert.assertTrue(Assert.java:37)
+	at com.qait.automation.stik.actionfixtures.ReferralPageFixture.checkSettingsButton(ReferralPageFixture.java:130)
+	at com.qait.automation.stik.test.TC_030.M_Referral_Settings(TC_030.java:117)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:80)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1197)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1122)
+	at org.testng.TestNG.run(TestNG.java:1030)
+	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:111)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:204)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:175)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- M_Referral_Settings -->
+        <test-method status="SKIP" signature="N_signOut()[pri:0, instance:com.qait.automation.stik.test.TC_030@2e71207]" name="N_signOut" duration-ms="0" started-at="2014-02-26T11:12:57Z" depends-on-methods="com.qait.automation.stik.test.TC_030.M_Referral_Settings" finished-at="2014-02-26T11:12:57Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- N_signOut -->
+        <test-method status="PASS" signature="afterClass()[pri:0, instance:com.qait.automation.stik.test.TC_030@2e71207]" name="afterClass" is-config="true" duration-ms="1720" started-at="2014-02-26T11:12:57Z" finished-at="2014-02-26T11:12:59Z">
+          <reporter-output>
+            <line>
+              <![CDATA[Closed Browser session...<br>]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- afterClass -->
+      </class> <!-- com.qait.automation.stik.test.TC_030 -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
