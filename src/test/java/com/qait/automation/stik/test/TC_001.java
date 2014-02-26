@@ -18,6 +18,8 @@ import com.qait.automation.stik.util.Utilities;
  * @author      QAIT
  */
 
+//Test github sample
+
 //Basic login from homepage www.knewdeal.com and account update verification
 public class TC_001 {
 	private static boolean newUserFlag= false;
