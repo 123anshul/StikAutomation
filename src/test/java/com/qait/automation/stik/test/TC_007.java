@@ -15,7 +15,7 @@ public class TC_007 {
 	
 	@BeforeClass
     @Parameters({ "filepath" })
-    public void beforeClass(@Optional("")String filePath){
+    public void beforeClass(@Optional("data/qatestdata.yml")String filePath){
         test.setUpDataFile(filePath);
     }
     

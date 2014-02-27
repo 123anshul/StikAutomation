@@ -41,7 +41,7 @@ public class UserHomePageUi extends BaseUi{
 	@FindBy(css="aside[class='client-panel is-home-page']>nav>section[class='details']>ul[class='score']>li>a>span[class='number']")
 	private List<WebElement> clientReviewsAndReferralNumbers;
 	
-	@FindBy(css="aside[class='client-panel is-home-page']>nav>section[class='quick-links']>ul>li>a")
+	@FindBy(css="aside[class='client-panel']>nav>section[class='quick-links']>ul>li>a")
 	private List<WebElement> clientQuickLinks; 
 	
 	/*******************Client Content- Leaderboard Section UI Elements*************************************/
