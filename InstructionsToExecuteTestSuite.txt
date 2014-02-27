@@ -18,13 +18,13 @@ B) Execute Test cases: Open command prompt and move to the directory where the S
 		Example: mvn clean verify -Dname=qa
 		
 		Currently available environment to execute the test suite are:
+		qa-stand for staging server(www.knewdeal.com)
 		ben
 		craig
 		dylan
 		eric
 		matt
 		nathan
-		qa
 		
 	b) Use the following command to Execute single test:
 
