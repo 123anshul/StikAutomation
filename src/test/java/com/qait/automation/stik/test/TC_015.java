@@ -12,7 +12,8 @@ import com.qait.automation.stik.actionfixtures.ClientsPageFixture;
 //Clients page : Import using Gmail account
 public class TC_015 {
 
-	private boolean newUserFlag= true;
+	//set newUserFlag= true when signup workflow starts working
+	private boolean newUserFlag= false;
 	ClientsPageFixture test = new ClientsPageFixture();
 	
 	@BeforeClass
@@ -37,7 +38,9 @@ public class TC_015 {
   	//Log in using Facebook account
   	@Test(dependsOnMethods={"A_launch_URL_Navgiate_to_Stick_HomePage"})
       public void B_Login_Using_FaceBook_Link_Given_On_Home_Page()  {
- 		assert test.signUpWithFacebook(test.getYamlVal("signup.name"),test.getYamlVal("signup.email"),test.getYamlVal("signup.importerEmail"));
+ 	//method called to follow the /professional workflow but now it has been replaced with /demo so modified the test
+  		//assert test.signUpWithFacebook(test.getYamlVal("signup.name"),test.getYamlVal("signup.email"),test.getYamlVal("signup.importerEmail"));
+  		assert test.clickLoginLink();
   		assert test.loginUsingFaceBookUserNamePassword(test.getYamlVal("userName"), test.getYamlVal("password"),newUserFlag);
   		
       }
@@ -55,7 +58,7 @@ public class TC_015 {
   	}
   	
   	@Test(dependsOnMethods={"D_Verify_Gmail_Import"})
-	public void D_signOut(){
+	public void E_signOut(){
   		test.navigateToHomePage();
 		test.signOut();
 	}

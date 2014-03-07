@@ -22,10 +22,10 @@ public class ClientsPageFixture extends SearchPageFixture{
 		}catch(Exception e3){
 			System.out.println(" Got It Button not found...");
 		}
-		
-		homePageUi.get_stiklogoOnProfessionalPage().click();
-		homePageUi.handleAlert();
-		Utilities.explicitWait(driver);
+		//method called tpo follow the /professional workflow but now it has been replaced with /demo so modified the test.		
+//		homePageUi.get_stiklogoOnProfessionalPage().click();
+//		homePageUi.handleAlert();
+//		Utilities.explicitWait(driver);
 		homePageUi.mouseMove(homePageUi.get_dropDown(), homePageUi.get_collectReviewsLink());
 		Utilities.explicitWait(driver);
 		clientsPageUi.get_mailContactsButton().click();
