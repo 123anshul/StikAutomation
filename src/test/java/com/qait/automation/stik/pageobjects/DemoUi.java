@@ -18,7 +18,53 @@ public class DemoUi extends BaseUi{
 	}
 
 	/*****************************************Web Elements*********************************/
-	
+	//adding webelements for newly added page /demo/connect
+		@FindBy(xpath=".//*[@id='uiTabs']/article/section/h2")
+		private WebElement demoHeading;
+		
+		@FindBy(xpath=".//*[@id='uiTabs']/article/nav/a[1]")
+		private WebElement demoTab;
+		
+		@FindBy(xpath=".//*[@id='demoHero']/div/div/div/div")
+		private WebElement joinDemoButtonNew;
+		
+		@FindBy(xpath=".//*[@id='uiTabs']/article/nav/a[2]")
+		private WebElement galleryTab;
+		
+		@FindBy(xpath=".//*[@id='uiTabs']/article/nav/a[3]")
+		private WebElement roiTab;
+		
+		@FindBy(xpath=".//*[@id='uiTabs']/article/nav/a[4]")
+		private WebElement pricingTab;
+		
+		@FindBy(css=".avatar>img")
+		private WebElement stikLogoOnDemoPage;
+		
+		@FindBy(xpath=".//*[@id='lead-form']/div")
+		private WebElement leadFormOnDemoPage;
+		
+		@FindBy(xpath=".//*[@id='name']")
+		private WebElement nameInputOnLeadForm;
+		
+		@FindBy(xpath=".//*[@id='phone']")
+		private WebElement phoneInputOnLeadForm;
+		
+		@FindBy(xpath=".//*[@id='email']")
+		private WebElement emailInputOnLeadForm;
+		
+		@FindBy(xpath=".//*[@id='questions-one']/div[2]/button")
+		private WebElement continueButtonOnLeadForm;
+		
+		@FindBy(xpath=".//*[@id='thank-you']/div/ul/li/p")
+		private WebElement successOnThankYouWizard;
+		
+		@FindBy(xpath=".//*[@id='layout']/div[1]/div/footer/div[1]/p/a")
+		private WebElement stikLinkOnThankYouPage;
+		
+		@FindBy(xpath=".//*[@id='pricingHero']")
+		private WebElement pricingTable;
+		
+	////End of newly added elements
 	@FindBy(css=".splash.row")
 	private WebElement splashSection;
 	
@@ -307,4 +353,65 @@ public class DemoUi extends BaseUi{
 	public WebElement get_referralImages(int index){
 		return driver.findElement(By.cssSelector(referralImages.replaceAll("index", "step step-"+String.valueOf(index))));
 	}
+	
+	//adding getters for newly newly added web elements on /demo/connect page
+		public WebElement get_demoHeading() {
+			return demoHeading;		
+		}
+		
+		public WebElement get_demoTab() {
+			return demoTab;
+		}
+		
+		public WebElement get_joinDemoButtonNew() {
+			return joinDemoButtonNew;
+		}
+		
+		public WebElement get_galleryTab() {
+			return galleryTab;
+		}
+		
+		public WebElement get_roiTab() {
+			return roiTab;
+		}
+		
+		public WebElement get_pricingTab() {
+			return pricingTab;
+		}
+		
+		public WebElement get_stikLogoOnDemoPage() {
+			return stikLogoOnDemoPage;
+		}
+		
+		public WebElement get_leadFormOnDemoPage() {
+			return leadFormOnDemoPage;
+		}
+		
+		public WebElement get_nameInputOnLeadForm() {
+			return nameInputOnLeadForm;
+		}
+		
+		public WebElement get_phoneInputOnLeadForm() {
+			return phoneInputOnLeadForm;
+		}
+		
+		public WebElement get_emailInputOnLeadForm() {
+			return emailInputOnLeadForm;
+		}
+		
+		public WebElement get_continueButtonOnLeadForm() {
+			return continueButtonOnLeadForm;
+		}
+		
+		public WebElement get_successOnThankYouWizard() {
+			return successOnThankYouWizard;
+		}
+		
+		public WebElement get_stikLinkOnThankYouPage() {
+			return stikLinkOnThankYouPage;
+		}
+		
+		public WebElement get_pricingTable() {
+			return pricingTable;
+		}
 }

@@ -167,7 +167,6 @@ public class ShowCaseEmailFixture extends SearchPageFixture{
 	
 	public boolean verifyAccountHyperlinksRedirectToCorrectURL(String provider){
 		if(provider.contains("gmail")){
-			System.out.println("In gmail provider if");
 			showcaseEmailUi.get_openGmailAccountLink().click();
 			homePageUi.changeWindow(1);
 			Utilities.hardWait(2);

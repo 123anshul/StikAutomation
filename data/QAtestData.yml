@@ -75,6 +75,12 @@ demoPage:
          staySafeImage: /images/landing-pages/enterprise/feature-protect.png
          stikPremiumText: We take our clients as seriously as you do
          companyPageImage: /images/landing-pages/enterprise/animations/companyPage/quicken-loans.png
+demoPageConnect:
+               url: "/demo/connect"
+leadform:
+        name: Anshul Mathur
+        phone: "(313) 373-7844"
+        email: anshul@stik.com               
 menuPage:
          url: "/menu"
 userHomePage:
@@ -120,3 +126,4 @@ directory:
         url: http://www.stik.com/accountant/
         state: Alaska
         city: Anchorage
+        

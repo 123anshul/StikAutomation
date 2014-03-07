@@ -195,5 +195,19 @@
 			<class name="com.qait.automation.stik.test.TC_033" />
 		</classes>
 	</test>	
+	<test name="Verify the content and functionality of the Demo connect page TC_035" preserve-order="true"> 
+		<parameter name="BROWSER" value="" />
+		<parameter name="filepath" value="" />
+		<classes>
+			<class name="com.qait.automation.stik.test.TC_035" />
+		</classes>
+	</test>	
+	<test name="Verify the content and functionality of the Demo Page TC_036" preserve-order="true"> 
+		<parameter name="BROWSER" value="" />
+		<parameter name="filepath" value="" />
+		<classes>
+			<class name="com.qait.automation.stik.test.TC_036" />
+		</classes>
+	</test>	
 		</suite>		
 

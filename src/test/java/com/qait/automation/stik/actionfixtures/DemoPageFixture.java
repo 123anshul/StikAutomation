@@ -158,4 +158,66 @@ public class DemoPageFixture extends SearchPageFixture {
 		}
 		return true;
 	}
+	
+	public boolean verifyBasicUIandFunctionalityForDemoTab(){
+		if(isDisplayed(demoUi.get_stikLogoOnDemoPage())){
+			homePageUi.waitForElementToAppear(demoUi.get_stikLogoOnDemoPage());
+			Assert.assertTrue(isDisplayed(demoUi.get_leadFormOnDemoPage()), "Lead form is not displayed on demo page");
+			demoUi.get_nameInputOnLeadForm().sendKeys(util.getYamlValue("leadform.name"));
+			demoUi.get_phoneInputOnLeadForm().clear();
+			demoUi.get_phoneInputOnLeadForm().sendKeys(util.getYamlValue("leadform.phone"));
+			demoUi.get_emailInputOnLeadForm().sendKeys(util.getYamlValue("leadform.email"));
+			demoUi.get_continueButtonOnLeadForm().click();
+			Utilities.hardWait(5);
+			Assert.assertTrue(demoUi.get_successOnThankYouWizard().getText().contains("Success"), "Success message is not displayed on Thank you wizard");
+			demoUi.get_stikLinkOnThankYouPage().click();
+			Utilities.explicitWait(driver);
+		}
+		else{
+			Assert.assertTrue(isDisplayed(demoUi.get_demoHeading()), "Demo heading on /demo page is not displayed");
+			Assert.assertTrue(isDisplayed(demoUi.get_joinDemoButtonNew()), "Join Demo button is not displayed on /demo page");
+			demoUi.get_joinDemoButtonNew().click();
+			int sizeOfDemoPresenters=demoUi.get_joinDemoOptions().size();
+			System.out.println("size of demo presenters: "+sizeOfDemoPresenters);
+			for(int i=0;i<sizeOfDemoPresenters;i++)
+			{
+				String nameOfDemoPresenter = demoUi.get_joinDemoOptions().get(i).getText().toLowerCase();
+				demoUi.get_joinDemoOptions().get(i).click();
+				homePageUi.changeWindow(1);
+				Utilities.explicitWait(driver);
+				Assert.assertTrue(driver.getCurrentUrl().contains("join.me/"+nameOfDemoPresenter) || driver.getCurrentUrl().contains("join.me"), "Incorrect URL for join demo option");
+				driver.close();
+				homePageUi.changeWindow(0);
+			}
+		}
+		return true;
+	}
+	
+	public boolean verifyGalleryTabonDemoPage(){
+		Assert.assertTrue(demoUi.get_galleryTab().getText().contains("GALLERY"), "Gallery Tab is not displayed on demo page");
+		demoUi.get_galleryTab().click();
+		Utilities.explicitWait(driver);
+		homePageUi.waitForElementToAppear(demoUi.get_demoHeading());
+		Assert.assertTrue(driver.getCurrentUrl().contains("/gallery"), "Clicking on Gallery doesn't open the correct page");
+		return true;
+	}
+	
+	public boolean verifyROITabOnDemoPage(){
+		Assert.assertTrue(demoUi.get_roiTab().getText().contains("ROI"), "ROI Tab is not displayed on demo page");
+		demoUi.get_roiTab().click();
+		homePageUi.waitForElementToAppear(demoUi.get_demoHeading());
+		Utilities.explicitWait(driver);
+		Assert.assertTrue(driver.getCurrentUrl().contains("/roi"), "Clicking on ROI doesn't open the correct page");
+		return true;
+	}
+	
+	public boolean verifyPricingTabOnDemoPage(){
+		Assert.assertTrue(demoUi.get_pricingTab().getText().contains("PRICING"), "Pricing Tab is not displayed on demo page");
+		demoUi.get_pricingTab().click();
+		homePageUi.waitForElementToAppear(demoUi.get_demoHeading());
+		Utilities.explicitWait(driver);
+		Assert.assertTrue(driver.getCurrentUrl().contains("/pricing"), "Clicking on Pricing doesn't open the correct page");
+		Assert.assertTrue(isDisplayed(demoUi.get_pricingTable()), "Pricing table on Pricing page is not displayed");
+		return true;
+	}
 }

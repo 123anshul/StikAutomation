@@ -36,7 +36,7 @@ public class ReviewPageFixture  extends ProfilePageFixture{
 		
 		recommendPageURL=driver.getCurrentUrl();
 		
-		if(recommendPageURL.contains("/reviews/new/")){
+		if(recommendPageURL.contains("/reviews/new")){
 			giveInlineReview(reviewText,rate,loggedinFlag);
 			boolean flag= verifyReviewerDetailForInlineReview(loggedinFlag);
 			if(flag){
