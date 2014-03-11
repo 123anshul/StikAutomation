@@ -73,13 +73,13 @@
 		</classes>
 	</test>
 	
-	<test name="Professional page : Verify Import using Gmail account TC_014" preserve-order="true"> -->
+	<!-- <test name="Professional page : Verify Import using Gmail account TC_014" preserve-order="true">
 		<parameter name="BROWSER" value="" />
 		<parameter name="filepath" value="" />
 		<classes>
 			<class name="com.qait.automation.stik.test.TC_014" />
 		</classes>
-	</test>
+	</test>-->
 	
 	<test name="Clients page : Import using Gmail account TC_015" preserve-order="true"> -->
 		<parameter name="BROWSER" value="" />
@@ -131,11 +131,11 @@
 			<class name="com.qait.automation.stik.test.TC_021" />
 		</classes>
 	</test>
-	<test name="Professional Sign Up process for a fresh account through Facebook TC_022" preserve-order="true"> -->
+	<!-- <test name="Professional Sign Up process for a fresh account through Facebook TC_022" preserve-order="true"> 
 		<parameter name="BROWSER" value="" />
 		<parameter name="filepath" value="" />
 		<classes>
-			<class name="com.qait.automation.stik.test.TC_022" />
+			<class name="com.qait.automation.stik.test.TC_022" />-->
 		</classes>
 	</test>
 	<test name="Submission of Review on Profile Page without existing session TC_023" preserve-order="true"> -->

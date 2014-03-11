@@ -79,7 +79,8 @@ public class ReferralPageFixture extends SignUpFixture{
 //			driver.navigate().to(appURL);
 //		}
 		
-		public boolean verifyReferralNames(String email1, String email2, String email3){
+	//original function according to /professional workflow when new user is created
+	/*	public boolean verifyReferralNames(String email1, String email2, String email3){
 			boolean flag=false;
 			Utilities.explicitWait(driver);
 			int sizeOfReferralList=referralPageUi.get_listOfReferrals_Name().size();
@@ -96,9 +97,31 @@ public class ReferralPageFixture extends SignUpFixture{
 			if(flag==true)Reporter.log("Email Ids on referral page are correct as provided by the reviewer...");
 			return flag;
 			
+		}*/
+		
+		public boolean verifyReferralNames(String email1, String email2, String email3){
+			boolean flag=false;
+			Utilities.explicitWait(driver);
+			int sizeOfReferralList=referralPageUi.get_listOfReferrals_Name().size();
+			int numberOfProspects= Integer.valueOf(referralPageUi.get_yourProspectsNumber().getText());
+			Assert.assertTrue(numberOfProspects==sizeOfReferralList, "Value for Prospects does not match number of referrals!!");
+			Reporter.log("Count of Prospects is correct...");
+			String[] ymlValues={email1,email2,email3};
+			String[] namesOfReferrals=new String[sizeOfReferralList];
+			namesOfReferrals[0]=referralPageUi.get_listOfReferrals_Name().get(4).getText();
+			namesOfReferrals[1]=referralPageUi.get_listOfReferrals_Name().get(5).getText();
+			namesOfReferrals[2]=referralPageUi.get_listOfReferrals_Name().get(6).getText();
+			for(int i=0;i<namesOfReferrals.length;i++){
+				System.out.println("namesOfReferrals " + i + namesOfReferrals[i]);
+			}
+			flag=compareArrays(ymlValues, namesOfReferrals);
+			if(flag==true)Reporter.log("Email Ids on referral page are correct as provided by the reviewer...");
+			return flag;
+			
 		}
 		
-		public boolean verifyReferralSupporter(String nameOfReviewer){
+		//original function according to /professional workflow when new user is created
+	/*	public boolean verifyReferralSupporter(String nameOfReviewer){
 			
 			Utilities.explicitWait(driver);
 			for(int i=0;i<referralPageUi.get_listOfReferrals_Supporter().size();i++){
@@ -107,12 +130,33 @@ public class ReferralPageFixture extends SignUpFixture{
 			}
 			Reporter.log("Supporter Name is correctly displayed...");
 			return true;
-		}
+		}*/
 		
-		public boolean verifyReferralDates(){
+		public boolean verifyReferralSupporter(String nameOfReviewer){
+			
+			Utilities.explicitWait(driver);
+			for(int i=0;i<referralPageUi.get_listOfReferrals_Supporter().size();i++){
+				Assert.assertTrue(isDisplayed(referralPageUi.get_listOfReferrals_Supporter().get(i)), "Problem in displaying Supporter name!!");
+			}
+			for(int i=4;i<referralPageUi.get_listOfReferrals_Supporter().size();i++){
+				Assert.assertTrue(referralPageUi.get_listOfReferrals_Supporter().get(i).getText().contains(nameOfReviewer), "Incorrect Name of the supporter");
+			}
+			Reporter.log("Supporter Name is correctly displayed...");
+			return true;
+		}
+		//original function according to /professional workflow when new user is created
+	/*	public boolean verifyReferralDates(){
 			for(int i=0;i<referralPageUi.get_referralDates().size();i++){
 				Assert.assertTrue(isDisplayed(referralPageUi.get_referralDates().get(i)), "Date for referral is not displayed");
 				Assert.assertTrue(referralPageUi.get_referralDates().get(i).getText().trim().equals(dateOfReferral), "Date of Referral is not correct");
+			}
+			Reporter.log("Dates of referral are correct...");
+			return true;
+	}*/
+		public boolean verifyReferralDates(){
+			for(int i=4;i<referralPageUi.get_referralDates().size();i++){
+				Assert.assertTrue(isDisplayed(referralPageUi.get_referralDates().get(i)), "Date for referral is not displayed");
+				Assert.assertTrue(referralPageUi.get_referralDates().get(i).getText().trim().equals(util.getYamlValue("dateOfReferral_temp")), "Date of Referral is not correct");
 			}
 			Reporter.log("Dates of referral are correct...");
 			return true;

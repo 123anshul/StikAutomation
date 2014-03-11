@@ -24,6 +24,7 @@ public class SignUpFixture extends SearchPageFixture{
 		}
 	}
 	
+	
 	public boolean clickContinueOnFBPanel(){
 		try{
 			clickGotItButton();
@@ -45,6 +46,12 @@ public class SignUpFixture extends SearchPageFixture{
 			return true;
 		}
 	
+	}
+	
+	public boolean navigateToClientsMailPage_temp(){
+		homePageUi.mouseMove(homePageUi.get_dropDown(), homePageUi.get_collectReviewsLink());
+		Utilities.explicitWait(driver);
+		return true;
 	}
 	
 	public boolean clickContinueOnLinkedInPanel(){

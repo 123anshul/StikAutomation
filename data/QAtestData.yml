@@ -103,6 +103,7 @@ referralPage:
         callMeNumber: 9001234567
         callUsNumber: "(313) 373-7844"
         userNameOfSupporter: "automationtwo automationtwo"
+        userNameOfSupporter_temp: "Automationthree Automationthree"
         settingsPageURL: "/zf/profile/settings#referrals"
         emailBoyTextOnSettingsPage: "[Test-Please Ignore]... You've been the best reviewer. Could you continue?"
 featuresPage:
@@ -126,4 +127,4 @@ directory:
         url: http://www.stik.com/accountant/
         state: Alaska
         city: Anchorage
-        
+dateOfReferral_temp: 03/11/14        

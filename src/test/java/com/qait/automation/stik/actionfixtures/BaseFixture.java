@@ -28,7 +28,7 @@ import org.testng.Reporter;
 import com.qait.automation.stik.pageobjects.BusineesInfoUi;
 import com.qait.automation.stik.pageobjects.ClientsPageUi;
 import com.qait.automation.stik.pageobjects.CompanyPageUi;
-import com.qait.automation.stik.pageobjects.DemoUI_Temp;
+//import com.qait.automation.stik.pageobjects.DemoUI_Temp;
 import com.qait.automation.stik.pageobjects.DemoUi;
 import com.qait.automation.stik.pageobjects.DirectoryPageUi;
 import com.qait.automation.stik.pageobjects.EnterprisePageUi;

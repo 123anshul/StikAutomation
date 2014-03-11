@@ -44,6 +44,8 @@ public class TC_022 {
 	
 	@Test(dependsOnMethods={"B_Sign_Up_Using_With_FaceBook_Using_Link_On_Professional_Sign_Up_Page"})
 	public void C_Navigate_To_Mail_Panel(){
+		assert test.navigateToHomePage();
+		assert test.navigateToClientsMailPage_temp();
 		assert test.clickContinueOnFBPanel();
 		assert test.clickContinueOnLinkedInPanel();
 		

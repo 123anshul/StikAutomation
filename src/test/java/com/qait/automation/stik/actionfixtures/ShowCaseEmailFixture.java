@@ -62,7 +62,7 @@ public class ShowCaseEmailFixture extends SearchPageFixture{
 		Utilities.hardWait(5);
 		homePageUi.mouseMove(homePageUi.get_dropDown(), homePageUi.get_viewProfileLink());
 		homePageUi.waitForElementToAppear(profilePageUi.get_profileName());
-		Assert.assertTrue(Integer.parseInt(arrayFromModalDailog[1]) == Integer.valueOf(profilePageUi.get_RatingCount().getText().trim()));
+		Assert.assertTrue((Integer.parseInt(arrayFromModalDailog[1]) == Integer.valueOf(profilePageUi.get_RatingCount().getText().trim())), "Number of Review on email preview modal doesn't matches the review on Profile");
 		Reporter.log("Total Reviews on Profile Page matches with number of Reviews dispalyed in Email preview Modal Dialog");
 		System.out.println("Total Reviews on Profile Matches number of Reviews dispalyed in Email preview Modal");	
 		
