@@ -135,9 +135,9 @@
 		<parameter name="BROWSER" value="" />
 		<parameter name="filepath" value="" />
 		<classes>
-			<class name="com.qait.automation.stik.test.TC_022" />-->
+			<class name="com.qait.automation.stik.test.TC_022" />
 		</classes>
-	</test>
+	</test>-->
 	<test name="Submission of Review on Profile Page without existing session TC_023" preserve-order="true"> -->
 		<parameter name="BROWSER" value="" />
 		<parameter name="filepath" value="" />
