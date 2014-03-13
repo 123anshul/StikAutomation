@@ -208,7 +208,10 @@ public class HomePageFixture extends ProfessionalPageFixture{
 		Assert.assertTrue(homePageUi.get_loginLink().isDisplayed());
 		Reporter.log("Verified that login Link is displayed");
 		homePageUi.get_loginLink().click();
-		homePageUi.get_facebookPicLink().click();
+		Assert.assertTrue(driver.getCurrentUrl().contains("/login"), "Clicking on Login doesn't open the login page");
+		homePageUi.get_alreadySignUpLink().click();
+		homePageUi.get_facebookLinkOnLoginPage().click();
+		//homePageUi.get_facebookPicLink().click();
 		Reporter.log("Login Link on Home Page clicked..");
 		return true;
 	}

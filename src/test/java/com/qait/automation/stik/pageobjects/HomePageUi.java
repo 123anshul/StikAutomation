@@ -33,6 +33,18 @@ public class HomePageUi extends BaseUi {
 	@FindBy(css = "ul[class = 'right js-header-right']>li a[class = 'login-button secondary button']")
 	private WebElement loginLink;
 	
+	//Already signed up with Facebook and Linked In link
+	@FindBy(xpath= ".//*[@id='emailLogin']/footer/p/a")
+	private WebElement alreadySignUpLink;
+	
+	//Facebook link after clicking on already signup link
+	@FindBy(css=".fb-login.button.small.secondary.login-link")
+	private WebElement facebookLinkOnLoginPage;
+	
+	//LinkedIn link after clicking on already signup link
+	@FindBy(css=".li-login.button.small.secondary.login-link")
+	private WebElement linkedInLinkOnLoginPage;
+	
 	@FindBy(css = "div[id ='jsLoginDropdown'] a[class = 'facebook-button button fb-login']")
 	private WebElement facebookPicLink;
 	
@@ -249,7 +261,7 @@ public class HomePageUi extends BaseUi {
 	//facebook login button
 	@FindBy(css= "label[class='uiButton uiButtonConfirm uiButtonLarge'] input")
 	private WebElement facebookLoginButton;
-	
+		
 	//SignUpWithFacebook Button
 	@FindBy(xpath = "//div[@id = 'header']")
 	private WebElement header;
@@ -279,6 +291,14 @@ public class HomePageUi extends BaseUi {
 	
 	public WebElement get_loginLink(){
 		return loginLink;
+	}
+	
+	public WebElement get_facebookLinkOnLoginPage(){
+		return facebookLinkOnLoginPage;
+	}
+	
+	public WebElement get_linkedInLinkOnLoginPage(){
+		return linkedInLinkOnLoginPage;
 	}
 	
 	public WebElement get_logoutLink(){
@@ -316,6 +336,10 @@ public class HomePageUi extends BaseUi {
 	
 	public WebElement get_facebookLoginButton(){
 		return facebookLoginButton;
+	}
+	
+	public WebElement get_alreadySignUpLink(){
+		return alreadySignUpLink;
 	}
 	
 	public WebElement get_linkedInLoginButton(){

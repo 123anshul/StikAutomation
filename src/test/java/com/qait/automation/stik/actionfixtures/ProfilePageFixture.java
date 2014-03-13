@@ -60,6 +60,8 @@ public class ProfilePageFixture extends ProfileInfoPageFixture{
 	}
 
 	public void isProfilePageMetadataOK(){
+		Utilities.explicitWait(driver);
+		homePageUi.waitForElementToAppear(profilePageUi.get_profileName());
 		Assert.assertTrue(isDisplayed(profilePageUi.get_metaName()),"Meta tag name missing");
 		Reporter.log("meta[name='name'] is displayed");
 		Assert.assertTrue(isDisplayed(profilePageUi.get_metaCharSet()),"Meta tag description missing");
