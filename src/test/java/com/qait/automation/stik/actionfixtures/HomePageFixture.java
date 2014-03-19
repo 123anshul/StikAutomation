@@ -7,7 +7,6 @@ import org.openqa.selenium.ElementNotVisibleException;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.testng.Reporter;
-
 import com.qait.automation.stik.util.Utilities;
 
 /**
@@ -126,7 +125,7 @@ public class HomePageFixture extends ProfessionalPageFixture{
 									System.out.println("None of the Sign Up buttons found!!");
 									e5.printStackTrace();
 								}
-								
+
 
 							}
 
@@ -210,6 +209,7 @@ public class HomePageFixture extends ProfessionalPageFixture{
 		homePageUi.get_loginLink().click();
 		Assert.assertTrue(driver.getCurrentUrl().contains("/login"), "Clicking on Login doesn't open the login page");
 		homePageUi.get_alreadySignUpLink().click();
+		scrollDown(00);
 		homePageUi.get_facebookLinkOnLoginPage().click();
 		//homePageUi.get_facebookPicLink().click();
 		Reporter.log("Login Link on Home Page clicked..");
@@ -658,7 +658,7 @@ public class HomePageFixture extends ProfessionalPageFixture{
 		homePageUi.get_directoryPageHeading().getText().contains("Home Contractors");
 		System.out.println("Home Services link works fine...");
 	}
-	
+
 	public void verifyFindProfessionalByLastNameLink(){
 		driver.get(util.getYamlValue("liveUrl"));
 		Assert.assertTrue(isDisplayed(homePageUi.get_findProfessionalByLastName()), "Link for 'Find Professional by Last Name' is not visible");
@@ -672,7 +672,7 @@ public class HomePageFixture extends ProfessionalPageFixture{
 		Assert.assertTrue(isDisplayed(homePageUi.get_loginPageFooter()) && homePageUi.get_loginPageFooter().getText().trim().contains("Login"), "Link 'Login at Footer' is not visible");
 		System.out.println("Login Link in footer appears on Home Page");
 	}
-	
+
 	public void verifyPressLinkAtFooter(){
 		driver.get(util.getYamlValue("liveUrl"));		
 		Assert.assertTrue(isDisplayed(homePageUi.get_pressLink()) && homePageUi.get_pressLink().getText().trim().contains("Press"), "Link 'Press at Footer' is not visible");
@@ -680,7 +680,7 @@ public class HomePageFixture extends ProfessionalPageFixture{
 		homePageUi.get_pressLink().getAttribute("href").contains("/press");
 		System.out.println("Press Link in footer appears on Home Page");
 	}
-	
+
 	public void verifyCareersLinkAtFooter(){
 		driver.get(util.getYamlValue("liveUrl"));		
 		Assert.assertTrue(isDisplayed(homePageUi.get_careersLink()) && homePageUi.get_careersLink().getText().trim().contains("Careers"), "Link 'Carrers at Footer' is not visible");		
@@ -688,7 +688,7 @@ public class HomePageFixture extends ProfessionalPageFixture{
 		homePageUi.get_careersLink().getAttribute("href").contains("/careers");
 		System.out.println("Career Link in footer appears on Home Page");
 	}
-	
+
 	public void verifyPartnerLinkAtFooter(){
 		driver.get(util.getYamlValue("liveUrl"));		
 		Assert.assertTrue(isDisplayed(homePageUi.get_partnersLink()) && homePageUi.get_partnersLink().getText().trim().contains("Partners"), "Link 'Partner at Footer' is not visible");		
@@ -696,7 +696,7 @@ public class HomePageFixture extends ProfessionalPageFixture{
 		homePageUi.get_partnersLink().getAttribute("href").contains("/partners");
 		System.out.println("Partners Link in footer appears on Home Page");
 	}
-	
+
 	public void verifyPrivacyLinkAtFooter(){
 		driver.get(util.getYamlValue("liveUrl"));		
 		Assert.assertTrue(isDisplayed(homePageUi.get_privacyLink()) && homePageUi.get_privacyLink().getText().trim().contains("Privacy"), "Link 'Privacy at Footer' is not visible");		
@@ -704,7 +704,7 @@ public class HomePageFixture extends ProfessionalPageFixture{
 		homePageUi.get_privacyLink().getAttribute("href").contains("/privacy");
 		System.out.println("Privacy Link in footer appears on Home Page");
 	}
-	
+
 	public void verifyTermsLinkAtFooter(){
 		driver.get(util.getYamlValue("liveUrl"));		
 		Assert.assertTrue(isDisplayed(homePageUi.get_termsLink()) && homePageUi.get_termsLink().getText().trim().contains("Terms"), "Link 'Terms at Footer' is not visible");		
@@ -712,7 +712,7 @@ public class HomePageFixture extends ProfessionalPageFixture{
 		homePageUi.get_termsLink().getAttribute("href").contains("/terms");
 		System.out.println("Terms Link in footer appears on Home Page");
 	}
-	
+
 
 	public boolean navigateToHomePage(){
 
@@ -747,16 +747,42 @@ public class HomePageFixture extends ProfessionalPageFixture{
 
 
 
-	public boolean clickYourOptionUnderShowcaseReviews(String option){
+//	public boolean clickYourOptionUnderShowcaseReviews(String option){
+//		Utilities.explicitWait(driver);
+//		homePageUi.mouseMove(homePageUi.get_dropDown(), homePageUi.get_inYourEmail());
+//		Utilities.explicitWait(driver);
+//		List<WebElement> list=homePageUi.get_dropDownOnProfilePage();
+//		//		for(WebElement el : list){
+//		//			if(el.getText().equalsIgnoreCase(option)){
+//		//				el.click();
+//		//				System.out.println(option+" link is clicked...");
+//		//				break;
+//		//			}
+//		//		}
+//		return true;
+//	}
+
+	public boolean clickInYourEmailShowcaseOptionUnderProfileDropdown(){
+		homePageUi.mouseMove(homePageUi.get_dropDown(), homePageUi.get_inYourEmail());
 		Utilities.explicitWait(driver);
-		List<WebElement> list=userHomePageUi.get_clientQuickLinks();
-		for(WebElement el : list){
-			if(el.getText().equalsIgnoreCase(option)){
-				el.click();
-				System.out.println(option+" link is clicked...");
-				break;
-			}
-		}
+		return true;
+	}
+	
+	public boolean clickOnYourWebsiteShowcaseOptionUnderProfileDropdown(){
+		homePageUi.mouseMove(homePageUi.get_dropDown(), homePageUi.get_onYourWebsite());
+		Utilities.explicitWait(driver);
+		return true;
+	}
+	
+	public boolean clickOnYourFacebookPageShowcaseOptionUnderProfileDropdown(){
+		homePageUi.mouseMove(homePageUi.get_dropDown(), homePageUi.get_onYourFacebookPage());
+		Utilities.explicitWait(driver);
+		return true;
+	}
+	
+	public boolean clickOnYourFacebookProfileShowcaseOptionUnderProfileDropdown(){
+		homePageUi.mouseMove(homePageUi.get_dropDown(), homePageUi.get_onYourFacebookProfile());
+		Utilities.explicitWait(driver);
 		return true;
 	}
 	
@@ -764,7 +790,7 @@ public class HomePageFixture extends ProfessionalPageFixture{
 		homePageUi.waitForElementToAppear(homePageUi.get_stiklogo());
 		homePageUi.get_enterPrise().click();
 	}
-	
+
 	public void navigateToDirectory(){
 		homePageUi.waitForElementToAppear(homePageUi.get_findAProfessional());
 		homePageUi.get_findAProfessional().click();

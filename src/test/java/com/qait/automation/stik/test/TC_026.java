@@ -43,7 +43,8 @@ public class TC_026 {
   	
   	@Test(dependsOnMethods={"B_Login_Using_FaceBook_Link_Given_On_Home_Page"})
   	public void C_Select_In_Your_Email_From_DropDown_And_Get_Started(){
-  		assert test.clickYourOptionUnderShowcaseReviews("In my email");
+  	//	assert test.clickYourOptionUnderShowcaseReviews("In my email");
+  		assert test.clickInYourEmailShowcaseOptionUnderProfileDropdown();
   		assert test.clickGetStartedButtonOnEmailPreviewPage();	
   	}
   	

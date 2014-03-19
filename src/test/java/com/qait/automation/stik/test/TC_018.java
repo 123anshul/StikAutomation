@@ -42,8 +42,8 @@ OnYourFacebookPageFixture test = new OnYourFacebookPageFixture();
   	
   	@Test(dependsOnMethods={"B_Login_Using_FaceBook_Link_Given_On_Home_Page"})
   	public void C_Select_On_Your_Facebook_Page_From_DropDown(){
-  		assert test.clickYourOptionUnderShowcaseReviews("On my Facebook page");
-  		
+  	//	assert test.clickYourOptionUnderShowcaseReviews("On my Facebook page");
+  		assert test.clickOnYourFacebookPageShowcaseOptionUnderProfileDropdown();
   	}
   	
   	@Test(dependsOnMethods={"C_Select_On_Your_Facebook_Page_From_DropDown"})

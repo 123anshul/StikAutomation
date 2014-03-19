@@ -88,7 +88,7 @@ public class DirectoryPageFixture extends ReviewPageFixture{
 	}
 
 	public boolean searchAutoProfessionalIndustries(){
-		scrollDown(120);
+		scrollDown(200);
 		Assert.assertTrue(isDisplayed(directTemp.getAutoProfessionHeading()), "Auto Professional heading is not displayed");
 		List<WebElement> list = directTemp.getAutoProfessionalIndustriesList();
 		String autoProfessionHeadingText = directTemp.getAutoProfessionHeadingText().getText();
@@ -116,7 +116,7 @@ public class DirectoryPageFixture extends ReviewPageFixture{
 	}
 	
 	public boolean searchHomeContractorsIndustries(){
-		scrollDown(130);
+		scrollDown(295);
 		Assert.assertTrue(isDisplayed(directTemp.getHomeContractorsHeading()), "Home Contractors heading is not displayed");
 		List<WebElement> list = directTemp.getHomeContractorsIndustriesList();
 		String homeContractorsHeadingText = directTemp.getHomeContractorsHeadingText().getText();
@@ -144,7 +144,7 @@ public class DirectoryPageFixture extends ReviewPageFixture{
 	}
 	
 	public boolean searchHealthCareIndustries(){
-		scrollDown(130);
+		scrollDown(300);
 		Assert.assertTrue(isDisplayed(directTemp.getHealthCareHeading()), "Health Care heading is not displayed");
 		List<WebElement> list = directTemp.getHealthCareIndustriesList();
 		String healthCareHeadingText = directTemp.getHealthCareHeadingText().getText();
@@ -172,6 +172,7 @@ public class DirectoryPageFixture extends ReviewPageFixture{
 	}
 	
 	public boolean searchArtistsIndustries(){
+		scrollDown(280);
 		Assert.assertTrue(isDisplayed(directTemp.getArtistsHeading()), "Artists heading is not displayed");
 		List<WebElement> list = directTemp.getArtistsIndustriesList();
 		String artistsHeadingText = directTemp.getArtistsHeadingText().getText();
@@ -279,8 +280,8 @@ public class DirectoryPageFixture extends ReviewPageFixture{
 	}
 	
 	public void selectAndVerifyState(String state){
-		scrollDown(200);
 		homePageUi.waitForElementToAppear(directoryPageUi.get_stateDropDownElement());
+		scrollDown(200);
 		directoryPageUi.get_stateDropDownElement().click();
 		homePageUi.waitForElementToAppear(directoryPageUi.get_stateList().get(1));
 		List<WebElement> stateList=directoryPageUi.get_stateList();

@@ -43,7 +43,8 @@ public class TC_017 {
   	
   	@Test(dependsOnMethods={"B_Login_Using_FaceBook_Link_Given_On_Home_Page"})
   	public void C_Select_On_Your_Website_From_DropDown_And_Check_WidgetStyles(){
-  		assert test.clickYourOptionUnderShowcaseReviews("On my website");
+  		//assert test.clickYourOptionUnderShowcaseReviews("On Your Website");
+  		assert test.clickOnYourWebsiteShowcaseOptionUnderProfileDropdown();
   		//test.verifySplashSectionText();
   		assert test.areWidgetStyleOptionsPresent();
   	}

@@ -77,7 +77,18 @@ public class HomePageUi extends BaseUi {
 	@FindBy(css="ul[class='dropdown']>li>a[href='/referrals']")
 	private WebElement referralLink;
 	
+	@FindBy(css="ul[class = 'dropdown']>li>a[href$='/emails']")
+	private WebElement inYourEmail;
 	
+	@FindBy(css="ul[class = 'dropdown']>li>a[href$='/widgets']")
+	private WebElement onYourWebsite;
+	
+	@FindBy(css="ul[class = 'dropdown']>li>a[href$='/facebook-page']")
+	private WebElement onFacebookPage;
+	
+	@FindBy(css="ul[class = 'dropdown']>li>a[href$='/facebook-profile']")
+	private WebElement onFacebookProfile;
+		
 	@FindBy(css = "span[id='firstName']")
 	private WebElement firstName;
 	
@@ -346,6 +357,22 @@ public class HomePageUi extends BaseUi {
 		return linkedInLoginButton;
 	}
 	
+	public WebElement get_inYourEmail(){
+		return inYourEmail;
+	}
+	
+	public WebElement get_onYourWebsite(){
+		return onYourWebsite;
+	}
+	
+	public WebElement get_onFacebookPage(){
+		return onFacebookPage;
+	}
+	
+	public WebElement get_onFacebookProfile(){
+		return onFacebookProfile;
+	}
+		
 	public WebElement get_dropDown(){
 		return dropDown;
 	}

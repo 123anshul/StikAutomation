@@ -37,12 +37,13 @@ public class TC_016 {
     public void B_Login_Using_FaceBook_Link_Given_On_Home_Page()  {
 		assert test.clickLoginLink();
 		assert test.loginUsingFaceBookUserNamePassword(test.getYamlVal("userName"), test.getYamlVal("password"),newUserFlag);
-		assert test.navigateToHomePage();
+	//	assert test.navigateToHomePage();
     }
   	
   	@Test(dependsOnMethods={"B_Login_Using_FaceBook_Link_Given_On_Home_Page"})
   	public void C_Select_In_Your_Email_From_DropDown_And_Get_Started(){
-  		assert test.clickYourOptionUnderShowcaseReviews("In my email");
+  	//	assert test.clickYourOptionUnderShowcaseReviews("In my email");
+  		assert test.clickInYourEmailShowcaseOptionUnderProfileDropdown();
   		test.verifySplashSectionOnEmailPage();
   		assert test.clickGetStartedButtonOnEmailPreviewPage();
   		
