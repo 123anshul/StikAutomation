@@ -9,10 +9,13 @@ combinedReviewWizardUrl: "http://www.knewdeal.com/recommend/screenName"
 runScriptWithNewUser: no
 userName: automationtwo_vshkkdn_automationtwo@tfbnw.net
 password: 123mayank
+EmailUserName: anshul@stik.com
+EmailPassword: qainfotech123
 userNameLinkedIn: testerAutomation0207@gmail.com
 passwordLinkedIn: qainfotech
 userName_for_Search_With_Existing_Seesion: anshul@stik.com
 password_for_Search_With_Existing_Seesion: qainfotech123
+emailSignup: "http://www.knewdeal.com/zf/sales-solution/email-account-import"
 signup:
        name: Tester
        email: tester123@test.com
@@ -34,6 +37,7 @@ update:
        industryTitle: Financial Planning
        zipcode: 20131
 otherprofile:
+       emailSignup: test.user
        username: automationthree.automationthree
        reviewComment: "Good to be a part of Stik team...."
        starRating: 5

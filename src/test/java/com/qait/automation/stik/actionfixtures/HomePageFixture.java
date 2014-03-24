@@ -560,14 +560,6 @@ public class HomePageFixture extends ProfessionalPageFixture{
 		System.out.println("FAQ Link works fine");
 	}
 
-	public void verifyAnswersLink(){
-		driver.get(util.getYamlValue("liveUrl"));
-		Assert.assertTrue(isDisplayed(homePageUi.get_answers()), "Link 'Answers' is not visible");
-		homePageUi.get_answers().click();
-		homePageUi.get_answersPage().isDisplayed();
-		System.out.println("Answers link works fine");
-	}
-
 	public void verifyFindProfessionalInYourAreaLink(){
 		driver.get(util.getYamlValue("liveUrl"));
 		Assert.assertTrue(isDisplayed(homePageUi.get_findProfessionalInYourArea()), "Link 'Find Professional In Your Area' is not visible");

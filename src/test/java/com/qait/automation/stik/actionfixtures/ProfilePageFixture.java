@@ -679,6 +679,7 @@ public class ProfilePageFixture extends ProfileInfoPageFixture{
 	
 	public void verifyPhotoReviewModal(){
 		Utilities.explicitWait(driver);
+		scrollDown(150);
 		homePageUi.mouseMove(profilePageUi.get_reviewAction(), profilePageUi.get_addPhotoLink());
 		homePageUi.waitForElementToAppear(profilePageUi.get_addPhotoModelText());
 		Assert.assertTrue(profilePageUi.get_addPhotoModalWindow().getAttribute("style").contains("visibility: visible"), "Add Photo model window doesnt open");

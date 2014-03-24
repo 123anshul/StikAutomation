@@ -209,5 +209,12 @@
 			<class name="com.qait.automation.stik.test.TC_036" />
 		</classes>
 	</test>	
+	<test name="Verify the functionality of email signup through csv import TC_037" preserve-order="true"> 
+		<parameter name="BROWSER" value="" />
+		<parameter name="filepath" value="" />
+		<classes>
+			<class name="com.qait.automation.stik.test.TC_037" />
+		</classes>
+	</test>	
 		</suite>		
 

@@ -24,11 +24,13 @@ public class CompanyPageFixture extends DirectoryPageFixture{
 	}
 
 	public void verifyContactNumber(String contactNumber){
+		Utilities.explicitWait(driver);
 		Assert.assertTrue(isDisplayed(companyPageUi.get_companyContactHeading()), "contact heading is not displayed");
 		Assert.assertTrue((companyPageUi.get_companyContactNumber().getText().contains(contactNumber)), "Contact number is incorrect");
 	}
 
 	public void verifyCompanyWebsitelink(){
+		scrollDown(300);
 		Assert.assertTrue(isDisplayed(companyPageUi.get_companyWebsiteLink()), "Company Website link is not visible");
 		String websiteLink=companyPageUi.get_companyWebsiteLink().getAttribute("href");
 		companyPageUi.get_companyWebsiteLink().click();
@@ -53,6 +55,7 @@ public class CompanyPageFixture extends DirectoryPageFixture{
 	
 	
 	public boolean verifyStateSelectDropDown(){
+		scrollDown(300);
 		homePageUi.waitForElementToAppear(companyPageUi.get_stateDropDownArrow());
 		int stateEmployeeCount=companyPageUi.get_EmployeeList().size();
 		if(stateEmployeeCount>1){
@@ -69,6 +72,7 @@ public class CompanyPageFixture extends DirectoryPageFixture{
 	}
 
 	public boolean verifyCitySelectDropDown(){
+		scrollDown(330);
 		int cityEmployeeCount=companyPageUi.get_EmployeeList().size();
 		if(cityEmployeeCount>1){
 			String city=get_clickedCity();
@@ -126,7 +130,6 @@ public class CompanyPageFixture extends DirectoryPageFixture{
 			List<WebElement> stateList = companyPageUi.get_stateSelextDropDownList();
 			int random=generateRandomNumber(1, stateList.size()-1);
 			String stateName = stateList.get(random).getText();
-			System.out.println("statename :" + stateName);
 			if(stateList.size()>1){
 				stateList.get(random).click();
 			}
@@ -148,6 +151,7 @@ public class CompanyPageFixture extends DirectoryPageFixture{
 			String cityName=citylist.get(1).getText();
 			System.out.println("City found:-"+cityName);
 			citylist.get(1).click();
+			Utilities.explicitWait(driver);
 			return cityName;
 		}catch(Exception ex){
 			System.out.println("City Drop Down Not Found");

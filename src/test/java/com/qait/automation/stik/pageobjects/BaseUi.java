@@ -93,6 +93,21 @@ public class BaseUi {
 		return wait.until(ExpectedConditions.alertIsPresent());
 	}
 	
+	public void handleAlertinEmail(){
+		try{
+			switchToAlertEmail().accept();
+			driver.switchTo().defaultContent();
+		}
+		catch(Exception e){
+			System.out.println("Email import summary alert not present..");
+		}
+	}
+	
+	public Alert switchToAlertEmail(){
+		Wait<WebDriver> wait = new WebDriverWait(driver, 60);
+		return wait.until(ExpectedConditions.alertIsPresent());
+	}
+	
 	public void printOutputOnConsole(String str) {
 		System.out.println("\n");
 		System.out.println(str);

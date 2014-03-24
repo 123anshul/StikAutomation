@@ -31,6 +31,7 @@ import com.qait.automation.stik.pageobjects.CompanyPageUi;
 //import com.qait.automation.stik.pageobjects.DemoUI_Temp;
 import com.qait.automation.stik.pageobjects.DemoUi;
 import com.qait.automation.stik.pageobjects.DirectoryPageUi;
+import com.qait.automation.stik.pageobjects.EmailSignUpUi;
 import com.qait.automation.stik.pageobjects.EnterprisePageUi;
 import com.qait.automation.stik.pageobjects.FeaturePagesUi;
 import com.qait.automation.stik.pageobjects.HomePageUi;
@@ -89,6 +90,7 @@ public class BaseFixture {
 	 public EnterprisePageUi enterprisePageUi;
 	 public Utilities util;
 	 public DirectoryPageUi directTemp;
+	 public EmailSignUpUi emailSignupUi;
 	
 		
 	 public static int AJAX_WAIT;
@@ -124,6 +126,7 @@ public class BaseFixture {
 		enterprisePageUi=new EnterprisePageUi(driver,sizzle);
 		
 		directTemp= new DirectoryPageUi(driver, sizzle);
+		emailSignupUi = new EmailSignUpUi(driver, sizzle);
 	}
 
 	/**

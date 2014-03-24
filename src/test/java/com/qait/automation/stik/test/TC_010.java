@@ -44,94 +44,89 @@ ProfilePageFixture test = new ProfilePageFixture();
 	public void D_verify_Link_FAQ_Appears_On_Home_Page(){
 		test.verifyFAQLink();
 	}
-	
+		
 	@Test(dependsOnMethods={"A_launch_URL_Navgiate_to_Stick_HomePage"})
-	public void E_verify_Link_Answers_Appears_On_Home_Page(){
-		test.verifyAnswersLink();
-	}
-	
-	@Test(dependsOnMethods={"A_launch_URL_Navgiate_to_Stick_HomePage"})
-	public void F_verify_Link_FindProfessionalInYourArea_Appears_On_Home_Page(){
+	public void E_verify_Link_FindProfessionalInYourArea_Appears_On_Home_Page(){
 		test.verifyFindProfessionalInYourAreaLink();
 	}
 	
 	@Test(dependsOnMethods={"A_launch_URL_Navgiate_to_Stick_HomePage"})
-	public void G_verify_Link_RealEstate_Appears_On_Home_Page(){
+	public void F_verify_Link_RealEstate_Appears_On_Home_Page(){
 		test.verifyRealEstateLink();
 	}
 	
 	@Test(dependsOnMethods={"A_launch_URL_Navgiate_to_Stick_HomePage"})
-	public void H_verify_Link_Mortgage_Appears_On_Home_Page(){
+	public void G_verify_Link_Mortgage_Appears_On_Home_Page(){
 		test.verifyMortgageLink();
 	}
 	
 	@Test(dependsOnMethods={"A_launch_URL_Navgiate_to_Stick_HomePage"})
-	public void I_verify_Link_Insurance_Appears_On_Home_Page(){
+	public void H_verify_Link_Insurance_Appears_On_Home_Page(){
 		test.verifyInsuranceLink();
 	}
 	
 	@Test(dependsOnMethods={"A_launch_URL_Navgiate_to_Stick_HomePage"})
-	public void J_verify_Link_HealthAndWellness_Appears_On_Home_Page(){
+	public void I_verify_Link_HealthAndWellness_Appears_On_Home_Page(){
 		test.verifyHealthAndWellnessLink();
 	}
 	
 	@Test(dependsOnMethods={"A_launch_URL_Navgiate_to_Stick_HomePage"})
-	public void K_verify_Link_Lawyers_Appears_On_Home_Page(){
+	public void J_verify_Link_Lawyers_Appears_On_Home_Page(){
 		test.verifyLawyersLink();
 	}
 	
 	@Test(dependsOnMethods={"A_launch_URL_Navgiate_to_Stick_HomePage"})
-	public void L_verify_Link_Financial_Planning_Appears_On_Home_Page(){
+	public void K_verify_Link_Financial_Planning_Appears_On_Home_Page(){
 		test.verifyFinancialPlanningLink();
 	}
 	
 	@Test(dependsOnMethods={"A_launch_URL_Navgiate_to_Stick_HomePage"})
-	public void M_verify_Link_Veterinarian_Appears_On_Home_Page(){
+	public void L_verify_Link_Veterinarian_Appears_On_Home_Page(){
 		test.verifyVeterinarianLink();
 	}
 	
 	@Test(dependsOnMethods={"A_launch_URL_Navgiate_to_Stick_HomePage"})
-	public void N_verify_Link_Photographers_Appears_On_Home_Page(){
+	public void M_verify_Link_Photographers_Appears_On_Home_Page(){
 		test.verifyPhotographersLink();
 	}
 	
 	@Test(dependsOnMethods={"A_launch_URL_Navgiate_to_Stick_HomePage"})
-	public void O_verify_Link_Home_Services_Appears_On_Home_Page(){
+	public void N_verify_Link_Home_Services_Appears_On_Home_Page(){
 		test.verifyHomeServicesLink();
 	}
 	
 	@Test(dependsOnMethods={"A_launch_URL_Navgiate_to_Stick_HomePage"})
-	public void P_verify_Link_Find_Professional_By_Last_Name(){
+	public void O_verify_Link_Find_Professional_By_Last_Name(){
 		test.verifyFindProfessionalByLastNameLink();
 	}
 	
 	@Test(dependsOnMethods={"A_launch_URL_Navgiate_to_Stick_HomePage"})
-	public void Q_verify_Link_Login_At_Footer_Appears_On_Home_Page(){
+	public void P_verify_Link_Login_At_Footer_Appears_On_Home_Page(){
 		test.verifyLoginLinkAtFooter();
 	}
 	
 	@Test(dependsOnMethods={"A_launch_URL_Navgiate_to_Stick_HomePage"})
-	public void R_verify_Link_Press_At_Footer_Appears_On_Home_Page(){
+	public void Q_verify_Link_Press_At_Footer_Appears_On_Home_Page(){
 		test.verifyPressLinkAtFooter();
 	}
 	
 	@Test(dependsOnMethods={"A_launch_URL_Navgiate_to_Stick_HomePage"})
-	public void S_verify_Link_Carrers_At_Footer_Appears_On_Home_Page(){
+	public void R_verify_Link_Carrers_At_Footer_Appears_On_Home_Page(){
 		test.verifyCareersLinkAtFooter();
 	}
 	
 	@Test(dependsOnMethods={"A_launch_URL_Navgiate_to_Stick_HomePage"})
-	public void R_verify_Link_Partner_At_Footer_Appears_On_Home_Page(){
+	public void S_verify_Link_Partner_At_Footer_Appears_On_Home_Page(){
 		test.verifyPartnerLinkAtFooter();
 	}
 	
 	@Test(dependsOnMethods={"A_launch_URL_Navgiate_to_Stick_HomePage"})
-	public void R_verify_Link_Privacy_At_Footer_Appears_On_Home_Page(){
+	public void T_verify_Link_Privacy_At_Footer_Appears_On_Home_Page(){
 		test.verifyPrivacyLinkAtFooter();
 	}
 	
 	@Test(dependsOnMethods={"A_launch_URL_Navgiate_to_Stick_HomePage"})
-	public void R_verify_Link_Terms_At_Footer_Appears_On_Home_Page(){
+	public void U_verify_Link_Terms_At_Footer_Appears_On_Home_Page(){
 		test.verifyTermsLinkAtFooter();
 	}
 	

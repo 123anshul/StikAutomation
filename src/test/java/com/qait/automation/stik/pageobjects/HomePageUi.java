@@ -160,10 +160,7 @@ public class HomePageUi extends BaseUi {
 	
 	@FindBy(css = "a[href = '/faq']")
 	private WebElement FAQ;
-	
-	@FindBy(css = "a[href = '/answers']")
-	private WebElement answers;
-	
+		
 	@FindBy(css = "footer[id='footer']>section>div[class='hide-for-small footer-middle']>div>aside:nth-child(2)>a:nth-child(1)")
 	private WebElement realEstate;
 	
@@ -229,11 +226,7 @@ public class HomePageUi extends BaseUi {
 	//FAQ
 	@FindBy(css = "div[id = 'faq']")
 	private WebElement faqPage;
-	
-	//Answers Page
-	@FindBy(css = "div[class = 'qa-body-wrapper']")
-	private WebElement answersPage;
-	
+		
 	//Real Estate
 	@FindBy(xpath = "//section[@id='directory']/preceding-sibling::h1")
 	private WebElement directoryPageHeading;
@@ -441,11 +434,7 @@ public class HomePageUi extends BaseUi {
 	public WebElement get_FAQ(){
 		return FAQ;
 	}
-	
-	public WebElement get_answers(){
-		return answers;
-	}
-	
+		
 	public WebElement get_realEstate(){
 		return realEstate;
 	}
@@ -520,10 +509,6 @@ public class HomePageUi extends BaseUi {
 	
 	public WebElement get_faqPage(){
 		return faqPage;
-	}
-	
-	public WebElement get_answersPage(){
-		return answersPage;
 	}
 	
 	public WebElement get_directoryPageHeading(){
