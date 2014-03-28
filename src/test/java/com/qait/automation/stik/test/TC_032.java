@@ -69,9 +69,9 @@ public class TC_032 {
 		assert test.verifyCitySelectDropDown();
 	}
 
-	@AfterClass
-	public void afterClass() {
-		test.closeBrowser();
-	}
+//	@AfterClass
+//	public void afterClass() {
+//		test.closeBrowser();
+//	}
 	
 }

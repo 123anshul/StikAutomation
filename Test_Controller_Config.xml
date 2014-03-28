@@ -80,14 +80,14 @@
 			<class name="com.qait.automation.stik.test.TC_014" />
 		</classes>
 	</test>-->
-	
-	<test name="Clients page : Import using Gmail account TC_015" preserve-order="true"> -->
+	<!-- Removing the test as Collect Reviews option has been temporarily disabled. See issue #2887 on Github.  -->
+	<!-- <test name="Clients page : Import using Gmail account TC_015" preserve-order="true"> 
 		<parameter name="BROWSER" value="" />
 		<parameter name="filepath" value="" />
 		<classes>
 			<class name="com.qait.automation.stik.test.TC_015" />
 		</classes>
-	</test>
+	</test>-->
 	<test name="Verify that the preview contains emails on ShowCase Email Page TC_016" preserve-order="true"> -->
 		<parameter name="BROWSER" value="" />
 		<parameter name="filepath" value="" />
@@ -167,13 +167,14 @@
 			<class name="com.qait.automation.stik.test.TC_027" />
 		</classes>
 	</test>
-	<test name="Verify complete UI and features on existing user's home page after log in TC_029" preserve-order="true"> -->
+	<!-- Removing the test as Client dashboard has been disabled for premium user -->
+	<!-- <test name="Verify complete UI and features on existing user's home page after log in TC_029" preserve-order="true">
 		<parameter name="BROWSER" value="" />
 		<parameter name="filepath" value="" />
 		<classes>
 			<class name="com.qait.automation.stik.test.TC_029" />
 		</classes>
-	</test>
+	</test>-->
 	<test name="Verify Referral Page and Referral Settings for a new user in TC_030" preserve-order="true"> -->
 		<parameter name="BROWSER" value="" />
 		<parameter name="filepath" value="" />

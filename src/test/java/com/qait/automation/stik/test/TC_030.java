@@ -110,7 +110,7 @@ public class TC_030 {
 	
 	//@Test(dependsOnMethods={"K_Navigate_To_ReferralPage_Again"})
 	@Test(dependsOnMethods={"C_Navigate_To_Referral_Page"})
-	public void L_Verify_Referral_Page_Again()  {
+	public void D_Verify_Referral_Page_Again()  {
 		//original line of code according to /professional workflow
 		//assert test.navigateToReferralPage();
 		assert test.verifyReferralNames(test.getYamlVal("recommendFriendList.email1"), test.getYamlVal("recommendFriendList.email2"), test.getYamlVal("recommendFriendList.email3"));
@@ -120,14 +120,15 @@ public class TC_030 {
 		assert test.verifyReferralDates();
 	}
 
-	@Test(dependsOnMethods={"L_Verify_Referral_Page_Again"})
+	//Commenting the test as /referral tab on settings page has been disabled for free users.
+/*	@Test(dependsOnMethods={"L_Verify_Referral_Page_Again"})
 	public void M_Referral_Settings()  {
 		assert test.checkSettingsButton(test.getYamlVal("appUrl")+ test.getYamlVal("referralPage.settingsPageURL"), test.getYamlVal("referralPage.emailBoyTextOnSettingsPage"));
-	}
+	}*/
 
 
-	@Test(dependsOnMethods={"M_Referral_Settings"})
-	public void N_signOut(){
+	@Test(dependsOnMethods={"D_Verify_Referral_Page_Again"})
+	public void E_signOut(){
 		test.signOut();
 	}
 

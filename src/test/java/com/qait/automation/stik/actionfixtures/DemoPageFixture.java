@@ -167,6 +167,7 @@ public class DemoPageFixture extends SearchPageFixture {
 			demoUi.get_phoneInputOnLeadForm().clear();
 			demoUi.get_phoneInputOnLeadForm().sendKeys(util.getYamlValue("leadform.phone"));
 			demoUi.get_emailInputOnLeadForm().sendKeys(util.getYamlValue("leadform.email"));
+			homePageUi.handleAlert();
 			demoUi.get_continueButtonOnLeadForm().click();
 			Utilities.hardWait(5);
 			Assert.assertTrue(demoUi.get_successOnThankYouWizard().getText().contains("Success"), "Success message is not displayed on Thank you wizard");

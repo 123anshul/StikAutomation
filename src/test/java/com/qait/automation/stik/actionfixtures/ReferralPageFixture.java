@@ -161,8 +161,8 @@ public class ReferralPageFixture extends SignUpFixture{
 			Reporter.log("Dates of referral are correct...");
 			return true;
 	}
-		
-		public boolean checkSettingsButton(String settingPageURL, String emailBody){
+		//commenting the method as /referral tab on setting page has been removed
+		/*public boolean checkSettingsButton(String settingPageURL, String emailBody){
 			referralPageUi.get_settingsButton().click();
 			Utilities.explicitWait(driver);
 			referralPageUi.get_noRadioButton().click();
@@ -183,7 +183,7 @@ public class ReferralPageFixture extends SignUpFixture{
 			
 			Reporter.log("Settings for Referral section is working fine");
 			return true;
-		}
+		}*/
 		
 		
 }

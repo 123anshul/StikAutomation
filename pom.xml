@@ -13,7 +13,7 @@
 	<properties>
 		<testsuite>*</testsuite>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<seleniumVer>2.37.0</seleniumVer>
+		<seleniumVer>2.40.0</seleniumVer>
 	</properties>
 
 
