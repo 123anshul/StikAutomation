@@ -8,7 +8,7 @@ import org.testng.annotations.Test;
 
 import com.qait.automation.stik.actionfixtures.DemoPageFixture;
 
-//Verify functionality on /demo page
+//Verify functionality on /demo/connect page
 public class TC_035 {
 
 	private boolean newUserFlag= false;

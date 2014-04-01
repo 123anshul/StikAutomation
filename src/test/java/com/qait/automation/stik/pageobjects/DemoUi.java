@@ -34,6 +34,15 @@ public class DemoUi extends BaseUi{
 		@FindBy(xpath=".//*[@id='uiTabs']/article/nav/a[3]")
 		private WebElement roiTab;
 		
+		@FindBy(xpath="//div[@class='return']/span[@id='roiCaption']")
+		private WebElement roiCaption;
+		
+		@FindBy(xpath="//form[@id='roiForm']/fieldset[@class='close-rate']/input")
+		private WebElement closeRateInputOnROIPage;
+			
+		@FindBy(xpath="//form[@id='roiForm']/fieldset[@class='revenue']/input")
+		private WebElement revenueInputOnROIPage;
+		
 		@FindBy(xpath=".//*[@id='uiTabs']/article/nav/a[4]")
 		private WebElement pricingTab;
 		
@@ -51,6 +60,12 @@ public class DemoUi extends BaseUi{
 		
 		@FindBy(xpath=".//*[@id='email']")
 		private WebElement emailInputOnLeadForm;
+		
+		@FindBy(xpath= "//div[@class='fields']/div[4]/div/a")
+		private WebElement selectIndustryDropdownOnLeadForm;
+		
+		@FindBy(xpath= "//div[@class='fields']/div[4]/div/div/ul/li")
+		private List<WebElement> selectIndustryDropdownListOnLeadForm;
 		
 		@FindBy(xpath=".//*[@id='questions-one']/div[2]/button")
 		private WebElement continueButtonOnLeadForm;
@@ -375,6 +390,18 @@ public class DemoUi extends BaseUi{
 			return roiTab;
 		}
 		
+		public WebElement get_roiCaption() {
+			return roiCaption;
+		}
+		
+		public WebElement get_closeRateInputOnROIPage() {
+			return closeRateInputOnROIPage;
+		}
+		
+		public WebElement get_revenueInputOnROIPage() {
+			return revenueInputOnROIPage;
+		}
+		
 		public WebElement get_pricingTab() {
 			return pricingTab;
 		}
@@ -397,6 +424,14 @@ public class DemoUi extends BaseUi{
 		
 		public WebElement get_emailInputOnLeadForm() {
 			return emailInputOnLeadForm;
+		}
+		
+		public WebElement get_selectIndustryDropdownOnLeadForm() {
+			return selectIndustryDropdownOnLeadForm;
+		}
+		
+		public List<WebElement> get_selectIndustryDropdownListOnLeadForm() {
+			return selectIndustryDropdownListOnLeadForm;
 		}
 		
 		public WebElement get_continueButtonOnLeadForm() {

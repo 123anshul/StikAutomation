@@ -50,7 +50,7 @@ public class TC_027 {
 	  	public void D_Verify_Referral_Collection_Workflow(){
 	  		assert test.verifyReferralCollectionProcess(test.getYamlVal("recommendFriendList.email1"), test.getYamlVal("recommendFriendList.email2"), test.getYamlVal("recommendFriendList.email3"));
 	  	}
-	  	
+  	
 //		@Test(dependsOnMethods={"D_Verify_Referral_Collection_Workflow"})
 //		public void E_signOut(){
 //			test.signOut();

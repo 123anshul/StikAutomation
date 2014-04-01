@@ -167,6 +167,8 @@ public class DemoPageFixture extends SearchPageFixture {
 			demoUi.get_phoneInputOnLeadForm().clear();
 			demoUi.get_phoneInputOnLeadForm().sendKeys(util.getYamlValue("leadform.phone"));
 			demoUi.get_emailInputOnLeadForm().sendKeys(util.getYamlValue("leadform.email"));
+			demoUi.get_selectIndustryDropdownOnLeadForm().click();
+			demoUi.get_selectIndustryDropdownListOnLeadForm().get(1).click();
 			homePageUi.handleAlert();
 			demoUi.get_continueButtonOnLeadForm().click();
 			Utilities.hardWait(5);
@@ -179,16 +181,15 @@ public class DemoPageFixture extends SearchPageFixture {
 			Assert.assertTrue(isDisplayed(demoUi.get_joinDemoButtonNew()), "Join Demo button is not displayed on /demo page");
 			demoUi.get_joinDemoButtonNew().click();
 			int sizeOfDemoPresenters=demoUi.get_joinDemoOptions().size();
-			System.out.println("size of demo presenters: "+sizeOfDemoPresenters);
 			for(int i=0;i<sizeOfDemoPresenters;i++)
 			{
-				String nameOfDemoPresenter = demoUi.get_joinDemoOptions().get(i).getText().toLowerCase();
 				demoUi.get_joinDemoOptions().get(i).click();
 				homePageUi.changeWindow(1);
 				Utilities.explicitWait(driver);
-				Assert.assertTrue(driver.getCurrentUrl().contains("join.me/"+nameOfDemoPresenter) || driver.getCurrentUrl().contains("join.me"), "Incorrect URL for join demo option");
+				Assert.assertTrue(driver.getCurrentUrl().contains("join.me") || driver.getCurrentUrl().contains("logme.in"), "Incorrect URL for join demo option");
 				driver.close();
 				homePageUi.changeWindow(0);
+				Utilities.hardWait(2);
 			}
 		}
 		return true;
@@ -209,6 +210,12 @@ public class DemoPageFixture extends SearchPageFixture {
 		homePageUi.waitForElementToAppear(demoUi.get_demoHeading());
 		Utilities.explicitWait(driver);
 		Assert.assertTrue(driver.getCurrentUrl().contains("/roi"), "Clicking on ROI doesn't open the correct page");
+		demoUi.get_closeRateInputOnROIPage().clear();
+		demoUi.get_closeRateInputOnROIPage().sendKeys(util.getYamlValue("roiPage.closeRate"));
+		demoUi.get_revenueInputOnROIPage().clear();
+		demoUi.get_revenueInputOnROIPage().sendKeys(util.getYamlValue("roiPage.revenue"));
+		Utilities.hardWait(2);
+		Assert.assertTrue(demoUi.get_roiCaption().getText().equalsIgnoreCase(util.getYamlValue("roiPage.roiCaption")), "Roi caption doesn't matches with input value");
 		return true;
 	}
 	
