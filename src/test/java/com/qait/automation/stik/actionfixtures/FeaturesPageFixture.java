@@ -1,9 +1,8 @@
 package com.qait.automation.stik.actionfixtures;
 
-import org.openqa.selenium.WebElement;
+
 import org.testng.Assert;
 import org.testng.Reporter;
-
 import com.qait.automation.stik.util.Utilities;
 
 public class FeaturesPageFixture extends HomePageFixture{

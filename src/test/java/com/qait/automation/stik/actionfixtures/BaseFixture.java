@@ -89,7 +89,6 @@ public class BaseFixture {
 	 public CompanyPageUi companyPageUi;
 	 public EnterprisePageUi enterprisePageUi;
 	 public Utilities util;
-	 public DirectoryPageUi directTemp;
 	 public EmailSignUpUi emailSignupUi;
 	
 		
@@ -124,8 +123,6 @@ public class BaseFixture {
 		featuresPageUi=new FeaturePagesUi(driver, sizzle);
 		companyPageUi=new CompanyPageUi(driver, sizzle);
 		enterprisePageUi=new EnterprisePageUi(driver,sizzle);
-		
-		directTemp= new DirectoryPageUi(driver, sizzle);
 		emailSignupUi = new EmailSignUpUi(driver, sizzle);
 	}
 

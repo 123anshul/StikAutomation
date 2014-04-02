@@ -47,36 +47,43 @@ public class TC_037 {
 		assert test.navigatetoProfilePage(test.getYamlVal("otherprofile.emailSignup"));
 	}
 
+	//Verify "Review" button is present on professionals profile page and click it 
 	@Test(dependsOnMethods = {"C_Launch_Email_SignUp_Page"})	
 	public void D_Verify__Review_Button_Present_On_Profile(){
 		assert test.verifyReviewButtonPresentOnProfilePage();
 	}
 
+	//Give random star rating
 	@Test(dependsOnMethods={"D_Verify__Review_Button_Present_On_Profile"})
 	public void E_Give_Random_Rating_To_The_Professional_On_Profile(){
 		assert test.giveRatingForReview();
 	}
-
+	
+	//Write the review text
 	@Test(dependsOnMethods={"E_Give_Random_Rating_To_The_Professional_On_Profile"})
 	public void F_Submit_Review_Text_On_Profile(){
 		assert test.submitReviewtextOnProfile(test.getYamlVal("otherprofile.reviewTextOnProfile"));
 	}
 
+	//Verify UI and basic functionality on UI verification screen
 	@Test(dependsOnMethods={"F_Submit_Review_Text_On_Profile"})
 	public void G_Verify_UI_Verification_screen_after_giving_review_on_Profile(){
 		assert test.verifyUIVerificationScreenInlineReview(true);
 	}
 
+	//Click "No" button on UI verification screen
 	@Test(dependsOnMethods={"G_Verify_UI_Verification_screen_after_giving_review_on_Profile"})
 	public void H_Verify_Review_Using_Facebook_Credentials_Of_Reviewer(){
 		assert test.verifyReviewSubmissionForExistingSession();
 	}
 
+	//Logged out from the app 
 	@Test(dependsOnMethods={"H_Verify_Review_Using_Facebook_Credentials_Of_Reviewer"})
 	public void I_signOut(){
 		test.signOut();
 	}
 
+	//Close the browser
 	@AfterClass
 	public void afterClass() {
 		test.closeBrowser();

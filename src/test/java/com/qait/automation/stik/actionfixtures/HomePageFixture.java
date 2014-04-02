@@ -1,11 +1,8 @@
 package com.qait.automation.stik.actionfixtures;
 
-import java.util.List;
-
 import org.testng.Assert;
 import org.openqa.selenium.ElementNotVisibleException;
 import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebElement;
 import org.testng.Reporter;
 import com.qait.automation.stik.util.Utilities;
 
@@ -786,7 +783,7 @@ public class HomePageFixture extends ProfessionalPageFixture{
 	public void navigateToDirectory(){
 		homePageUi.waitForElementToAppear(homePageUi.get_findAProfessional());
 		homePageUi.get_findAProfessional().click();
-		homePageUi.waitForElementToAppear(directTemp.getContinueButton());
+		homePageUi.waitForElementToAppear(directoryPageUi.getContinueButton());
 	}
 
 	public void clearCache(){

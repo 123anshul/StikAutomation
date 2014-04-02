@@ -1,12 +1,9 @@
 package com.qait.automation.stik.actionfixtures;
 
-
-import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.Reporter;
-
 import com.qait.automation.stik.util.Utilities;
-import com.sun.jna.platform.win32.WinUser.HARDWAREINPUT;
+
 
 public class UserHomePageFixture extends HomePageFixture {
 

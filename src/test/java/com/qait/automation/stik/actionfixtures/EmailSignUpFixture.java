@@ -1,10 +1,6 @@
 package com.qait.automation.stik.actionfixtures;
 
-import java.io.File;
-
 import org.testng.Assert;
-
-import com.qait.automation.stik.pageobjects.EmailSignUpUi;
 import com.qait.automation.stik.util.Utilities;
 
 public class EmailSignUpFixture extends SearchPageFixture{

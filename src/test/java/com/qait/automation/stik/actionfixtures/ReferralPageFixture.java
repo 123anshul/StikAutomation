@@ -1,10 +1,7 @@
 package com.qait.automation.stik.actionfixtures;
 
-import java.util.StringTokenizer;
-
 import org.testng.Assert;
 import org.testng.Reporter;
-
 import com.qait.automation.stik.util.Utilities;
 
 public class ReferralPageFixture extends SignUpFixture{

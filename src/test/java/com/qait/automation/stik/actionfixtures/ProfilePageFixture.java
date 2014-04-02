@@ -4,12 +4,9 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
-
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
 import org.testng.Reporter;
-
 import com.qait.automation.stik.util.Utilities;
 
 public class ProfilePageFixture extends ProfileInfoPageFixture{
@@ -608,6 +605,7 @@ public class ProfilePageFixture extends ProfileInfoPageFixture{
 		profilePageUi.get_popUpCross().click();
 	}
 
+	//Verifying the functionality of "Edit Featured Review" modal on profile page
 	public void verifyFeaturedReviewModalWindow(){
 		homePageUi.waitForElementToAppear(profilePageUi.get_editFeaturedReviewLink());
 		scrollDown(100);
@@ -648,6 +646,7 @@ public class ProfilePageFixture extends ProfileInfoPageFixture{
 		}
 	}
 	
+	//Verify "Featured REview" section on Profile page
 	public boolean verifyFeaturedReviewsSection(){
 		Assert.assertTrue(profilePageUi.get_featuredReviewsSectionText().getText().contains("FEATURED REVIEWS"), "Edit featured reviews section is not Displayed");
 		Reporter.log("Fetured reviews are displayed");
@@ -658,6 +657,7 @@ public class ProfilePageFixture extends ProfileInfoPageFixture{
 		return true;
 	}
 
+	//Verify "Top Professional" section appears on profile page
 	public boolean verifyTopProfessionalSection(){
 		scrollDown(250);
 		Assert.assertTrue((profilePageUi.get_topProfessionals().size()==5),"Top professionals section is not dispalyed");
@@ -665,6 +665,7 @@ public class ProfilePageFixture extends ProfileInfoPageFixture{
 		return true;
 	}
 
+	//Verify the "Share Profile" on Facebook/Linked In/Google+ 
 	public void verifyShareProfileSection(){
 		scrollDown(50);
 		Utilities.explicitWait(driver);
@@ -677,6 +678,7 @@ public class ProfilePageFixture extends ProfileInfoPageFixture{
 		verifyProfileUrlTextbox();
 	}
 	
+	//Verify "Add Photo" link appear on Profile page and then click it
 	public void verifyPhotoReviewModal(){
 		Utilities.explicitWait(driver);
 		scrollDown(150);
@@ -694,6 +696,7 @@ public class ProfilePageFixture extends ProfileInfoPageFixture{
 		Assert.assertTrue(profilePageUi.get_profileUrlInputBox().getAttribute("value").contains("www.stik.com"), "Profile URL is not correct");
 	}
 	
+	//Share profile on Facebook through the link appearing on Profile page
 	public void verifyFacebookShareProfile(){
 		homePageUi.waitForElementToAppear(profilePageUi.get_facebookLink());
 		Assert.assertTrue(isDisplayed(profilePageUi.get_facebookLink()), "facebook share button is not present");
@@ -706,6 +709,7 @@ public class ProfilePageFixture extends ProfileInfoPageFixture{
 		homePageUi.changeWindow(0);
 	}
 	
+	//Share profile on Linked In through the link appearing on Profile page
 	public void verifyLinkedinShareProfile(){
 		homePageUi.waitForElementToAppear(profilePageUi.get_linkedInLink());
 		Assert.assertTrue(isDisplayed(profilePageUi.get_linkedInLink()), "linkedin share button is not present");
@@ -718,6 +722,7 @@ public class ProfilePageFixture extends ProfileInfoPageFixture{
 		homePageUi.changeWindow(0);
 	}
 	
+	//Share profile on Google+ through the link appearing on Profile page
 	public void verifyGooglePlusShareProfile(){
 		homePageUi.waitForElementToAppear(profilePageUi.get_googlePlusLink());
 		Assert.assertTrue(isDisplayed(profilePageUi.get_googlePlusLink()), "Google share button is not present");
@@ -730,6 +735,7 @@ public class ProfilePageFixture extends ProfileInfoPageFixture{
 		homePageUi.changeWindow(0);
 	}
 
+	//Verifying whether cover image is displayed on profile page or not
 	public boolean verifyCoverPhoto(){
 		Utilities.explicitWait(driver);
 		Assert.assertTrue(isDisplayed(profilePageUi.get_coverImage()), "Cover image is not displayed");

@@ -1,5 +1,6 @@
 package com.qait.automation.stik.actionfixtures;
 
+import org.apache.log4j.Logger;
 import org.testng.Assert;
 import org.testng.Reporter;
 
@@ -159,9 +160,12 @@ public class DemoPageFixture extends SearchPageFixture {
 		return true;
 	}
 	
+	/** Verify UI and functionality of /demo and /demo/connect page and 
+			filling details for requesting a demo on /demo/connect page*/
+	
 	public boolean verifyBasicUIandFunctionalityForDemoTab(){
-		if(isDisplayed(demoUi.get_stikLogoOnDemoPage())){
-			homePageUi.waitForElementToAppear(demoUi.get_stikLogoOnDemoPage());
+		if(isDisplayed(demoUi.get_stikLogoOnDemoConnectPage())){
+			homePageUi.waitForElementToAppear(demoUi.get_stikLogoOnDemoConnectPage());
 			Assert.assertTrue(isDisplayed(demoUi.get_leadFormOnDemoPage()), "Lead form is not displayed on demo page");
 			demoUi.get_nameInputOnLeadForm().sendKeys(util.getYamlValue("leadform.name"));
 			demoUi.get_phoneInputOnLeadForm().clear();
@@ -172,6 +176,7 @@ public class DemoPageFixture extends SearchPageFixture {
 			homePageUi.handleAlert();
 			demoUi.get_continueButtonOnLeadForm().click();
 			Utilities.hardWait(5);
+			homePageUi.waitForElementToAppear(demoUi.get_successOnThankYouWizard());
 			Assert.assertTrue(demoUi.get_successOnThankYouWizard().getText().contains("Success"), "Success message is not displayed on Thank you wizard");
 			demoUi.get_stikLinkOnThankYouPage().click();
 			Utilities.explicitWait(driver);
@@ -181,20 +186,20 @@ public class DemoPageFixture extends SearchPageFixture {
 			Assert.assertTrue(isDisplayed(demoUi.get_joinDemoButtonNew()), "Join Demo button is not displayed on /demo page");
 			demoUi.get_joinDemoButtonNew().click();
 			int sizeOfDemoPresenters=demoUi.get_joinDemoOptions().size();
-			for(int i=0;i<sizeOfDemoPresenters;i++)
-			{
-				demoUi.get_joinDemoOptions().get(i).click();
-				homePageUi.changeWindow(1);
-				Utilities.explicitWait(driver);
-				Assert.assertTrue(driver.getCurrentUrl().contains("join.me") || driver.getCurrentUrl().contains("logme.in"), "Incorrect URL for join demo option");
-				driver.close();
-				homePageUi.changeWindow(0);
-				Utilities.hardWait(2);
-			}
+			int randomNumber = generateRandomNumber(0, sizeOfDemoPresenters-1);
+			Reporter.log("Demo Presenter name: "+ demoUi.get_joinDemoOptions().get(randomNumber).getText());
+			demoUi.get_joinDemoOptions().get(randomNumber).click();
+			homePageUi.changeWindow(1);
+			Utilities.explicitWait(driver);
+			Reporter.log("Url of the selected Demo Presenter: " + driver.getCurrentUrl());
+			Assert.assertTrue(driver.getCurrentUrl().contains("join.me") || driver.getCurrentUrl().contains("logme.in"), "Incorrect URL for join demo option");
+			driver.close();
+			homePageUi.changeWindow(0);
 		}
 		return true;
 	}
 	
+	//Verify UI on /gallery page
 	public boolean verifyGalleryTabonDemoPage(){
 		Assert.assertTrue(demoUi.get_galleryTab().getText().contains("GALLERY"), "Gallery Tab is not displayed on demo page");
 		demoUi.get_galleryTab().click();
@@ -204,6 +209,7 @@ public class DemoPageFixture extends SearchPageFixture {
 		return true;
 	}
 	
+	//Verify UI and functionality on /roi page
 	public boolean verifyROITabOnDemoPage(){
 		Assert.assertTrue(demoUi.get_roiTab().getText().contains("ROI"), "ROI Tab is not displayed on demo page");
 		demoUi.get_roiTab().click();
@@ -219,7 +225,9 @@ public class DemoPageFixture extends SearchPageFixture {
 		return true;
 	}
 	
+	//Verify UI on /pricing page
 	public boolean verifyPricingTabOnDemoPage(){
+		//logger.info("Pricing method");
 		Assert.assertTrue(demoUi.get_pricingTab().getText().contains("PRICING"), "Pricing Tab is not displayed on demo page");
 		demoUi.get_pricingTab().click();
 		homePageUi.waitForElementToAppear(demoUi.get_demoHeading());

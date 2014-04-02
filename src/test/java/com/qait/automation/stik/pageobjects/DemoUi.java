@@ -19,19 +19,19 @@ public class DemoUi extends BaseUi{
 
 	/*****************************************Web Elements*********************************/
 	//adding webelements for newly added page /demo/connect
-		@FindBy(xpath=".//*[@id='uiTabs']/article/section/h2")
+		@FindBy(xpath="//div[@id='uiTabs']/article/section/h2")
 		private WebElement demoHeading;
 		
-		@FindBy(xpath=".//*[@id='uiTabs']/article/nav/a[1]")
+		@FindBy(xpath="//a[@href='/demo']")
 		private WebElement demoTab;
 		
-		@FindBy(xpath=".//*[@id='demoHero']/div/div/div/div")
+		@FindBy(xpath="//div[@id='demoHero']/div/div/div/div")
 		private WebElement joinDemoButtonNew;
 		
-		@FindBy(xpath=".//*[@id='uiTabs']/article/nav/a[2]")
+		@FindBy(xpath="//a[@href='/demo/gallery']")
 		private WebElement galleryTab;
 		
-		@FindBy(xpath=".//*[@id='uiTabs']/article/nav/a[3]")
+		@FindBy(xpath="//a[@href='/demo/roi']")
 		private WebElement roiTab;
 		
 		@FindBy(xpath="//div[@class='return']/span[@id='roiCaption']")
@@ -43,22 +43,22 @@ public class DemoUi extends BaseUi{
 		@FindBy(xpath="//form[@id='roiForm']/fieldset[@class='revenue']/input")
 		private WebElement revenueInputOnROIPage;
 		
-		@FindBy(xpath=".//*[@id='uiTabs']/article/nav/a[4]")
+		@FindBy(xpath="//a[@href='/demo/pricing']")
 		private WebElement pricingTab;
 		
 		@FindBy(css=".avatar>img")
-		private WebElement stikLogoOnDemoPage;
+		private WebElement stikLogoOnDemoConnectPage;
 		
-		@FindBy(xpath=".//*[@id='lead-form']/div")
+		@FindBy(xpath="//div[@id='lead-form']/div")
 		private WebElement leadFormOnDemoPage;
 		
-		@FindBy(xpath=".//*[@id='name']")
+		@FindBy(xpath="//input[@id='name']")
 		private WebElement nameInputOnLeadForm;
 		
-		@FindBy(xpath=".//*[@id='phone']")
+		@FindBy(xpath="//input[@id='phone']")
 		private WebElement phoneInputOnLeadForm;
 		
-		@FindBy(xpath=".//*[@id='email']")
+		@FindBy(xpath="//input[@id='email']")
 		private WebElement emailInputOnLeadForm;
 		
 		@FindBy(xpath= "//div[@class='fields']/div[4]/div/a")
@@ -67,16 +67,16 @@ public class DemoUi extends BaseUi{
 		@FindBy(xpath= "//div[@class='fields']/div[4]/div/div/ul/li")
 		private List<WebElement> selectIndustryDropdownListOnLeadForm;
 		
-		@FindBy(xpath=".//*[@id='questions-one']/div[2]/button")
+		@FindBy(xpath="//button[@ah-label='Button-Continue']")
 		private WebElement continueButtonOnLeadForm;
 		
-		@FindBy(xpath=".//*[@id='thank-you']/div/ul/li/p")
+		@FindBy(xpath="//p[@class='title']")
 		private WebElement successOnThankYouWizard;
 		
-		@FindBy(xpath=".//*[@id='layout']/div[1]/div/footer/div[1]/p/a")
+		@FindBy(xpath="//a[@href='http://www.stik.com']")
 		private WebElement stikLinkOnThankYouPage;
 		
-		@FindBy(xpath=".//*[@id='pricingHero']")
+		@FindBy(xpath="//div[@id='pricingHero']")
 		private WebElement pricingTable;
 		
 	////End of newly added elements
@@ -406,8 +406,8 @@ public class DemoUi extends BaseUi{
 			return pricingTab;
 		}
 		
-		public WebElement get_stikLogoOnDemoPage() {
-			return stikLogoOnDemoPage;
+		public WebElement get_stikLogoOnDemoConnectPage() {
+			return stikLogoOnDemoConnectPage;
 		}
 		
 		public WebElement get_leadFormOnDemoPage() {

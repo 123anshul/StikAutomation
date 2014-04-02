@@ -33,14 +33,15 @@ public class TC_035 {
 		test.launchUrl(test.getYamlVal("appUrl")+ test.getYamlVal("demoPageConnect.url"));
 	}
 	
+	//Verify UI on /demo/connect page and filling details for requesting a demo
 	@Test(dependsOnMethods={"A_launch_URL_Navgiate_to_Stick_HomePage"})
 	public void B_verify_BasicUI_Functionality_Of_DemoConnect_Page(){
 		test.verifyBasicUIandFunctionalityForDemoTab();
 	}
 
+	//Close the browser
 	@AfterClass
 	public void afterClass() {
-		test.deleteUserOnFacebook();
 		test.closeBrowser();
 	}
 }

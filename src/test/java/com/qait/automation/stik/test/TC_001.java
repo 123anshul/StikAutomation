@@ -6,10 +6,7 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
-
-import com.qait.automation.stik.actionfixtures.BaseFixture;
 import com.qait.automation.stik.actionfixtures.SearchPageFixture;
-import com.qait.automation.stik.util.Utilities;
 
 /**
  * <b>Class: TestCase001</b>

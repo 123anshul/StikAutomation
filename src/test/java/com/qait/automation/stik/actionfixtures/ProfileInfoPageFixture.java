@@ -141,6 +141,7 @@ public class ProfileInfoPageFixture extends HomePageFixture {
 		return false;
 	}
 	
+	//Selecting "My Profile" from dropdown
 	public boolean navigateToMyProfilePage(){
 		ifExistsDebugClickClose();
 		if(get_Browser().equalsIgnoreCase("iexplore")){

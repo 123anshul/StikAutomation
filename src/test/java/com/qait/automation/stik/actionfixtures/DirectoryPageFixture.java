@@ -21,31 +21,31 @@ public class DirectoryPageFixture extends ReviewPageFixture{
 	}
 
 	public boolean verifySearchFormOnDirectory(){
-		Assert.assertTrue(isDisplayed(directTemp.getDirectoryPageHeading()), "Page heading is not displayed");
-		Assert.assertTrue(isDisplayed(directTemp.getSelectIndustry()), "Select Industry list is not displayed");
-		Assert.assertTrue(isDisplayed(directTemp.getZipcodeInput()), "Zipcode text input is not displayed");
-		Assert.assertTrue(isDisplayed(directTemp.getContinueButton()), "Continue button is not present");
+		Assert.assertTrue(isDisplayed(directoryPageUi.getDirectoryPageHeading()), "Page heading is not displayed");
+		Assert.assertTrue(isDisplayed(directoryPageUi.getSelectIndustry()), "Select Industry list is not displayed");
+		Assert.assertTrue(isDisplayed(directoryPageUi.getZipcodeInput()), "Zipcode text input is not displayed");
+		Assert.assertTrue(isDisplayed(directoryPageUi.getContinueButton()), "Continue button is not present");
 		return true;
 	}
 
 	public boolean verifyPopularIndustriesHeading(){
-		Assert.assertTrue(isDisplayed(directTemp.getHeadingPopularIndustries()), "Heading Popular Industries is not displayed");
+		Assert.assertTrue(isDisplayed(directoryPageUi.getHeadingPopularIndustries()), "Heading Popular Industries is not displayed");
 		return true;
 	}
 
 	public boolean searchInsuranceIndustries(){
-		Assert.assertTrue(isDisplayed(directTemp.getInsuranceHeading()), "Insurance Agents heading is not displayed");
-		List<WebElement> list = directTemp.getInsuranceIndustriesList();
-		String insuranceHeadingText = directTemp.getInsuranceHeadingText().getText();
+		Assert.assertTrue(isDisplayed(directoryPageUi.getInsuranceHeading()), "Insurance Agents heading is not displayed");
+		List<WebElement> list = directoryPageUi.getInsuranceIndustriesList();
+		String insuranceHeadingText = directoryPageUi.getInsuranceHeadingText().getText();
 		
-		if(directTemp.getInsuranceIndustriesList().size()>0){
+		if(directoryPageUi.getInsuranceIndustriesList().size()>0){
 			String linkText = list.get(0).getText();
 			list.get(0).click();
-			homePageUi.waitForElementToAppear(directTemp.getIndustryHeading());
+			homePageUi.waitForElementToAppear(directoryPageUi.getIndustryHeading());
 			Assert.assertTrue(driver.getCurrentUrl().contains("insurance"), "Clicking on the Insurance industry doesn't navigate to correct url");
 
-			String industryHead = directTemp.getIndustryHeading().getText();
-			String recommendProfessionalText = directTemp.getRecommendProfessionalsText().getText();
+			String industryHead = directoryPageUi.getIndustryHeading().getText();
+			String recommendProfessionalText = directoryPageUi.getRecommendProfessionalsText().getText();
 			
 			Assert.assertTrue(industryHead.contains(linkText), "Selected insurance industry doesn't open the correct page");
 			Assert.assertTrue(recommendProfessionalText.contains(insuranceHeadingText), "List of professionals displayed is not in accordance with the selected Insurance industry");
@@ -61,18 +61,18 @@ public class DirectoryPageFixture extends ReviewPageFixture{
 	}
 
 	public boolean searchRealtorsIndustries(){
-		Assert.assertTrue(isDisplayed(directTemp.getRealtorsHeading()), "Realtors heading is not displayed");
-		List<WebElement> list = directTemp.getRealtorsIndustriesList();
-		String realtorseHeadingText = directTemp.getRealtorsHeadingText().getText();
+		Assert.assertTrue(isDisplayed(directoryPageUi.getRealtorsHeading()), "Realtors heading is not displayed");
+		List<WebElement> list = directoryPageUi.getRealtorsIndustriesList();
+		String realtorseHeadingText = directoryPageUi.getRealtorsHeadingText().getText();
 		
-		if(directTemp.getRealtorsIndustriesList().size()>0){
+		if(directoryPageUi.getRealtorsIndustriesList().size()>0){
 			String linkText = list.get(0).getText();
 			list.get(0).click();
-			homePageUi.waitForElementToAppear(directTemp.getIndustryHeading());
+			homePageUi.waitForElementToAppear(directoryPageUi.getIndustryHeading());
 			Assert.assertTrue(driver.getCurrentUrl().contains("real-estate"), "Clicking on the Real Estate industry doesn't navigate to correct url");
 
-			String industryHead = directTemp.getIndustryHeading().getText();			
-			String recommendProfessionalText = directTemp.getRecommendProfessionalsText().getText();
+			String industryHead = directoryPageUi.getIndustryHeading().getText();			
+			String recommendProfessionalText = directoryPageUi.getRecommendProfessionalsText().getText();
 
 			Assert.assertTrue(industryHead.contains(linkText), "Selected Real Estate industry redirects to the wrong page");
 			Assert.assertTrue(recommendProfessionalText.contains(realtorseHeadingText), "List of professionals displayed is not in accordance with the selected Real Estate industry");
@@ -89,18 +89,18 @@ public class DirectoryPageFixture extends ReviewPageFixture{
 
 	public boolean searchAutoProfessionalIndustries(){
 		scrollDown(200);
-		Assert.assertTrue(isDisplayed(directTemp.getAutoProfessionHeading()), "Auto Professional heading is not displayed");
-		List<WebElement> list = directTemp.getAutoProfessionalIndustriesList();
-		String autoProfessionHeadingText = directTemp.getAutoProfessionHeadingText().getText();
+		Assert.assertTrue(isDisplayed(directoryPageUi.getAutoProfessionHeading()), "Auto Professional heading is not displayed");
+		List<WebElement> list = directoryPageUi.getAutoProfessionalIndustriesList();
+		String autoProfessionHeadingText = directoryPageUi.getAutoProfessionHeadingText().getText();
 		
-		if(directTemp.getAutoProfessionalIndustriesList().size()>0){
+		if(directoryPageUi.getAutoProfessionalIndustriesList().size()>0){
 			String linkText = list.get(0).getText();
 			list.get(0).click();
-			homePageUi.waitForElementToAppear(directTemp.getIndustryHeading());
+			homePageUi.waitForElementToAppear(directoryPageUi.getIndustryHeading());
 			Assert.assertTrue(driver.getCurrentUrl().contains("auto-sales"), "Clicking on the Auto Professional industry doesn't navigate to correct url");
 
-			String industryHead = directTemp.getIndustryHeading().getText();
-			String recommendProfessionalText = directTemp.getRecommendProfessionalsText().getText();
+			String industryHead = directoryPageUi.getIndustryHeading().getText();
+			String recommendProfessionalText = directoryPageUi.getRecommendProfessionalsText().getText();
 
 			Assert.assertTrue(industryHead.contains(linkText), "Selected Auto Professional industry redirects to the wrong page");
 			Assert.assertTrue(recommendProfessionalText.contains(autoProfessionHeadingText), "List of professionals displayed is not in accordance with the selected Auto Professional industry");
@@ -117,18 +117,18 @@ public class DirectoryPageFixture extends ReviewPageFixture{
 	
 	public boolean searchHomeContractorsIndustries(){
 		scrollDown(295);
-		Assert.assertTrue(isDisplayed(directTemp.getHomeContractorsHeading()), "Home Contractors heading is not displayed");
-		List<WebElement> list = directTemp.getHomeContractorsIndustriesList();
-		String homeContractorsHeadingText = directTemp.getHomeContractorsHeadingText().getText();
+		Assert.assertTrue(isDisplayed(directoryPageUi.getHomeContractorsHeading()), "Home Contractors heading is not displayed");
+		List<WebElement> list = directoryPageUi.getHomeContractorsIndustriesList();
+		String homeContractorsHeadingText = directoryPageUi.getHomeContractorsHeadingText().getText();
 		
-		if(directTemp.getHomeContractorsIndustriesList().size()>0){
+		if(directoryPageUi.getHomeContractorsIndustriesList().size()>0){
 			String linkText = list.get(0).getText();
 			list.get(0).click();
-			homePageUi.waitForElementToAppear(directTemp.getIndustryHeading());
+			homePageUi.waitForElementToAppear(directoryPageUi.getIndustryHeading());
 			Assert.assertTrue(driver.getCurrentUrl().contains("home-services"), "Clicking on the Home Contractor industry doesn't navigate to correct url");
 
-			String industryHead = directTemp.getIndustryHeading().getText();
-			String recommendProfessionalText = directTemp.getRecommendProfessionalsText().getText();
+			String industryHead = directoryPageUi.getIndustryHeading().getText();
+			String recommendProfessionalText = directoryPageUi.getRecommendProfessionalsText().getText();
 
 			Assert.assertTrue(industryHead.contains(linkText), "Selected Home Contractor industry redirects to the wrong page");
 			Assert.assertTrue(recommendProfessionalText.contains(homeContractorsHeadingText), "List of professionals displayed is not in accordance with the selected Home Contractor industry");
@@ -145,18 +145,18 @@ public class DirectoryPageFixture extends ReviewPageFixture{
 	
 	public boolean searchHealthCareIndustries(){
 		scrollDown(300);
-		Assert.assertTrue(isDisplayed(directTemp.getHealthCareHeading()), "Health Care heading is not displayed");
-		List<WebElement> list = directTemp.getHealthCareIndustriesList();
-		String healthCareHeadingText = directTemp.getHealthCareHeadingText().getText();
+		Assert.assertTrue(isDisplayed(directoryPageUi.getHealthCareHeading()), "Health Care heading is not displayed");
+		List<WebElement> list = directoryPageUi.getHealthCareIndustriesList();
+		String healthCareHeadingText = directoryPageUi.getHealthCareHeadingText().getText();
 		
-		if(directTemp.getHealthCareIndustriesList().size()>0){
+		if(directoryPageUi.getHealthCareIndustriesList().size()>0){
 			String linkText = list.get(0).getText();
 			list.get(0).click();
-			homePageUi.waitForElementToAppear(directTemp.getIndustryHeading());
+			homePageUi.waitForElementToAppear(directoryPageUi.getIndustryHeading());
 			Assert.assertTrue(driver.getCurrentUrl().contains("health-wellness"), "Clicking on the Health Care industry doesn't navigate to correct url");
 
-			String industryHead = directTemp.getIndustryHeading().getText();
-			String recommendProfessionalText = directTemp.getRecommendProfessionalsText().getText();
+			String industryHead = directoryPageUi.getIndustryHeading().getText();
+			String recommendProfessionalText = directoryPageUi.getRecommendProfessionalsText().getText();
 
 			Assert.assertTrue(industryHead.contains(linkText), "Selected Health Care industry redirects to the wrong page");
 			Assert.assertTrue(recommendProfessionalText.contains(healthCareHeadingText), "List of professionals displayed is not in accordance with the selected Health Care industry");
@@ -173,18 +173,18 @@ public class DirectoryPageFixture extends ReviewPageFixture{
 	
 	public boolean searchArtistsIndustries(){
 		scrollDown(280);
-		Assert.assertTrue(isDisplayed(directTemp.getArtistsHeading()), "Artists heading is not displayed");
-		List<WebElement> list = directTemp.getArtistsIndustriesList();
-		String artistsHeadingText = directTemp.getArtistsHeadingText().getText();
+		Assert.assertTrue(isDisplayed(directoryPageUi.getArtistsHeading()), "Artists heading is not displayed");
+		List<WebElement> list = directoryPageUi.getArtistsIndustriesList();
+		String artistsHeadingText = directoryPageUi.getArtistsHeadingText().getText();
 		
-		if(directTemp.getArtistsIndustriesList().size()>0){
+		if(directoryPageUi.getArtistsIndustriesList().size()>0){
 			String linkText = list.get(0).getText();
 			list.get(0).click();
-			homePageUi.waitForElementToAppear(directTemp.getIndustryHeading());
+			homePageUi.waitForElementToAppear(directoryPageUi.getIndustryHeading());
 			Assert.assertTrue(driver.getCurrentUrl().contains("arts-entertainment"), "Clicking on the Artists industry doesn't navigate to correct url");
 
-			String industryHead = directTemp.getIndustryHeading().getText();
-			String recommendProfessionalText = directTemp.getRecommendProfessionalsText().getText();
+			String industryHead = directoryPageUi.getIndustryHeading().getText();
+			String recommendProfessionalText = directoryPageUi.getRecommendProfessionalsText().getText();
 
 			Assert.assertTrue(industryHead.contains(linkText), "Selected Artists industry redirects to the wrong page");
 			Assert.assertTrue(recommendProfessionalText.contains(artistsHeadingText), "List of professionals displayed is not in accordance with the selected Artists industry");
@@ -200,15 +200,15 @@ public class DirectoryPageFixture extends ReviewPageFixture{
 	}
 	
 	public boolean searchOtherIndustries(){
-		Assert.assertTrue(isDisplayed(directTemp.getOthersHeading()), "Others heading is not displayed");
-		List<WebElement> list = directTemp.getOthersIndustriesList();
-		if(directTemp.getOthersIndustriesList().size()>0){
+		Assert.assertTrue(isDisplayed(directoryPageUi.getOthersHeading()), "Others heading is not displayed");
+		List<WebElement> list = directoryPageUi.getOthersIndustriesList();
+		if(directoryPageUi.getOthersIndustriesList().size()>0){
 			list.get(0).click();
-			homePageUi.waitForElementToAppear(directTemp.getIndustryHeading());
+			homePageUi.waitForElementToAppear(directoryPageUi.getIndustryHeading());
 			Assert.assertTrue(driver.getCurrentUrl().contains("financial-planning"), "Clicking on Other industry doesn't navigate to correct url");
 
-			String industryHead = directTemp.getIndustryHeading().getText();
-			String recommendProfessionalText = directTemp.getRecommendProfessionalsText().getText();
+			String industryHead = directoryPageUi.getIndustryHeading().getText();
+			String recommendProfessionalText = directoryPageUi.getRecommendProfessionalsText().getText();
 
 			Assert.assertTrue(industryHead.contains("Financial Planners"), "Selected Other industry redirects to the wrong page");
 			Assert.assertTrue(recommendProfessionalText.contains("Financial Planners"), "List of professionals displayed is not in accordance with the selected Artists industry");
