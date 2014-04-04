@@ -9,7 +9,9 @@ import org.testng.annotations.Test;
 import com.qait.automation.stik.actionfixtures.ProfilePageFixture;
 
 
-//Verify the UI and functionality of different sections present on Profile page.
+/**Verify the UI and functionality of
+ *		 different sections present on Profile page.
+ */
 public class TC_033 {
 
 	private boolean newUserFlag= false;
@@ -90,7 +92,7 @@ public class TC_033 {
 		test.signOut();
 	}
 
-	//close the browser
+	//Close the browser
 	@AfterClass
 	public void afterClass() {
 		test.closeBrowser();
