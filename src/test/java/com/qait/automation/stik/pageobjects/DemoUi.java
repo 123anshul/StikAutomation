@@ -37,6 +37,9 @@ public class DemoUi extends BaseUi{
 		@FindBy(xpath="//div[@class='return']/span[@id='roiCaption']")
 		private WebElement roiCaption;
 		
+		@FindBy(xpath="//div[@class='bar'][@style='top: 87.04%;']")
+		private WebElement roiGraphBar1;
+		
 		@FindBy(xpath="//form[@id='roiForm']/fieldset[@class='close-rate']/input")
 		private WebElement closeRateInputOnROIPage;
 			
@@ -392,6 +395,10 @@ public class DemoUi extends BaseUi{
 		
 		public WebElement get_roiCaption() {
 			return roiCaption;
+		}
+		
+		public WebElement get_roiGraphBar1() {
+			return roiGraphBar1;
 		}
 		
 		public WebElement get_closeRateInputOnROIPage() {

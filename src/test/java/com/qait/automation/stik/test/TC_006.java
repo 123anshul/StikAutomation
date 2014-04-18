@@ -44,7 +44,6 @@ public class TC_006 {
     public void B_Login_Using_FaceBook_Link_Given_On_Home_Page()  {
 		assert test.clickLoginLink();
 		assert test.loginUsingFaceBookUserNamePassword(test.getYamlVal("userName"), test.getYamlVal("password"),newUserFlag);
-	
 		assert test.navigateToHomePage();
     }
 	

@@ -23,7 +23,7 @@ public class TC_001 {
 		
 	@BeforeClass
     @Parameters({ "filepath" })
-    public void beforeClass(@Optional("data/qatestdata.yml")String filePath){
+    public void beforeClass(@Optional("")String filePath){
         test.setUpDataFile(filePath);
     }
     
@@ -80,13 +80,13 @@ public class TC_001 {
 	public void G_Is_My_Profile_Ok()  {
 		test.isMyProfileOk();
     }
-	
+	//Logout of the Application
 	@Test(dependsOnMethods={"G_Is_My_Profile_Ok"})
 	public void H_signOut(){
 		test.signOut();
 	}
 	
-	//Logout of the Application and Close Browser
+	//Close Browser
 	@AfterClass
 	public void afterClass() {
 		test.deleteUserOnFacebook();

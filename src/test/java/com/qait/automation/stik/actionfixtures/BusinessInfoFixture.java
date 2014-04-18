@@ -41,14 +41,14 @@ public class BusinessInfoFixture extends SearchPageFixture{
 		String currentIndustry= businessInfoUi.get_currentIndustry();
 		businessInfoUi.get_industryDropDownArrow().click();
 	
-		System.out.println("Current Industry:- "+currentIndustry);
-		System.out.println("Industry to be selected:- "+businessInfoUi.getIndustrySelected(countOfIndustry).getText());
+		logger.info("Current Industry:- "+currentIndustry);
+		logger.info("Industry to be selected:- "+businessInfoUi.getIndustrySelected(countOfIndustry).getText());
 		if(currentIndustry.equalsIgnoreCase(businessInfoUi.getIndustrySelected(countOfIndustry).getText())){
 			countOfIndustry++;
 		}
-		System.out.println("CoutOfIndustry Variable value:- " +countOfIndustry);
+		System.out.println("CountOfIndustry Variable value:- " +countOfIndustry);
 		Reporter.log("Industry Selected as:- " + businessInfoUi.getIndustrySelected(countOfIndustry).getText());
-		System.out.println("Industry Selected:- "+businessInfoUi.getIndustrySelected(countOfIndustry).getText());
+		logger.info("Industry Selected:- "+businessInfoUi.getIndustrySelected(countOfIndustry).getText());
 		businessInfoUi.getIndustrySelected(countOfIndustry).click();
 		
 		return true;
@@ -82,19 +82,19 @@ public class BusinessInfoFixture extends SearchPageFixture{
 	
 	public boolean clickAddAnotherAndVerifyStateIncrement(){
 		int sizebeforeAdd= businessInfoUi.get_stateDropDown().size();
-		System.out.println("Number of States Before Adding Any:- "+ sizebeforeAdd);
+		logger.info("Number of States Before Adding Any:- "+ sizebeforeAdd);
 		businessInfoUi.get_addAnotherButton().click();
 		Utilities.hardWait(2);
 		int sizeAfterAdd= businessInfoUi.get_stateDropDown().size();
 		if(sizeAfterAdd == (sizebeforeAdd+1)){
 			System.out.println("Number of States After Adding Another:- "+sizeAfterAdd);
 			Reporter.log("Add Another Button working Fine...");
-			System.out.println("Add Another Button working fine");
+			logger.info("Add Another Button working fine");
 			return true;
 		}
 		else{
 			Reporter.log("Unable to Add another state drop down with Add Another button...");
-			System.out.println("Problem with Add Another Button...");
+			logger.info("Problem with Add Another Button...");
 			return false;
 		}
 	}
@@ -106,14 +106,14 @@ public class BusinessInfoFixture extends SearchPageFixture{
 		try{
 		Assert.assertTrue(isDisplayed(businessInfoUi.get_cityTextBoxSuggestionPlaceholder()));
 		Reporter.log("Placeholder in Suggestion list for city text box appears...");
-		System.out.println("Text in Suggestion Placeholder:- "+ businessInfoUi.get_cityTextBoxSuggestionPlaceholder().getText());
+		logger.info("Text in Suggestion Placeholder:- "+ businessInfoUi.get_cityTextBoxSuggestionPlaceholder().getText());
 		
 		for(int i=0;i<3;i++){
 			clickOnCityFromSuggestionList(i);
 			city=incrementCityCharacter(city);
 		}
 		}catch(Exception e){
-			System.out.println("Unable to select city");
+			logger.error("Unable to select city");
 		}
 		return true;
 	}
@@ -121,7 +121,7 @@ public class BusinessInfoFixture extends SearchPageFixture{
 	public void clickOnCityFromSuggestionList(int counter){
 		businessInfoUi.get_cityTextBox().click();
 		businessInfoUi.get_cityTextBox().sendKeys(city);
-		System.out.println("Name of Selected City:- "+ businessInfoUi.get_citySuggestionList().getText());
+		logger.info("Name of Selected City:- "+ businessInfoUi.get_citySuggestionList().getText());
 		Reporter.log("Selected City No."+counter+1+" is:- "+businessInfoUi.get_citySuggestionList().getText());
 		businessInfoUi.get_citySuggestionList().click();
 		Utilities.hardWait(1);
@@ -167,7 +167,7 @@ public class BusinessInfoFixture extends SearchPageFixture{
 		businessInfoUi.get_addAnotherButton().getAttribute("ttile");
 		homePageUi.mouseMove(homePageUi.get_dropDown(), homePageUi.get_viewProfileLink());
 		homePageUi.waitForElementToAppear(profilePageUi.get_profileName());
-		System.out.println("About Section Text:- "+profilePageUi.get_about().getText());
+		logger.info("About Section Text:- "+profilePageUi.get_about().getText());
 		if(profilePageUi.get_about().getText().trim().equalsIgnoreCase(summary.trim())){
 			
 			Reporter.log("Summary content matches with the About Section on Profile Page");

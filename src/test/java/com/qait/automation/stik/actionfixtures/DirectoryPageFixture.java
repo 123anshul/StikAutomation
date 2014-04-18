@@ -14,12 +14,14 @@ import com.qait.automation.stik.util.Utilities;
 public class DirectoryPageFixture extends ReviewPageFixture{
 
 
+	//Verify the Directory page url
 	public boolean verifyDirectoryURL(){
 		Utilities.explicitWait(driver);
 		Assert.assertTrue(driver.getCurrentUrl().contains("directory"), "The url doesn't contain the directory") ;
 		return true;
 	}
 
+	//Verify basic UI elements of Search form on /directory page
 	public boolean verifySearchFormOnDirectory(){
 		Assert.assertTrue(isDisplayed(directoryPageUi.getDirectoryPageHeading()), "Page heading is not displayed");
 		Assert.assertTrue(isDisplayed(directoryPageUi.getSelectIndustry()), "Select Industry list is not displayed");
@@ -28,11 +30,13 @@ public class DirectoryPageFixture extends ReviewPageFixture{
 		return true;
 	}
 
+	//Verify popular industry heading on /directory page
 	public boolean verifyPopularIndustriesHeading(){
 		Assert.assertTrue(isDisplayed(directoryPageUi.getHeadingPopularIndustries()), "Heading Popular Industries is not displayed");
 		return true;
 	}
 
+	//Verifying the presence of "Insurance" link, clicking it and verifying UI elements on insurance page
 	public boolean searchInsuranceIndustries(){
 		Assert.assertTrue(isDisplayed(directoryPageUi.getInsuranceHeading()), "Insurance Agents heading is not displayed");
 		List<WebElement> list = directoryPageUi.getInsuranceIndustriesList();
@@ -60,6 +64,7 @@ public class DirectoryPageFixture extends ReviewPageFixture{
 		return true;
 	}
 
+	//Verifying the presence of "Realtors" link, clicking it and verifying UI elements on insurance page
 	public boolean searchRealtorsIndustries(){
 		Assert.assertTrue(isDisplayed(directoryPageUi.getRealtorsHeading()), "Realtors heading is not displayed");
 		List<WebElement> list = directoryPageUi.getRealtorsIndustriesList();
@@ -87,6 +92,7 @@ public class DirectoryPageFixture extends ReviewPageFixture{
 		return true;
 	}
 
+	//Verifying the presence of "Auto Professional" link, clicking it and verifying UI elements on insurance page
 	public boolean searchAutoProfessionalIndustries(){
 		scrollDown(200);
 		Assert.assertTrue(isDisplayed(directoryPageUi.getAutoProfessionHeading()), "Auto Professional heading is not displayed");
@@ -115,6 +121,7 @@ public class DirectoryPageFixture extends ReviewPageFixture{
 		return true;
 	}
 	
+	//Verifying the presence of "Home Contractors" link, clicking it and verifying UI elements on insurance page
 	public boolean searchHomeContractorsIndustries(){
 		scrollDown(295);
 		Assert.assertTrue(isDisplayed(directoryPageUi.getHomeContractorsHeading()), "Home Contractors heading is not displayed");
@@ -143,6 +150,7 @@ public class DirectoryPageFixture extends ReviewPageFixture{
 		return true;
 	}
 	
+	//Verifying the presence of "Health Care" link, clicking it and verifying UI elements on insurance page
 	public boolean searchHealthCareIndustries(){
 		scrollDown(300);
 		Assert.assertTrue(isDisplayed(directoryPageUi.getHealthCareHeading()), "Health Care heading is not displayed");
@@ -171,6 +179,7 @@ public class DirectoryPageFixture extends ReviewPageFixture{
 		return true;
 	}
 	
+	//Verifying the presence of "Artists" link, clicking it and verifying UI elements on insurance page
 	public boolean searchArtistsIndustries(){
 		scrollDown(280);
 		Assert.assertTrue(isDisplayed(directoryPageUi.getArtistsHeading()), "Artists heading is not displayed");
@@ -199,6 +208,7 @@ public class DirectoryPageFixture extends ReviewPageFixture{
 		return true;
 	}
 	
+	//Verifying the presence of "Financial Planning" link, clicking it and verifying UI elements on insurance page
 	public boolean searchOtherIndustries(){
 		Assert.assertTrue(isDisplayed(directoryPageUi.getOthersHeading()), "Others heading is not displayed");
 		List<WebElement> list = directoryPageUi.getOthersIndustriesList();
@@ -220,6 +230,7 @@ public class DirectoryPageFixture extends ReviewPageFixture{
 		return true;
 	}
 	
+	//Selecting the industry from dropdown on /directory page
 	public void searchAndVerifyProfessionalFromDropDown(String industry, String matchText, String url){
 	
 		homePageUi.waitForElementToAppear(directoryPageUi.getSelectIndustry());
@@ -267,6 +278,7 @@ public class DirectoryPageFixture extends ReviewPageFixture{
 		return flag1 && flag2;
 	}
 	
+	//Inputting a zipcode and verifying the list of professionals for the provided zipcode
 	public boolean verifyZipcode(String zipcode){
 		homePageUi.waitForElementToAppear(directoryPageUi.get_zipcodeInput());
 		directoryPageUi.get_zipcodeInput().sendKeys(zipcode);
@@ -279,6 +291,7 @@ public class DirectoryPageFixture extends ReviewPageFixture{
 		
 	}
 	
+	//Selecting a state from dropdown and verifying the list of professionals
 	public void selectAndVerifyState(String state){
 		homePageUi.waitForElementToAppear(directoryPageUi.get_stateDropDownElement());
 		scrollDown(200);
@@ -302,6 +315,7 @@ public class DirectoryPageFixture extends ReviewPageFixture{
 		
 	}
 	
+	//Selecting a city from dropdown and verifying the list of professionals
 	public void selectAndverifyCity(String city){
 		homePageUi.waitForElementToAppear(directoryPageUi.get_cityDropDownElement());
 		directoryPageUi.get_cityDropDownElement().click();
@@ -324,6 +338,7 @@ public class DirectoryPageFixture extends ReviewPageFixture{
 		Assert.assertTrue(directoryPageUi.get_employeeList().size()>0, "Professional's list is not there after selecting city");
 	}
 		
+	//verify breadcrumbs updated correctly
 	public boolean checkForBreadCrumbTrailOnCityPage(String industry, String state, String city, String all){
 		boolean flag=false;
 		String[] arr={all,industry,state,city};

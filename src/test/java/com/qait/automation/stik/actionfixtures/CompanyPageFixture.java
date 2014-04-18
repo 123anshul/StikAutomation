@@ -35,6 +35,7 @@ public class CompanyPageFixture extends DirectoryPageFixture{
 		String websiteLink=companyPageUi.get_companyWebsiteLink().getAttribute("href");
 		companyPageUi.get_companyWebsiteLink().click();
 		Utilities.hardWait(1);
+		logger.info("website link clicked");
 		homePageUi.changeWindow(1);
 		Utilities.explicitWait(driver);
 		String currentUrl=driver.getCurrentUrl();
@@ -119,6 +120,7 @@ public class CompanyPageFixture extends DirectoryPageFixture{
 		}
 		catch(Exception ex){
 			System.out.println("Company Drop Down Not Found");
+			logger.error("Company Drop Down Not Found");
 			return null;
 		}
 	}
@@ -130,6 +132,7 @@ public class CompanyPageFixture extends DirectoryPageFixture{
 			List<WebElement> stateList = companyPageUi.get_stateSelextDropDownList();
 			int random=generateRandomNumber(1, stateList.size()-1);
 			String stateName = stateList.get(random).getText();
+			logger.info("statename :" + stateName);
 			if(stateList.size()>1){
 				stateList.get(random).click();
 			}
@@ -138,7 +141,7 @@ public class CompanyPageFixture extends DirectoryPageFixture{
 			}
 			return stateName;
 		}catch(Exception ex){
-			System.out.println("State Drop Down Not Found");
+			logger.error("State Drop Down Not Found");
 			return "";
 		}
 	}
@@ -149,12 +152,12 @@ public class CompanyPageFixture extends DirectoryPageFixture{
 			homePageUi.waitForElementToAppear(companyPageUi.get_citySearchTextBoxInDropDown());
 			List<WebElement> citylist=companyPageUi.get_citySelectDropDownList();
 			String cityName=citylist.get(1).getText();
-			System.out.println("City found:-"+cityName);
+			logger.info("City found:-"+cityName);
 			citylist.get(1).click();
 			Utilities.explicitWait(driver);
 			return cityName;
 		}catch(Exception ex){
-			System.out.println("City Drop Down Not Found");
+			logger.error("City Drop Down Not Found");
 			return  "";
 		}
 	}

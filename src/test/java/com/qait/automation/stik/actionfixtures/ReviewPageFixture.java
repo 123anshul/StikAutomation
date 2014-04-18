@@ -264,7 +264,6 @@ public class ReviewPageFixture  extends ProfilePageFixture{
 					Reporter.log("Star ratings does not match");
 			}else
 				countReview=countReview+1;
-			Reporter.log("Review text does not match");
 		}
 		return false;
 
@@ -498,6 +497,7 @@ public class ReviewPageFixture  extends ProfilePageFixture{
 		}
 	}	
 
+	//Verify UI elements an their functionality on Verification screen appearing in inline review workflow
 	public boolean verifyUIVerificationScreenInlineReview(boolean loggedinFlag){
 		homePageUi.waitForElementToAppear(reviewPageUi.get_uiVerificationHeading());
 		Assert.assertTrue(isDisplayed(reviewPageUi.get_uiVerificationHeading()), "Heading is not displayed on UI verification sceen");
@@ -536,6 +536,7 @@ public class ReviewPageFixture  extends ProfilePageFixture{
 		reviewPageUi.get_uiVerificationTermsOfUseLink().click();
 		Utilities.explicitWait(driver);
 		homePageUi.changeWindow(1);
+		Utilities.explicitWait(driver);
 		Assert.assertTrue(driver.getCurrentUrl().contains("terms"), "Clicking on Terms of use doesn't navigate to correct url");
 		Assert.assertTrue(isDisplayed(reviewPageUi.get_termsOfUseWindowHeading()), "Heading is not displayed on Terms of Use page");
 		driver.close();

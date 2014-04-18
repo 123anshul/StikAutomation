@@ -93,7 +93,7 @@ public class BaseUi {
 		return wait.until(ExpectedConditions.alertIsPresent());
 	}
 	
-	public void handleAlertinEmail(){
+	public void handleAlertafterClickingImport(){
 		try{
 			switchToAlertEmail().accept();
 			driver.switchTo().defaultContent();

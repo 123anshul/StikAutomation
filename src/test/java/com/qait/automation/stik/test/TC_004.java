@@ -42,23 +42,27 @@ public class TC_004 {
 		assert test.navigateToHomePage();
     }
 	
+	//Verifying metadata of Profile page
 	@Test(dependsOnMethods={"B_Login_Using_FaceBook_Link_Given_On_Home_Page"})
 	public void C_Navigate_To_My_ProfilePage_Verify_MetaDataTags(){
 		assert test.navigateToMyProfilePage();
 		test.isMyProfileMetadataOK();
 	}
 	
+	//Verifying metadata of other professional's Profile page
 	@Test(dependsOnMethods={"C_Navigate_To_My_ProfilePage_Verify_MetaDataTags"})
 	public void D_Navigate_To_Other_ProfilePage_VerifyMetaDataTags(){
 		assert test.navigatetoProfilePage(test.getYamlVal("otherprofile.username"));
 		test.isOtherProfileMetadataOK();
 	}
 	
+	//Logout from the app
 	@Test(dependsOnMethods={"D_Navigate_To_Other_ProfilePage_VerifyMetaDataTags"})
 	public void E_SignOut(){
 		test.signOut();
 	}
-	//Logout of the Application and Close Browser
+	
+	//Close Browser
 	@AfterClass
 	public void afterClass() {
 		test.deleteUserOnFacebook();

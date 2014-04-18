@@ -24,7 +24,11 @@ public class HomePageUi extends BaseUi {
 	
 	//SignUp Link
 	@FindBy(css = "ul[class='right js-header-right']>li>a[class='signup-button orange button']")
-	private WebElement joinForFree;
+	private WebElement signUpLink;
+	
+	//Request A demo link
+	@FindBy(css = "ul[class='right js-header-right']>li>a[class='signup-button orange button']")
+	private WebElement requestDemoLink;
 	
 	//loginLink Link on stik home page
 	@FindBy(css = "ul[class = 'right js-header-right']>li a[class = 'login-button secondary button']")
@@ -270,6 +274,12 @@ public class HomePageUi extends BaseUi {
 	@FindBy(xpath = "label[class='uiButton uiButtonConfirm uiButtonLarge'] input")
 	private WebElement signUpWithFacebookLink;
 	
+	@FindBy(xpath = ".//*[@id='homepageHero']/article/section[1]/div/a[1]")
+	private WebElement requestADemoButton1;
+
+	@FindBy(xpath = ".//*[@id='homepageHero']/article/section[1]/div/a[2]")
+	private WebElement learnMoreButton;
+	
 	
 	/***************LinkedIn UI Elements***************************************/
 	//Email Field
@@ -287,7 +297,11 @@ public class HomePageUi extends BaseUi {
 	
 	/************ Getter Methods to get WEB Elements ************************/
 	public WebElement get_signUpLink() {
-		return joinForFree;
+		return signUpLink;
+	}
+	
+	public WebElement get_requestDemoLink() {
+		return requestDemoLink;
 	}
 	
 	public WebElement get_loginLink(){
@@ -588,6 +602,14 @@ public class HomePageUi extends BaseUi {
 	
 	public WebElement get_professionalSearch(){
 		return professionalSearch;
+	}
+	
+	public WebElement get_requestADemoButton1(){
+		return requestADemoButton1;
+	}
+
+	public WebElement get_learnMoreButton(){
+		return learnMoreButton;
 	}
 	
 }

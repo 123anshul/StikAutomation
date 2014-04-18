@@ -191,10 +191,10 @@ public class ProfilePageUi extends BaseUi{
 	//private String compnayLink="section[id='profile']>header>div[class='info']>div:nth-child(2)>article>section>div>div>a:nth-child(2)";
 	//private String licenseLink="div[class='license inline-edit']>a:nth-child(1)";
 	//private String addressLink="div[class='profile-content']>aside>article:nth-child(1)>footer>div>div[class='address-container']>a";
-	//private String cityLink="div[id='extraInfo']>div>ul[class='container']>li[id='contact']>div>a[id='addressLocality']";
-	//private String stateLink="div[id='extraInfo']>div>ul[class='container']>li[id='contact']>div>a[id='addressRegion']";
-	//private String zipCodeLink="div[id='extraInfo']>div>ul[class='container']>li[id='contact']>div>a[id='postalCode']";
-	//private String emailUserLink="div[id='extraInfo']>div>ul[class='container']>li[id='contact']>div[class='email-user']>h4[id='emailUser']>a";
+//	private String cityLink="div[id='extraInfo']>div>ul[class='container']>li[id='contact']>div>a[id='addressLocality']";
+//	private String stateLink="div[id='extraInfo']>div>ul[class='container']>li[id='contact']>div>a[id='addressRegion']";
+//	private String zipCodeLink="div[id='extraInfo']>div>ul[class='container']>li[id='contact']>div>a[id='postalCode']";
+//	private String emailUserLink="div[id='extraInfo']>div>ul[class='container']>li[id='contact']>div[class='email-user']>h4[id='emailUser']>a";
 	//private String webSiteLink="div[id='extraInfo']>div>ul[class='container']>li[id='contact']>div>a[id='website']";
 	//private String editPhoneNumberLink="div[class='profile-content']>aside>article:nth-child(1)>footer>div[class='button-container']>div>a[class='edit-setting']";
 	
@@ -529,7 +529,8 @@ public class ProfilePageUi extends BaseUi{
 //	public WebElement get_stateLink(){
 //		return driver.findElement(By.cssSelector(stateLink));
 //	}
-//	
+	
+	
 //	public WebElement get_zipCode(){
 //		return zipCode;
 //	}

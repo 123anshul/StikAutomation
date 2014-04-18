@@ -428,6 +428,7 @@ public class HomePageFixture extends ProfessionalPageFixture{
 		return true;
 	}
 
+	//Verify Stik logo appears on Home page
 	public void verifyStikLogoOnHomePage(){
 		Assert.assertTrue(isDisplayed(homePageUi.get_stiklogo()), "Stik Logo in not visible");
 		System.out.println("Stik Logo Appears on Home Page");
@@ -461,13 +462,14 @@ public class HomePageFixture extends ProfessionalPageFixture{
 		Reporter.log("How It Works Link Present in the header on Home page ");
 	}
 
-
+	//Verify the presence of "For bUsiness" link on Home pge and click it
 	public void verifyLinkForBusinessOnHomePage(){
 		Assert.assertTrue(homePageUi.get_forBusinessLink().getText().trim().equalsIgnoreCase("For Business"), "For Business Link is not visible");
 		System.out.println("For Business Appears on Home Page");
 		Reporter.log("For Business Link Present in the header on Home page ");
 	}
 
+	//Verify the presence of "Find a Professinal" link on Home pge and click it
 	public void verifyLinkFindProfessionalOnHomePage(){
 		Assert.assertTrue(homePageUi.get_findAProfessional().getText().trim().equalsIgnoreCase("Find a Professional"), "Find a Professional Link is not visible");
 		System.out.println("Find a Professional Appears on Home Page");
@@ -498,22 +500,51 @@ public class HomePageFixture extends ProfessionalPageFixture{
 		Reporter.log("Professional Search Present in the header on Home page ");
 	}
 
+	//Verify Login button appears on Home page
 	public void verifyLoginLinkAppearsOnHomePage(){
 		Assert.assertTrue(isDisplayed(homePageUi.get_loginLink()),"Login Link is not visible");
 		System.out.println("Login Link Appears On Home Page");
 		Reporter.log("Login Link Present in the header on Home page ");
 	}
 
-	public void verifySignUpLinkAppearsOnHomePage(){
-		Assert.assertTrue(isDisplayed(homePageUi.get_signUpLink()),"Sign Up Link is not visible");
-		System.out.println("Sign Up Link Appears On Home Page");
-		Reporter.log("Sign Up Link Present in the header on Home page ");
+	//	public void verifySignUpLinkAppearsOnHomePage(){
+	//		Assert.assertTrue(isDisplayed(homePageUi.get_signUpLink()),"Sign Up Link is not visible");
+	//		System.out.println("Sign Up Link Appears On Home Page");
+	//		Reporter.log("Sign Up Link Present in the header on Home page ");
+	//	}
+
+	//Verify the presence of "Request A Demo" button on Home page and click on it
+	public void verifyRequestDemoLinkAppearsOnHomePage(){
+		Assert.assertTrue(isDisplayed(homePageUi.get_requestDemoLink()),"Request A Demo button does not appear on home page");
+		System.out.println("Request A Demo Link Appears On Home Page");
+		Reporter.log("Request A Demo Link Present in the header on Home page ");
 	}
 
+	//Verify the home page title
 	public void verifyHomePageTitle(String title){
 		homePageUi.waitForElementToAppear(homePageUi.get_GetStartedButton());
 		Assert.assertTrue(driver.getTitle().equalsIgnoreCase(title), "Title does not match..");
 		System.out.println("Home Page title matches");
+	}
+
+	//Verify presence of different UI elements on Home page
+	public void verifyBasicUIElemetsOnHomePage(){
+		//homePageUi.get_stiklogo1().click();
+		Assert.assertTrue(isDisplayed(homePageUi.get_learnMoreButton()), "Learn More button is not displayed on home page");
+		//Assert.assertTrue(isDisplayed(homePageUi.get_signUpForFreeButton()), "Sign up for free button is not present on home page");
+		Assert.assertTrue(isDisplayed(homePageUi.get_requestADemoButton1()), "Request a Demo button is not present on home page");
+		//	homePageUi.get_signUpForFreeButton().click();
+		homePageUi.get_requestADemoButton1().click();
+		Utilities.explicitWait(driver);
+		//	Assert.assertTrue(driver.getCurrentUrl().contains("professional?type=syrup#signup"), "Clicking on Sign up for free on home page doesn't open a sign up page");
+		Assert.assertTrue(driver.getCurrentUrl().contains("demo/connect"), "Clicking on Request a Demo button doesn't open the demo page");
+		demoUi.get_stikLinkOnThankYouPage().click();
+		homePageUi.changeWindow(1);
+		Utilities.explicitWait(driver);
+		Assert.assertTrue(driver.getCurrentUrl().contains("stik"), "Clicking on Stik link doesn't open home page");
+		driver.close();
+		homePageUi.changeWindow(0);
+		driver.get(util.getYamlValue("navigateUrl.mainpage"));
 	}
 
 	public void verifyTabWhatIsStikAppearsOnHomePage(){
@@ -531,6 +562,7 @@ public class HomePageFixture extends ProfessionalPageFixture{
 		System.out.println("Stand Out Online Appears On Home Page");
 	}
 
+	//Verify the presence "Meet the Team" link and click it
 	public void verifyMeetTheTeamLink(){
 		driver.get(util.getYamlValue("liveUrl"));
 		Assert.assertTrue(isDisplayed(homePageUi.get_meetTheTeam()), "Link 'Meet The Team Link' is not visible");
@@ -541,6 +573,7 @@ public class HomePageFixture extends ProfessionalPageFixture{
 		System.out.println("Meet the Team works fine");
 	}
 
+	//Verify the presence "Contact Us" link and click it
 	public void verifyContactUsLink(){
 		driver.get(util.getYamlValue("liveUrl"));
 		Assert.assertTrue(isDisplayed(homePageUi.get_contactUs()), "Link 'Contact Us' is not visible");
@@ -549,6 +582,7 @@ public class HomePageFixture extends ProfessionalPageFixture{
 		System.out.println("Contact Us Link works fine");
 	}
 
+	//Verify the presence "FAQ" link and click it
 	public void verifyFAQLink(){
 		driver.get(util.getYamlValue("liveUrl"));
 		Assert.assertTrue(isDisplayed(homePageUi.get_FAQ()), "Link 'FAQ' is not visible");
@@ -557,6 +591,7 @@ public class HomePageFixture extends ProfessionalPageFixture{
 		System.out.println("FAQ Link works fine");
 	}
 
+	//Verify the presence "Find a Professional In Your Area" link and click it
 	public void verifyFindProfessionalInYourAreaLink(){
 		driver.get(util.getYamlValue("liveUrl"));
 		Assert.assertTrue(isDisplayed(homePageUi.get_findProfessionalInYourArea()), "Link 'Find Professional In Your Area' is not visible");
@@ -566,6 +601,7 @@ public class HomePageFixture extends ProfessionalPageFixture{
 		System.out.println("Find Professional In your area works fine");
 	}
 
+	//Verify the presence "Real Estate" link and click it
 	public void verifyRealEstateLink(){
 		driver.get(util.getYamlValue("liveUrl"));
 		Assert.assertTrue(isDisplayed(homePageUi.get_realEstate()), "Link 'Real Estate' is not visible");
@@ -575,8 +611,7 @@ public class HomePageFixture extends ProfessionalPageFixture{
 		System.out.println("Real Estate Link works fine..");
 	}
 
-
-
+	//Verify the presence "Mortgage" link and click it
 	public void verifyMortgageLink(){
 		driver.get(util.getYamlValue("liveUrl"));
 		Assert.assertTrue(isDisplayed(homePageUi.get_mortgage()), "Link 'Mortgage' is not visible");
@@ -586,6 +621,7 @@ public class HomePageFixture extends ProfessionalPageFixture{
 		System.out.println("Mortgage Link works fine");
 	}
 
+	//Verify the presence "Insurance" link and click it
 	public void verifyInsuranceLink(){
 		driver.get(util.getYamlValue("liveUrl"));
 		Assert.assertTrue(isDisplayed(homePageUi.get_insurance()), "Link 'Insurance' is not visible");
@@ -595,6 +631,7 @@ public class HomePageFixture extends ProfessionalPageFixture{
 		System.out.println("Insurance link works fine");
 	}
 
+	//Verify the presence "Health And Wellness" link and click it
 	public void verifyHealthAndWellnessLink(){
 		driver.get(util.getYamlValue("liveUrl"));
 		Assert.assertTrue(isDisplayed(homePageUi.get_healthAndWellness()), "Link 'Health And Wellness' is not visible");
@@ -604,6 +641,7 @@ public class HomePageFixture extends ProfessionalPageFixture{
 		System.out.println("Health professional Link works fine..");
 	}
 
+	//Verify the presence "Lawyers" link and click it
 	public void verifyLawyersLink(){
 		driver.get(util.getYamlValue("liveUrl"));
 		Assert.assertTrue(isDisplayed(homePageUi.get_lawyers()), "Link 'Lawyers' is not visible");
@@ -613,6 +651,7 @@ public class HomePageFixture extends ProfessionalPageFixture{
 		System.out.println("Lawyers links works fine..");
 	}
 
+	//Verify the presence "Financial Planning" link and click it
 	public void verifyFinancialPlanningLink(){
 		driver.get(util.getYamlValue("liveUrl"));
 		Assert.assertTrue(isDisplayed(homePageUi.get_financialPlanning()), "Link 'Financial Planning' is not visible");
@@ -622,6 +661,7 @@ public class HomePageFixture extends ProfessionalPageFixture{
 		System.out.println("Financial Professional Link works fine....");
 	}
 
+	//Verify the presence "Veterinarian" link and click it
 	public void verifyVeterinarianLink(){
 		driver.get(util.getYamlValue("liveUrl"));
 		Assert.assertTrue(isDisplayed(homePageUi.get_veterinarians()), "Link 'Veterinarians' is not visible");
@@ -630,6 +670,7 @@ public class HomePageFixture extends ProfessionalPageFixture{
 		System.out.println("Veterinarians link works fine...");
 	}
 
+	//Verify the presence "Photographers" link and click it
 	public void verifyPhotographersLink(){
 		driver.get(util.getYamlValue("liveUrl"));
 		Assert.assertTrue(isDisplayed(homePageUi.get_photographers()), "Link 'Photographers' is not visible");
@@ -639,6 +680,7 @@ public class HomePageFixture extends ProfessionalPageFixture{
 		System.out.println("Photographers link works fine...");
 	}
 
+	//Verify the presence "Home Services" link and click it
 	public void verifyHomeServicesLink(){
 		driver.get(util.getYamlValue("liveUrl"));
 		Assert.assertTrue(isDisplayed(homePageUi.get_homeServices()), "Link 'Home Services' is not visible");
@@ -648,6 +690,7 @@ public class HomePageFixture extends ProfessionalPageFixture{
 		System.out.println("Home Services link works fine...");
 	}
 
+	//Verify the presence "Find Professional By Last Name" link and click it
 	public void verifyFindProfessionalByLastNameLink(){
 		driver.get(util.getYamlValue("liveUrl"));
 		Assert.assertTrue(isDisplayed(homePageUi.get_findProfessionalByLastName()), "Link for 'Find Professional by Last Name' is not visible");
@@ -656,12 +699,14 @@ public class HomePageFixture extends ProfessionalPageFixture{
 		System.out.println("Find Professional By Last Name link works fine...");
 	}
 
+	//Verify the presence "Login" link in footer
 	public void verifyLoginLinkAtFooter(){
 		driver.get(util.getYamlValue("liveUrl"));		
 		Assert.assertTrue(isDisplayed(homePageUi.get_loginPageFooter()) && homePageUi.get_loginPageFooter().getText().trim().contains("Login"), "Link 'Login at Footer' is not visible");
 		System.out.println("Login Link in footer appears on Home Page");
 	}
 
+	//Verify the presence "Press" link in footer and click it
 	public void verifyPressLinkAtFooter(){
 		driver.get(util.getYamlValue("liveUrl"));		
 		Assert.assertTrue(isDisplayed(homePageUi.get_pressLink()) && homePageUi.get_pressLink().getText().trim().contains("Press"), "Link 'Press at Footer' is not visible");
@@ -670,6 +715,7 @@ public class HomePageFixture extends ProfessionalPageFixture{
 		System.out.println("Press Link in footer appears on Home Page");
 	}
 
+	//Verify the presence "Careers" link in footer and click it
 	public void verifyCareersLinkAtFooter(){
 		driver.get(util.getYamlValue("liveUrl"));		
 		Assert.assertTrue(isDisplayed(homePageUi.get_careersLink()) && homePageUi.get_careersLink().getText().trim().contains("Careers"), "Link 'Carrers at Footer' is not visible");		
@@ -678,6 +724,7 @@ public class HomePageFixture extends ProfessionalPageFixture{
 		System.out.println("Career Link in footer appears on Home Page");
 	}
 
+	//Verify the presence "Careers" Partner in footer and click it
 	public void verifyPartnerLinkAtFooter(){
 		driver.get(util.getYamlValue("liveUrl"));		
 		Assert.assertTrue(isDisplayed(homePageUi.get_partnersLink()) && homePageUi.get_partnersLink().getText().trim().contains("Partners"), "Link 'Partner at Footer' is not visible");		
@@ -686,6 +733,7 @@ public class HomePageFixture extends ProfessionalPageFixture{
 		System.out.println("Partners Link in footer appears on Home Page");
 	}
 
+	//Verify the presence "Privacy" Partner in footer and click it
 	public void verifyPrivacyLinkAtFooter(){
 		driver.get(util.getYamlValue("liveUrl"));		
 		Assert.assertTrue(isDisplayed(homePageUi.get_privacyLink()) && homePageUi.get_privacyLink().getText().trim().contains("Privacy"), "Link 'Privacy at Footer' is not visible");		
@@ -694,6 +742,7 @@ public class HomePageFixture extends ProfessionalPageFixture{
 		System.out.println("Privacy Link in footer appears on Home Page");
 	}
 
+	//Verify the presence "Terms" Partner in footer and click it
 	public void verifyTermsLinkAtFooter(){
 		driver.get(util.getYamlValue("liveUrl"));		
 		Assert.assertTrue(isDisplayed(homePageUi.get_termsLink()) && homePageUi.get_termsLink().getText().trim().contains("Terms"), "Link 'Terms at Footer' is not visible");		
@@ -736,50 +785,51 @@ public class HomePageFixture extends ProfessionalPageFixture{
 
 
 
-//	public boolean clickYourOptionUnderShowcaseReviews(String option){
-//		Utilities.explicitWait(driver);
-//		homePageUi.mouseMove(homePageUi.get_dropDown(), homePageUi.get_inYourEmail());
-//		Utilities.explicitWait(driver);
-//		List<WebElement> list=homePageUi.get_dropDownOnProfilePage();
-//		//		for(WebElement el : list){
-//		//			if(el.getText().equalsIgnoreCase(option)){
-//		//				el.click();
-//		//				System.out.println(option+" link is clicked...");
-//		//				break;
-//		//			}
-//		//		}
-//		return true;
-//	}
+	//	public boolean clickYourOptionUnderShowcaseReviews(String option){
+	//		Utilities.explicitWait(driver);
+	//		homePageUi.mouseMove(homePageUi.get_dropDown(), homePageUi.get_inYourEmail());
+	//		Utilities.explicitWait(driver);
+	//		List<WebElement> list=homePageUi.get_dropDownOnProfilePage();
+	//		//		for(WebElement el : list){
+	//		//			if(el.getText().equalsIgnoreCase(option)){
+	//		//				el.click();
+	//		//				System.out.println(option+" link is clicked...");
+	//		//				break;
+	//		//			}
+	//		//		}
+	//		return true;
+	//	}
 
 	public boolean clickInYourEmailShowcaseOptionUnderProfileDropdown(){
 		homePageUi.mouseMove(homePageUi.get_dropDown(), homePageUi.get_inYourEmail());
 		Utilities.explicitWait(driver);
 		return true;
 	}
-	
+
 	public boolean clickOnYourWebsiteShowcaseOptionUnderProfileDropdown(){
 		homePageUi.mouseMove(homePageUi.get_dropDown(), homePageUi.get_onYourWebsite());
 		Utilities.explicitWait(driver);
 		return true;
 	}
-	
+
 	public boolean clickOnYourFacebookPageShowcaseOptionUnderProfileDropdown(){
 		homePageUi.mouseMove(homePageUi.get_dropDown(), homePageUi.get_onYourFacebookPage());
 		Utilities.explicitWait(driver);
 		return true;
 	}
-	
+
 	public boolean clickOnYourFacebookProfileShowcaseOptionUnderProfileDropdown(){
 		homePageUi.mouseMove(homePageUi.get_dropDown(), homePageUi.get_onYourFacebookProfile());
 		Utilities.explicitWait(driver);
 		return true;
 	}
-	
+
 	public void navigateToEnterprisePage(){
 		homePageUi.waitForElementToAppear(homePageUi.get_stiklogo());
 		homePageUi.get_enterPrise().click();
 	}
 
+	//Launch Stick URL
 	public void navigateToDirectory(){
 		homePageUi.waitForElementToAppear(homePageUi.get_findAProfessional());
 		homePageUi.get_findAProfessional().click();

@@ -4,6 +4,8 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
+
+import org.apache.log4j.Logger;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.Reporter;
@@ -56,6 +58,7 @@ public class ProfilePageFixture extends ProfileInfoPageFixture{
 		isProfilePageMetadataOK();
 	}
 
+	//Verifying metadata of Profile page
 	public void isProfilePageMetadataOK(){
 		Utilities.explicitWait(driver);
 		homePageUi.waitForElementToAppear(profilePageUi.get_profileName());
@@ -141,23 +144,23 @@ public class ProfilePageFixture extends ProfileInfoPageFixture{
 	public boolean verifyProfileInfoLinksPresent(){
 		homePageUi.waitForElementToAppear(profilePageUi.get_profileName());
 		Assert.assertTrue(isDisplayed(profilePageUi.get_jobTitleLink()), "Add your Job Title Link not present");
-		System.out.println("Job Title Link Says:- "+profilePageUi.get_jobTitleLink().getText());
+		logger.info("Job Title Link Says:- "+profilePageUi.get_jobTitleLink().getText());
 		Reporter.log("Add Your Job Title Hyperlink available...");
 		Assert.assertTrue(isDisplayed(profilePageUi.get_compnayLink()), "Add your compnay Link not present");
-		System.out.println("Company link Says:- "+ profilePageUi.get_compnayLink().getText());
+		logger.info("Company link Says:- "+ profilePageUi.get_compnayLink().getText());
 		Reporter.log("Add Your Company Hyperlink available...");
 		//		Assert.assertTrue(isDisplayed(profilePageUi.get_licenseLink()), "Add your license Link not present");
 		//		System.out.println("License Link present");
 		//		Reporter.log("Add Your License Hyperlink available...");
 		//		profilePageUi.get_contactTab().click();
 		Assert.assertTrue(isDisplayed(profilePageUi.get_addressLink()), "Add Address Link not present");
-		System.out.println("Add Address Link present");
+		logger.info("Add Address Link present");
 		Reporter.log("Add Address Hyperlink available...");
 		Assert.assertTrue(isDisplayed(profilePageUi.get_locationLink()), "Add location Link not present");
-		System.out.println("Add location Link present");
+		logger.info("Add location Link present");
 		Reporter.log("Add Location Hyperlink available...");
 		Assert.assertTrue(isDisplayed(profilePageUi.get_editPhoneNumberLink()), "Add Phone Number Link not present");
-		System.out.println("Add Phone Number Link present");
+		logger.info("Add Phone Number Link present");
 		Reporter.log("Add Phone Number Hyperlink available...");
 		//		Assert.assertTrue(isDisplayed(profilePageUi.get_cityLink()), "Add City Link not present");
 		//		System.out.println("Add City Link present");
@@ -248,39 +251,39 @@ public class ProfilePageFixture extends ProfileInfoPageFixture{
 		navigateToMyProfilePage();
 	}
 
-	//	public void verifyCityLink(){
-	//		homePageUi.waitForElementToAppear(profilePageUi.get_profileName());
-	//		profilePageUi.get_contactTab().click();
-	//		Utilities.hardWait(2);
-	//		profilePageUi.get_cityLink().click();
-	//		homePageUi.waitForElementToAppear(profileInfoPageUi.get_cityNameTextBox());
-	//		Assert.assertTrue(isDisplayed(profileInfoPageUi.get_cityNameTextBox()), "Profile City Text box missing");
-	//		
-	//		if(driver.getCurrentUrl().toString().contains("settings")){
-	//			Reporter.log("City hyperlink lands on correct page...");
-	//		}else{
-	//			Reporter.log("City hyperlink not redirecting to Proifle Info Page !!");
-	//		}
-	//		navigateToMyProfilePage();
-	//	}
+//		public void verifyCityLink(){
+//			homePageUi.waitForElementToAppear(profilePageUi.get_profileName());
+//			profilePageUi.get_contactTab().click();
+//			Utilities.hardWait(2);
+//			profilePageUi.get_cityLink().click();
+//			homePageUi.waitForElementToAppear(profileInfoPageUi.get_cityNameTextBox());
+//			Assert.assertTrue(isDisplayed(profileInfoPageUi.get_cityNameTextBox()), "Profile City Text box missing");
+//			
+//			if(driver.getCurrentUrl().toString().contains("settings")){
+//				Reporter.log("City hyperlink lands on correct page...");
+//			}else{
+//				Reporter.log("City hyperlink not redirecting to Proifle Info Page !!");
+//			}
+//			navigateToMyProfilePage();
+//		}
 
-	//	public void verifyStateLink(){
-	//		homePageUi.waitForElementToAppear(profilePageUi.get_profileName());
-	//		profilePageUi.get_contactTab().click();	
-	//		Utilities.hardWait(2);
-	//		profilePageUi.get_stateLink().click();
-	//		homePageUi.waitForElementToAppear(profileInfoPageUi.get_saveButton());
-	//		Assert.assertTrue(isDisplayed(profileInfoPageUi.get_stateDropDownSingle()), "Profile State drop down missing");
-	//
-	//		if(driver.getCurrentUrl().toString().contains("settings")){
-	//			Reporter.log("State hyperlink lands on correct page...");
-	//		}else{
-	//			Reporter.log("State hyperlink not redirecting to Proifle Info Page !!");
-	//		}
-	//		navigateToMyProfilePage();
-	//	}
+//		public void verifyStateLink(){
+//			homePageUi.waitForElementToAppear(profilePageUi.get_profileName());
+//			profilePageUi.get_contactTab().click();	
+//			Utilities.hardWait(2);
+//			profilePageUi.get_stateLink().click();
+//			homePageUi.waitForElementToAppear(profileInfoPageUi.get_saveButton());
+//			Assert.assertTrue(isDisplayed(profileInfoPageUi.get_stateDropDownSingle()), "Profile State drop down missing");
+//	
+//			if(driver.getCurrentUrl().toString().contains("settings")){
+//				Reporter.log("State hyperlink lands on correct page...");
+//			}else{
+//				Reporter.log("State hyperlink not redirecting to Proifle Info Page !!");
+//			}
+//			navigateToMyProfilePage();
+//		}
 
-
+//
 //	public void verifyZipCodeLink(){
 //		homePageUi.waitForElementToAppear(profilePageUi.get_profileName());
 //		profilePageUi.get_contactTab().click();	
@@ -296,24 +299,24 @@ public class ProfilePageFixture extends ProfileInfoPageFixture{
 //		navigateToMyProfilePage();
 //	}
 
-	//	public void verifyEmailUserLink(){
-	//		homePageUi.waitForElementToAppear(profilePageUi.get_profileName());
-	//		profilePageUi.get_contactTab().click();	
-	//		Utilities.hardWait(2);
-	//		profilePageUi.get_emailUserLink().click();
-	//		Utilities.hardWait(2);
-	//		if(isDisplayed(profilePageUi.get_messageModal()) && profilePageUi.get_messageModal().getAttribute("style").contains("display: block")){
-	//			Reporter.log("Contact User Modal on Profile page opened...");
-	//		}else{
-	//			Reporter.log("Problem in Email user link");
-	//		}
-	//		profilePageUi.get_closeModalIcon().click();
-	//		Utilities.hardWait(1);
-	//		Assert.assertTrue(profilePageUi.get_messageModal().getAttribute("style").contains("display: none"), "Email User Modal dialog did not close");
-	//		System.out.println("Closed Email User Modal dialog");
-	//		Reporter.log("Closed Email User Modal dialog");
-	//		scrollDown(50);
-	//	}
+//		public void verifyEmailUserLink(){
+//			homePageUi.waitForElementToAppear(profilePageUi.get_profileName());
+//			profilePageUi.get_contactTab().click();	
+//			Utilities.hardWait(2);
+//			profilePageUi.get_emailUserLink().click();
+//			Utilities.hardWait(2);
+//			if(isDisplayed(profilePageUi.get_messageModal()) && profilePageUi.get_messageModal().getAttribute("style").contains("display: block")){
+//				Reporter.log("Contact User Modal on Profile page opened...");
+//			}else{
+//				Reporter.log("Problem in Email user link");
+//			}
+//			profilePageUi.get_closeModalIcon().click();
+//			Utilities.hardWait(1);
+//			Assert.assertTrue(profilePageUi.get_messageModal().getAttribute("style").contains("display: none"), "Email User Modal dialog did not close");
+//			System.out.println("Closed Email User Modal dialog");
+//			Reporter.log("Closed Email User Modal dialog");
+//			scrollDown(50);
+//		}
 
 	public void verifyWebsiteCodeLink(){
 		homePageUi.waitForElementToAppear(profilePageUi.get_profileName());
@@ -360,6 +363,7 @@ public class ProfilePageFixture extends ProfileInfoPageFixture{
 		return true;
 	}
 
+	//Clicking and verifying "Review" button on professional's profile page
 	public boolean verifyReviewButtonPresentOnProfilePage(){
 		homePageUi.waitForElementToAppear(profilePageUi.get_profileName());
 		Assert.assertTrue(isDisplayed(profilePageUi.get_reviewButtonOnProfilePage()), "The Review button is not displayed");
@@ -376,6 +380,7 @@ public class ProfilePageFixture extends ProfileInfoPageFixture{
 		return reviewCount;
 	}
 
+	//Give the random star rating to the professional
 	public boolean giveRatingForReview(){
 		randomRating=generateRandomNumber(1, 5);
 		recommendPageURL=driver.getCurrentUrl();
@@ -391,6 +396,7 @@ public class ProfilePageFixture extends ProfileInfoPageFixture{
 		return true;
 	}
 
+	//Give review to professional and click "Continue"
 	public boolean submitReviewtextOnProfile(String reviewContent){
 		reviewTextLocal=reviewContent+" "+System.currentTimeMillis();
 		recommendPageURL=driver.getCurrentUrl();
@@ -416,6 +422,7 @@ public class ProfilePageFixture extends ProfileInfoPageFixture{
 		return true;
 	}
 
+	//Verify whether user is logged in or not and then perform required action accordingly
 	public boolean verifyReviewSubmission(){
 		recommendPageURL=driver.getCurrentUrl();
 		if(recommendPageURL.contains("#/reviews/new/")){
@@ -572,8 +579,7 @@ public class ProfilePageFixture extends ProfileInfoPageFixture{
 		
 	}
 	
-	
-
+	//Navigate to other professional's profile and verify Review count on his profile
 	public boolean verifyRatingAndReviewOnProfilePage(String userName){
 		navigatetoProfilePage(userName);
 		homePageUi.handleAlert();
@@ -613,7 +619,7 @@ public class ProfilePageFixture extends ProfileInfoPageFixture{
 		if(editFeaturedReviewLink){
 			Utilities.hardWait(2);
 			profilePageUi.get_editFeaturedReviewLink().click();
-			System.out.println("Link clicked!");
+			logger.info("Link clicked!");
 			homePageUi.waitForElementToAppear(profilePageUi.get_popUpCross());
 			Assert.assertTrue(profilePageUi.get_featuredReviewModelWindow().getAttribute("style").contains("visibility: visible"));
 			Utilities.explicitWait(driver);
@@ -631,7 +637,7 @@ public class ProfilePageFixture extends ProfileInfoPageFixture{
 			Utilities.hardWait(2);
 			String textForSecondReview=profilePageUi.get_textForfeaturedReviewsInPopUp().get(1).getText();
 			String nameOnSecondReview=profilePageUi.get_profileNameForFeaturedReviewsInPopUp().get(1).getText();
-			System.out.println("Text for second top review:-"+textForSecondReview);
+			logger.info("Text for second top review:-"+textForSecondReview);
 			profilePageUi.get_featuredReviewsInPopUp().get(1).click();
 			Utilities.explicitWait(driver);
 			Assert.assertTrue(profilePageUi.get_featuredReviewsInPopUp().get(1).getAttribute("class").contains("selected"),"Review is not selected");
@@ -646,7 +652,7 @@ public class ProfilePageFixture extends ProfileInfoPageFixture{
 		}
 	}
 	
-	//Verify "Featured REview" section on Profile page
+	//Verify "Featured Review" section on Profile page
 	public boolean verifyFeaturedReviewsSection(){
 		Assert.assertTrue(profilePageUi.get_featuredReviewsSectionText().getText().contains("FEATURED REVIEWS"), "Edit featured reviews section is not Displayed");
 		Reporter.log("Fetured reviews are displayed");

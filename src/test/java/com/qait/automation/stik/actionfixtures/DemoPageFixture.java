@@ -1,6 +1,5 @@
 package com.qait.automation.stik.actionfixtures;
 
-import org.apache.log4j.Logger;
 import org.testng.Assert;
 import org.testng.Reporter;
 
@@ -187,10 +186,12 @@ public class DemoPageFixture extends SearchPageFixture {
 			demoUi.get_joinDemoButtonNew().click();
 			int sizeOfDemoPresenters=demoUi.get_joinDemoOptions().size();
 			int randomNumber = generateRandomNumber(0, sizeOfDemoPresenters-1);
+			logger.info("Demo Presenter name: "+ demoUi.get_joinDemoOptions().get(randomNumber).getText());
 			Reporter.log("Demo Presenter name: "+ demoUi.get_joinDemoOptions().get(randomNumber).getText());
 			demoUi.get_joinDemoOptions().get(randomNumber).click();
 			homePageUi.changeWindow(1);
 			Utilities.explicitWait(driver);
+			logger.info("Url of demo presenter: " + driver.getCurrentUrl());
 			Reporter.log("Url of the selected Demo Presenter: " + driver.getCurrentUrl());
 			Assert.assertTrue(driver.getCurrentUrl().contains("join.me") || driver.getCurrentUrl().contains("logme.in"), "Incorrect URL for join demo option");
 			driver.close();
@@ -222,12 +223,13 @@ public class DemoPageFixture extends SearchPageFixture {
 		demoUi.get_revenueInputOnROIPage().sendKeys(util.getYamlValue("roiPage.revenue"));
 		Utilities.hardWait(2);
 		Assert.assertTrue(demoUi.get_roiCaption().getText().equalsIgnoreCase(util.getYamlValue("roiPage.roiCaption")), "Roi caption doesn't matches with input value");
+		Assert.assertTrue(isDisplayed(demoUi.get_roiGraphBar1()), "First ROI graph bar is not displayed");
+		Assert.assertTrue(demoUi.get_roiGraphBar1().getText().equalsIgnoreCase(util.getYamlValue("roiPage.roiGraphBar1")), "Graph bar value doesn't matches with input value");
 		return true;
 	}
 	
 	//Verify UI on /pricing page
 	public boolean verifyPricingTabOnDemoPage(){
-		//logger.info("Pricing method");
 		Assert.assertTrue(demoUi.get_pricingTab().getText().contains("PRICING"), "Pricing Tab is not displayed on demo page");
 		demoUi.get_pricingTab().click();
 		homePageUi.waitForElementToAppear(demoUi.get_demoHeading());

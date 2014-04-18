@@ -12,8 +12,7 @@ public class EmailSignUpFixture extends SearchPageFixture{
 		emailSignupUi.getCsvUserData().sendKeys(System.getProperty("user.dir")+ "\\" + "ModifiedEmailReport.csv");
 		emailSignupUi.getCsvPictureData().sendKeys(System.getProperty("user.dir")+ "\\"+ "email-import-pictures.zip");
 		emailSignupUi.getImportButton().click();
-		Utilities.hardWait(7);
-		homePageUi.handleAlertinEmail();
+		homePageUi.handleAlertafterClickingImport();
 		homePageUi.waitForElementToAppear(emailSignupUi.getImportData());
 		Assert.assertTrue(isDisplayed(emailSignupUi.getImportData()), "Import data is not displayed..");
 		return true;

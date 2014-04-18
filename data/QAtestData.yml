@@ -131,8 +131,11 @@ directory:
         url: http://www.stik.com/accountant/
         state: Alaska
         city: Anchorage
-dateOfReferral_temp: 03/11/14      
+dateOfReferral_temp: 03/11/14  
+navigateUrl:
+       mainpage: www.stik.com    
 roiPage:
        closeRate: 10
        revenue: 5000  
        roiCaption: 5x
+       roiGraphBar1: $5,988
