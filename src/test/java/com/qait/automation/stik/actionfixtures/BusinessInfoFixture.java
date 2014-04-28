@@ -95,6 +95,7 @@ public class BusinessInfoFixture extends SearchPageFixture{
 		else{
 			Reporter.log("Unable to Add another state drop down with Add Another button...");
 			logger.info("Problem with Add Another Button...");
+			System.out.println("Problem with Add Another Button...");
 			return false;
 		}
 	}
