@@ -32,7 +32,7 @@ public class BusinessInfoFixture extends SearchPageFixture{
 		Assert.assertTrue(isDisplayed(businessInfoUi.get_cityTextBox()));
 		Reporter.log("City Text Box present...");
 		Assert.assertTrue(isDisplayed(businessInfoUi.get_summaryTextArea()));
-		Reporter.log("Summary Text Area present...");
+		Reporter.log("Summary Text Area present");
 	}
 	
 	public boolean selectIndustry(){
