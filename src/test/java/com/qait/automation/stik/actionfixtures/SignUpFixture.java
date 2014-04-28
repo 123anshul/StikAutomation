@@ -20,7 +20,7 @@ public class SignUpFixture extends SearchPageFixture{
 		professionalPageUi.get_gotItButtonOnPopup().click();
 		System.out.println("Got It button present ancd clicked..");
 		}catch(Exception ex){
-			System.out.println("Got it button not found");
+			logger.error("Got it button not found");
 		}
 	}
 	
@@ -30,7 +30,7 @@ public class SignUpFixture extends SearchPageFixture{
 			clickGotItButton();
 			Utilities.hardWait(1);
 		}catch(Exception ex){
-			System.out.println("Black Pop up screen does not appear");
+			logger.error("Black Pop up screen does not appear");
 		}
 		homePageUi.waitForElementToAppear(professionalPageUi.get_ContinueButton());
 		professionalPageUi.get_ContinueButton().click();
@@ -81,10 +81,10 @@ public class SignUpFixture extends SearchPageFixture{
 	public boolean importIndividualEmailContactOnMailPanel(String email, String fname, String lname){
 		Utilities.explicitWait(driver);
 		int counterForPeopleSelectedBeforeImport= professionalPageUi.get_counterForPeopleSelected();
-		System.out.println("Counter value for people Selected Before Import:- "+counterForPeopleSelectedBeforeImport);
+		logger.info("Counter value for people Selected Before Import:- "+counterForPeopleSelectedBeforeImport);
 		String randomNumber=generateRandomEmailIds(email);
 		String localEmailId=email+randomNumber+"@test.net";
-		System.out.println("The Random Email Id generated is:- "+localEmailId);
+		logger.info("The Random Email Id generated is:- "+localEmailId);
 		scrollDown(250);
 		try{
 		professionalPageUi.get_emailFieldOnImportSection().clear();
@@ -95,21 +95,21 @@ public class SignUpFixture extends SearchPageFixture{
 		Utilities.hardWait(1);
 		professionalPageUi.get_lastNameOnImportedSection().clear();
 		professionalPageUi.get_lastNameOnImportedSection().sendKeys(lname);
-		System.out.println("All Information for importing individual contact filled");
+		logger.info("All Information for importing individual contact filled");
 		Reporter.log("All Information for importing individual contact filled");
 		professionalPageUi.get_importButton().click();
-		System.out.println("Clicked import button");
+		logger.info("Clicked import button");
 		Utilities.hardWait(4);
 		Utilities.explicitWait(driver);
 		homePageUi.waitForElementToAppear(professionalPageUi.get_yourEmailContactListForNewUser());
-		System.out.println("Contact Imported");
+		logger.info("Contact Imported");
 		homePageUi.waitForElementToAppear(professionalPageUi.get_yourEmailContactListForNewUser());
 		int counterForPeopleSelectedAfterImport=professionalPageUi.get_counterForPeopleSelected();
-		System.out.println("Counter value for people Selected After Import:- "+counterForPeopleSelectedAfterImport);
+		logger.info("Counter value for people Selected After Import:- "+counterForPeopleSelectedAfterImport);
 		Assert.assertTrue(counterForPeopleSelectedAfterImport==(counterForPeopleSelectedBeforeImport+1), "Counter for people selected doesn't get updated");
 		return true;
 		}catch(Exception ex){
-			System.out.println("Problem in importing individual contact");
+			logger.error("Problem in importing individual contact");
 			Reporter.log("Problems in importing individual contacts");
 			return false;
 		}
@@ -118,7 +118,7 @@ public class SignUpFixture extends SearchPageFixture{
 	public void checkUncheckImportedContactOnEmailPanel_VerifyCounterValues_VeifyUIMeter(){
 	
 		if(professionalPageUi.get_yourEmailContactListForNewUser().getAttribute("class").contains("selected")){
-			System.out.println("The newly imported Contact is selected by default");
+			logger.info("The newly imported Contact is selected by default");
 			Reporter.log("The newly imported Contact is selected by default");
 			
 			professionalPageUi.get_yourEmailContactListForNewUser().click();
@@ -145,7 +145,7 @@ public class SignUpFixture extends SearchPageFixture{
 	
 			if(professionalPageUi.get_uiMeterSection().isDisplayed()){
 				uiMeterFLAG=true;
-				System.out.println("UI Meter found...");
+				logger.info("UI Meter found...");
 				Reporter.log("UI Challenge meter found...");
 				return uiMeterFLAG;
 			}else{
@@ -203,7 +203,7 @@ public class SignUpFixture extends SearchPageFixture{
 	public boolean verifyUserIsOnProfilePage(){
 		homePageUi.waitForElementToAppear(profilePageUi.get_RatingCount());
 		if(profilePageUi.get_profileName().isDisplayed()){
-			System.out.println("On Profile Page");
+			logger.info("On Profile Page");
 			Reporter.log("User is On the Profile page...");
 			return true;
 		}else{
@@ -216,7 +216,7 @@ public class SignUpFixture extends SearchPageFixture{
 		professionalPageUi.get_selectorElement().click();
 		List<WebElement> industry=professionalPageUi.get_industryList();
 		int randomPickFromList= 1+ (int)(Math.random()*19);
-	    System.out.println("At random index "+randomPickFromList+", the industry is:- " +industry.get(randomPickFromList).getText());
+		logger.info("At random index "+randomPickFromList+", the industry is:- " +industry.get(randomPickFromList).getText());
 	    Reporter.log("At random index "+randomPickFromList+", the industry is:- " +industry.get(randomPickFromList).getText());
 	    industry.get(randomPickFromList).click();
 	}
@@ -226,9 +226,9 @@ public class SignUpFixture extends SearchPageFixture{
 		int counterForPeopleSelected=professionalPageUi.get_counterForPeopleSelected();
 		if(professionalPageUi.get_yourEmailContactListForNewUser().getAttribute("class").contains("selected")){
 			int counterAtBack=professionalPageUi.get_counterAtBackofContact();
-			System.out.println("Counter At back:- "+counterAtBack);
+			logger.info("Counter At back:- "+counterAtBack);
 			
-			System.out.println("Counter for People Selected:- "+ counterForPeopleSelected);
+			logger.info("Counter for People Selected:- "+ counterForPeopleSelected);
 			if(counterAtBack== counterForPeopleSelected){
 				Reporter.log("Counter for Number of People Selected is correct");
 			
@@ -252,7 +252,7 @@ public class SignUpFixture extends SearchPageFixture{
 		if(professionalPageUi.get_yourEmailContactListForNewUser().getAttribute("class").contains("selected")){
 			if(professionalPageUi.get_uiProgressMeter().getAttribute("style").contains("10%")){
 				Reporter.log("Progress Bar has moved from 0 to 10% on selection");
-				System.out.println("Progress Bar working fine on selection...");
+				logger.info("Progress Bar working fine on selection...");
 				return true;
 			}else{
 				Reporter.log("Progress Bar did not work on Selection!!");
@@ -261,7 +261,7 @@ public class SignUpFixture extends SearchPageFixture{
 		}else{
 			if(professionalPageUi.get_uiProgressMeter().getAttribute("style").contains("0%")){
 				Reporter.log("Progress Bar has moved to 0% on deselecting the contact");
-				System.out.println("Progress Bar workign fine on deselction...");
+				logger.info("Progress Bar workign fine on deselction...");
 				return true;
 			}else{
 				Reporter.log("Progress Bar did not work on DeSelection!!");

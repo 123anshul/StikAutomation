@@ -13,7 +13,7 @@ public class OnYourWebsiteFixture extends SearchPageFixture {
 		homePageUi.waitForElementToAppear(onYourWebsiteUi.get_GetStartedNow());
 		Assert.assertTrue(onYourWebsiteUi.get_splashText().getText().contains("Stik Reviews on Your Website"), "Incorrect text in splash section!!!");
 		Reporter.log("Text in splash section is OK");
-		System.out.println("Text in Splash Section is Ok");
+		logger.info("Text in Splash Section is Ok");
 	}
 	
 	public boolean areWidgetStyleOptionsPresent(){
@@ -36,35 +36,35 @@ public class OnYourWebsiteFixture extends SearchPageFixture {
 	public boolean checkiFramePresentOrNot(){
 		homePageUi.waitForElementToAppear(onYourWebsiteUi.get_iFrameObject());
 		Assert.assertTrue(isDisplayed(onYourWebsiteUi.get_iFrameObject()));
-		System.out.println("Iframe Present");		
+		logger.info("Iframe Present");		
 		Reporter.log("IFrame is present...");
 		return true;
 		
 	}
 	
 	public void verifyContentWithinIframeHeader(){
-		System.out.println("Inside IFrame Header");
+		logger.info("Inside IFrame Header");
 		driver.switchTo().frame(onYourWebsiteUi.get_iFrameObject());
 		homePageUi.waitForElementToAppear(onYourWebsiteUi.get_iFrameheader());
 		
 		Assert.assertTrue(isDisplayed(onYourWebsiteUi.get_iFrameheader()));
-		System.out.println("IFrame header is present");
+		logger.info("IFrame header is present");
 		Reporter.log("Header in the iFrame is present..");
 		Assert.assertTrue(isDisplayed(onYourWebsiteUi.get_iFrameProfilePic()));
 		Reporter.log("Profile Pic in iFrame is present..");
-		System.out.println("Profile pic is present");
+		logger.info("Profile pic is present");
 		Assert.assertTrue(isDisplayed(onYourWebsiteUi.get_iFrameProfileName()));
 		Reporter.log("Profile Name in iFrame is present..");
-		System.out.println("Profile Name in IFrame is present.. "+ onYourWebsiteUi.get_iFrameProfileName().getText());
+		logger.info("Profile Name in IFrame is present.. "+ onYourWebsiteUi.get_iFrameProfileName().getText());
 		Assert.assertTrue(isDisplayed(onYourWebsiteUi.get_iFrameProfileDetails()));
 		Reporter.log("Profile Details in iFrame are present.. ");
-		System.out.println("Profile Details on IFrame is present.. "+onYourWebsiteUi.get_iFrameProfileDetails().getText());
+		logger.info("Profile Details on IFrame is present.. "+onYourWebsiteUi.get_iFrameProfileDetails().getText());
 		Assert.assertTrue(isDisplayed(onYourWebsiteUi.get_iFrameReviewMeButton()));
-		System.out.println("Review Me button on IFrame is present..");
+		logger.info("Review Me button on IFrame is present..");
 		Reporter.log("Review Me button on iFrame is present..");
 		Utilities.hardWait(2);
 		driver.switchTo().defaultContent();
-		System.out.println("Out of Iframe header");
+		logger.info("Out of Iframe header");
 		
 	
 	}
@@ -72,12 +72,12 @@ public class OnYourWebsiteFixture extends SearchPageFixture {
 		onYourWebsiteUi.get_selectThemeDropDown().click();
 		String themeColour=onYourWebsiteUi.get_selectedTheme().getText();
 		onYourWebsiteUi.get_selectedTheme().click();
-		System.out.println(themeColour);
+		logger.info("themeColour: "+themeColour);
 		onYourWebsiteUi.get_heightOfFrame().clear();
 		onYourWebsiteUi.get_widthOfFrame().clear();
 		onYourWebsiteUi.get_heightOfFrame().sendKeys(util.getYamlValue("customizeWidgetEnteries.height"));
 		onYourWebsiteUi.get_widthOfFrame().sendKeys(util.getYamlValue("customizeWidgetEnteries.width"));
-		System.out.println("height:- " + util.getYamlValue("customizeWidgetEnteries.height") + "\n Width:- " +util.getYamlValue("customizeWidgetEnteries.width"));
+		logger.info("height:- " + util.getYamlValue("customizeWidgetEnteries.height") + "\n Width:- " +util.getYamlValue("customizeWidgetEnteries.width"));
 		onYourWebsiteUi.get_widthOfFrame().sendKeys(Keys.ENTER);
 		Utilities.hardWait(2);
 		verifyIFrameChangsWithCustomizeWidgetForm(themeColour);
@@ -90,14 +90,14 @@ public class OnYourWebsiteFixture extends SearchPageFixture {
 		driver.switchTo().frame(onYourWebsiteUi.get_iFrameObject());
 		Assert.assertFalse(onYourWebsiteUi.get_iFrameFooter().isDisplayed());
 		Reporter.log("Footer not present on selecting \"Hide\" in Display Footer");
-		System.out.println("Footer not present on selecting \"Hide\"  in Display Footer");	
+		logger.info("Footer not present on selecting \"Hide\"  in Display Footer");	
 		driver.switchTo().defaultContent();
 		Utilities.hardWait(2);
 		onYourWebsiteUi.get_showFooterRadio();
 		driver.switchTo().frame(onYourWebsiteUi.get_iFrameObject());
 		Assert.assertTrue(isDisplayed(onYourWebsiteUi.get_iFrameFooter()));
 		Reporter.log("Footer Present on selecting \"Show\" in Display Footer");
-		System.out.println("Footer Present on selecting \"Show\" in Display Footer");
+		logger.info("Footer Present on selecting \"Show\" in Display Footer");
 		driver.switchTo().defaultContent();
 	}
 	
@@ -111,7 +111,7 @@ public class OnYourWebsiteFixture extends SearchPageFixture {
 		onYourWebsiteUi.get_emailMyWebMasterButton().click();
 		Utilities.hardWait(2);
 		homePageUi.waitForElementToAppear(onYourWebsiteUi.get_successMessageOnSendingEmailToWebMaster());
-		System.out.println("Success Message:- " +onYourWebsiteUi.get_successMessageOnSendingEmailToWebMaster().getText());
+		logger.info("Success Message:- " +onYourWebsiteUi.get_successMessageOnSendingEmailToWebMaster().getText());
 		Assert.assertTrue(isDisplayed(onYourWebsiteUi.get_successMessageOnSendingEmailToWebMaster()));
 		Reporter.log("Success Message after sending embed code to Webmaster has appeared. DONE!!!");
 		
@@ -138,7 +138,7 @@ public class OnYourWebsiteFixture extends SearchPageFixture {
 	public void verifyIFrameChangsWithCustomizeWidgetForm(String themecolour){
 		driver.switchTo().frame(onYourWebsiteUi.get_iFrameObject());
 		String classInfoOfHeader= onYourWebsiteUi.get_iFrameReviewWidgetWrapper().getAttribute("class");
-		System.out.println("Class Info:- " +classInfoOfHeader);
+		logger.info("Class Info:- " +classInfoOfHeader);
 		Assert.assertTrue(classInfoOfHeader.contains("width-"+util.getYamlValue("customizeWidgetEnteries.width")));
 		Reporter.log("Width of Frame has changed according to the customization ");
 		Assert.assertTrue(classInfoOfHeader.contains("height-"+util.getYamlValue("customizeWidgetEnteries.height")));
@@ -158,7 +158,7 @@ public class OnYourWebsiteFixture extends SearchPageFixture {
 		int reviewListCount=onYourWebsiteUi.get_iFrameReviewsList().size();
 		System.out.println("Total Reviews In list:-  " +reviewListCount);
 		for(int i=1; i<=reviewListCount;i++){
-			System.out.println("Taking rating count...");
+			logger.info("Taking rating count...");
 			try{
 			int ratingCount=onYourWebsiteUi.get_iFrameReviewRatings(i).size();
 			System.out.println("Rating count:- "+ratingCount);
@@ -179,14 +179,14 @@ public class OnYourWebsiteFixture extends SearchPageFixture {
 	}
 	
 	public String[] checkForCompleteDetailsOfFirstReviewerInIframe(){
-		System.out.println("In Review List Panel");
+		logger.info("In Review List Panel");
 		driver.switchTo().frame(onYourWebsiteUi.get_iFrameObject());
 		String linkOfProfilePic= onYourWebsiteUi.get_firstReviewerInIframe_ProfilePic().getAttribute("src").toString();
-		System.out.println(linkOfProfilePic);
+		logger.info("linkOfProfilePic: "+ linkOfProfilePic);
 		String profileName=onYourWebsiteUi.get_firstReviewerInIframe_ProfileName().getText();
 		String profileDetails= onYourWebsiteUi.get_firstReviewerInIframe_ProfileDetails().getText();
 		String profileDate=  onYourWebsiteUi.get_firstReviewerInIframe_ProfileDate().getText();
-		System.out.println("Out of Review List Panel");
+		logger.info("Out of Review List Panel");
 		driver.switchTo().defaultContent();
 		String[] detailsOfFirstReviewerInIFrame=new String[4];
 		detailsOfFirstReviewerInIFrame[0]=linkOfProfilePic;

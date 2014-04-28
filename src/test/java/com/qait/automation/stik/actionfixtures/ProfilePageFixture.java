@@ -359,7 +359,7 @@ public class ProfilePageFixture extends ProfileInfoPageFixture{
 		homePageUi.waitForElementToAppear(profilePageUi.get_profileName());
 		Assert.assertTrue(isDisplayed(profilePageUi.get_inLineReviewSection()), "The in-line review section is not displayed");
 		Reporter.log("Inline Review section is displayed correctly...");
-		System.out.println("In Line Review section is present...");
+		logger.info("In Line Review section is present...");
 		return true;
 	}
 
@@ -368,7 +368,7 @@ public class ProfilePageFixture extends ProfileInfoPageFixture{
 		homePageUi.waitForElementToAppear(profilePageUi.get_profileName());
 		Assert.assertTrue(isDisplayed(profilePageUi.get_reviewButtonOnProfilePage()), "The Review button is not displayed");
 		Reporter.log("Review button is displayed correctly...");
-		System.out.println("Review button is present...");
+		logger.info("Review button is present...");
 		reviewCountBeforeReview=calculateReviewCountOnProfilePage();
 		profilePageUi.get_reviewButtonOnProfilePage().click();
 		return true;
@@ -411,12 +411,11 @@ public class ProfilePageFixture extends ProfileInfoPageFixture{
 			Assert.assertTrue(reviewPageUi.get_textAreaBox().isDisplayed());
 			reviewPageUi.get_textAreaBox().click();
 			reviewPageUi.get_textAreaBox().sendKeys(reviewTextLocal);
-			System.out.println("Type in Text Area Box////");
 			Assert.assertTrue(reviewPageUi.get_continueButtonForRecommend().isDisplayed());
 			Utilities.hardWait(1);
 			reviewPageUi.get_continueButtonForRecommend().click();
 			Reporter.log("Clicked Leave Review Button...");
-			System.out.println("Clicked Leave Review Button...");
+			logger.info("Clicked Leave Review Button...");
 			Utilities.hardWait(3);
 		}
 		return true;
@@ -438,7 +437,7 @@ public class ProfilePageFixture extends ProfileInfoPageFixture{
 			reviewPageUi.waitForElementToAppear(reviewPageUi.get_faceBookButton());
 			Utilities.hardWait(1);
 			reviewPageUi.get_faceBookButton().click();
-			System.out.println("Clicked Facebook Button");
+			logger.info("Clicked Facebook Button");
 			loginUsingFaceBookUserNamePassword(getYamlVal("userName"), getYamlVal("password"), false);
 			isRecommendScreenPresent();
 		}
@@ -452,11 +451,11 @@ public class ProfilePageFixture extends ProfileInfoPageFixture{
 		ifYesNoButttonPresent= size>0;
 		if(ifYesNoButttonPresent){
 			Reporter.log("Yes and No Buttons Present on Recommend Page- Step 3");
-			System.out.println("Yes and No Buttons Present on Recommend Page- Step 3");
+			logger.info("Yes and No Buttons Present on Recommend Page- Step 3");
 			reviewPageUi.get_recommendNoButton().click();
 			homePageUi.waitForElementToAppear(reviewPageUi.get_thankPageText());
 		}else{
-			System.out.println("Recommend Page did not appear");
+			logger.info("Recommend Page did not appear");
 			Reporter.log("Would you recommend Screen did not appear");
 		}
 	}
@@ -532,23 +531,23 @@ public class ProfilePageFixture extends ProfileInfoPageFixture{
 		Utilities.explicitWait(driver);
 		sortByNewestOnProfilePage();
 		int reviewRatingOnProfile= profilePageUi.get_firstReviewerRatingCount();
-		System.out.println("review Rating on profile:-"+reviewRatingOnProfile);
-		System.out.println("randomRating give on profile Page:-"+randomRating);
+		logger.info("review Rating on profile:-"+reviewRatingOnProfile);
+		logger.info("randomRating give on profile Page:-"+randomRating);
 		if(randomRating==reviewRatingOnProfile){
 			String reviewCommentOnProfile= profilePageUi.get_firstReviewerProfileComment().getText().replaceAll("\"", "").replaceAll(" ", "");
 			if(reviewCommentOnProfile.equalsIgnoreCase(reviewTextLocal.replaceAll("\"", "").replaceAll(" ", ""))){
 				Reporter.log("Review Text and Rating count matches... ");
-				System.out.println("Review text and Rating Count Matches...");
+				logger.info("Review text and Rating Count Matches...");
 				return true;
 			}else{
 				Reporter.log("Review text on profile doesn't match with the review submitted");
-				System.out.println("Error in Review text");
+				logger.info("Error in Review text");
 				return false;
 			}
 
 		}else{
 			Reporter.log("Rating count on profile doesn't match with the rating submitted");
-			System.out.println("Error in Rating count!!");
+			logger.info("Error in Rating count!!");
 			return false;
 		}
 	}
@@ -563,17 +562,17 @@ public class ProfilePageFixture extends ProfileInfoPageFixture{
 			String reviewCommentOnProfile= profilePageUi.get_firstReviewerProfileComment().getText().replaceAll("\"", "").replaceAll(" ", "");
 			if(reviewCommentOnProfile.equalsIgnoreCase(reviewTextLocal.replaceAll("\"", "").replaceAll(" ", ""))){
 				Reporter.log("Review Text and Rating count matches... ");
-				System.out.println("Review text and Rating Count Matches...");
+				logger.info("Review text and Rating Count Matches...");
 				return true;
 			}else{
 				Reporter.log("Review text on profile doesn't match with the review submitted");
-				System.out.println("Error in Review text");
+				logger.info("Error in Review text");
 				return false;
 			}
 
 		}else{
 			Reporter.log("Rating count on profile doesn't match with the rating submitted");
-			System.out.println("Error in Rating count!!");
+			logger.info("Error in Rating count!!");
 			return false;
 		}
 		
@@ -586,7 +585,7 @@ public class ProfilePageFixture extends ProfileInfoPageFixture{
 		homePageUi.waitForElementToAppear(profilePageUi.get_profileName());
 		String countText=profilePageUi.get_RatingCount().getText();
 		int reviewCountAfterReview=Integer.parseInt(countText);
-		System.out.println("Review Count After Review"+reviewCountAfterReview);
+		logger.info("Review Count After Review"+reviewCountAfterReview);
 		if(reviewCountAfterReview==reviewCountBeforeReview+1){
 			return true;
 		}
@@ -599,7 +598,7 @@ public class ProfilePageFixture extends ProfileInfoPageFixture{
 		homePageUi.waitForElementToAppear(profilePageUi.get_popUpCross());
 		Utilities.explicitWait(driver);
 		int reviewCount=profilePageUi.get_totalReviewInPopUp().size();
-		System.out.println("Size of review list on Featured modal window:- "+reviewCount);
+		logger.info("Size of review list on Featured modal window:- "+reviewCount);
 		scrollDown(100);
 		for(int i=0;i<3;i++){
 			profilePageUi.get_totalReviewInPopUp().get(i).click();

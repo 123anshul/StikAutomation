@@ -46,7 +46,7 @@ public class ShowCaseEmailFixture extends SearchPageFixture{
 		Assert.assertTrue(isDisplayed(showcaseEmailUi.get_headerInSignature()));
 		Reporter.log("\"What people are saying about me\" is displayed");
 		driver.switchTo().defaultContent();
-		System.out.println("\"What people are saying about me\" is displayed");
+		logger.info("\"What people are saying about me\" is displayed");
 	}
 	
 	public void verifyEmailPreviewIsOk(){
@@ -55,16 +55,16 @@ public class ShowCaseEmailFixture extends SearchPageFixture{
 		String[] arrayFromEmailPreview= performOperationsOnEmailPreviewFrame();
 		Assert.assertTrue(Integer.parseInt(arrayFromModalDailog[0])== Integer.parseInt(arrayFromEmailPreview[0]));
 		Reporter.log("Number of Reviews in signature matches with number of reviews selected in Preview Modal");
-		System.out.println("Number of Reviews In Signature matches with number of Reviews selected in Preview Modal");
+		logger.info("Number of Reviews In Signature matches with number of Reviews selected in Preview Modal");
 		Assert.assertTrue(arrayFromModalDailog[2].equals(arrayFromEmailPreview[1]));
 		Reporter.log("First Reviewer in Signature list is the same as selected in Preview Modal");
-		System.out.println("First Reviewer in Signature list is the same as selected in Preview Modal");
+		logger.info("First Reviewer in Signature list is the same as selected in Preview Modal");
 		Utilities.hardWait(5);
 		homePageUi.mouseMove(homePageUi.get_dropDown(), homePageUi.get_viewProfileLink());
 		homePageUi.waitForElementToAppear(profilePageUi.get_profileName());
 		Assert.assertTrue((Integer.parseInt(arrayFromModalDailog[1]) == Integer.valueOf(profilePageUi.get_RatingCount().getText().trim())), "Number of Review on email preview modal doesn't matches the review on Profile");
 		Reporter.log("Total Reviews on Profile Page matches with number of Reviews dispalyed in Email preview Modal Dialog");
-		System.out.println("Total Reviews on Profile Matches number of Reviews dispalyed in Email preview Modal");	
+		logger.info("Total Reviews on Profile Matches number of Reviews dispalyed in Email preview Modal");	
 		
 	}
 
@@ -73,13 +73,13 @@ public class ShowCaseEmailFixture extends SearchPageFixture{
 		showcaseEmailUi.get_DeselectAllButton();
 		Reporter.log("Deselect button clicked..");
 		int totalReviewCountOnPreviewModal=showcaseEmailUi.get_totalReviewCountOnPreview().size();
-		System.out.println("Total Reviews on Modal:- " +totalReviewCountOnPreviewModal);
+		logger.info("Total Reviews on Modal:- " +totalReviewCountOnPreviewModal);
 		Utilities.hardWait(2);
 		String NameofFirstReviewerInPreview=showcaseEmailUi.get_firstReviewerInPreview().getText();
-		System.out.println("Name of First reviewer On Modal:- " +NameofFirstReviewerInPreview);
+		logger.info("Name of First reviewer On Modal:- " +NameofFirstReviewerInPreview);
 		check_CheckboxesOnPreviewModalDialog(totalReviewCountOnPreviewModal);
 		int checkedReviewCountOnPreviewModal= Integer.parseInt(showcaseEmailUi.get_CheckedReviewCountOnPreviewModal().getText());
-		System.out.println("Checked Review Count:- " +checkedReviewCountOnPreviewModal);
+		logger.info("Checked Review Count:- " +checkedReviewCountOnPreviewModal);
 		Utilities.hardWait(3);
 		showcaseEmailUi.get_returnToPreviewButton();
 		Reporter.log("Preview Modal Closed");
@@ -95,10 +95,10 @@ public class ShowCaseEmailFixture extends SearchPageFixture{
 	public String[] performOperationsOnEmailPreviewFrame(){
 		driver.switchTo().frame(0);
 		String reviewCountInSignature=Integer.toString(showcaseEmailUi.get_ReviewCountInSignature().size());
-		System.out.println("Reviews Displayed In signature:-"+reviewCountInSignature);
+		logger.info("Reviews Displayed In signature:-"+reviewCountInSignature);
 		
 		String firstReviewerNameInSignature= showcaseEmailUi.get_reviewerNameInSignaturePreview().getText();
-		System.out.println("Name of First Reviewer In Singature:- "+firstReviewerNameInSignature);
+		logger.info("Name of First Reviewer In Singature:- "+firstReviewerNameInSignature);
 		driver.switchTo().defaultContent();
 		String[] arrayCount=new String[2];
 		arrayCount[0]=reviewCountInSignature;
@@ -116,22 +116,22 @@ public class ShowCaseEmailFixture extends SearchPageFixture{
 		showcaseEmailUi.get_CheckboxesOnPreview_1().click();
 		
 		Utilities.hardWait(1);
-		System.out.println("First selected");
+		logger.info("First selected");
 		try{
 		showcaseEmailUi.get_CheckboxesOnPreview_2().click();
 		
 		Utilities.hardWait(1);
 		
 		showcaseEmailUi.get_CheckboxesOnPreview_3().click();
-		System.out.println("All 3 checkboxes are checked!!");
+		logger.info("All 3 checkboxes are checked!!");
 		
 		}catch(Exception e){
-			System.out.println("Number of checkboxes is less than 2");
+			logger.error("Number of checkboxes is less than 2");
 			Reporter.log("Number of checkboxes on preview Dialog Modal is less than 2");
 		
 		}}else{
 		
-			System.out.println("No Checkboxes");
+			logger.error("No Checkboxes");
 			Reporter.log("No Reviews on the modal dialog ");
 		}
 	}

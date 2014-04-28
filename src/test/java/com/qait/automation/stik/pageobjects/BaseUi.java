@@ -164,5 +164,12 @@ public class BaseUi {
 		wait = new WebDriverWait(driver, BaseFixture.AJAX_WAIT);
         wait.until(new VisibilityOfElementLocated(locator));
     }
+	
+	public WebElement waitForElementToBeVisible(By locator){
+		WebElement element;
+		WebDriverWait wait = new WebDriverWait(driver, BaseFixture.AJAX_WAIT);
+		element = wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
+		return element;
+	}
 }
 

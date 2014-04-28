@@ -12,7 +12,7 @@ public class ReferralPageFixture extends SignUpFixture{
 		String dateOfReferral="";
 		
 		public boolean verifyPageLoads(){
-			System.out.println("Username and password of the new user are:- "+userNameForNewUser + " and "+passwordForNewUser);
+			logger.info("Username and password of the new user are:- "+userNameForNewUser + " and "+passwordForNewUser);
 			Utilities.explicitWait(driver);
 			homePageUi.waitForElementToAppear(referralPageUi.get_yourReferralText());
 			Assert.assertTrue(isDisplayed(referralPageUi.get_alertHeading()), "Problem in displaying Alert message!!");
@@ -27,7 +27,7 @@ public class ReferralPageFixture extends SignUpFixture{
 			Assert.assertTrue(isDisplayed(referralPageUi.get_noreferralImage()) && referralPageUi.get_noreferralImage().getAttribute("src").equals(noReferralImageURL), "Problems in no referral image for new user");
 			Assert.assertTrue(isDisplayed(referralPageUi.get_startCollectingReviewsButton()), "Start collecting reviews button not found");
 			referralPageUi.get_startCollectingReviewsButton().click();
-			System.out.println("Start Collecting Reviews clicked...");
+			logger.info("Start Collecting Reviews clicked...");
 			Utilities.explicitWait(driver);
 			String url=driver.getCurrentUrl().trim();
 			Assert.assertTrue(url.equals(startCollectingReviewsURL), "Start Collecting Reviews button does not redirect to the correct URL");
@@ -109,7 +109,7 @@ public class ReferralPageFixture extends SignUpFixture{
 			namesOfReferrals[1]=referralPageUi.get_listOfReferrals_Name().get(5).getText();
 			namesOfReferrals[2]=referralPageUi.get_listOfReferrals_Name().get(6).getText();
 			for(int i=0;i<namesOfReferrals.length;i++){
-				System.out.println("namesOfReferrals " + i + namesOfReferrals[i]);
+				logger.info("namesOfReferrals " + i + namesOfReferrals[i]);
 			}
 			flag=compareArrays(ymlValues, namesOfReferrals);
 			if(flag==true)Reporter.log("Email Ids on referral page are correct as provided by the reviewer...");

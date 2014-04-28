@@ -149,7 +149,7 @@ public class ProfileInfoPageFixture extends HomePageFixture {
 			homePageUi.get_dropDown().click();
 			Assert.assertTrue(homePageUi.get_viewProfileLink().isDisplayed());
 			//homePageUi.get_viewProfileLink().click();
-			System.out.println("href: " + homePageUi.get_viewProfileLink().getAttribute("href"));
+			logger.info("href: " + homePageUi.get_viewProfileLink().getAttribute("href"));
 			driver.navigate().to(homePageUi.get_viewProfileLink().getAttribute("href"));
 			Reporter.log("Clicked drop down link and navigate to Users Profile...");
 			homePageUi.waitForElementToAppear(profilePageUi.get_affiliation());
@@ -161,7 +161,7 @@ public class ProfileInfoPageFixture extends HomePageFixture {
 				homePageUi.mouseMove(homePageUi.get_dropDown(), homePageUi.get_viewProfileLink());
 			}catch(Exception enve){
 					homePageUi.get_dropDown().click();
-					System.out.println("href: " + homePageUi.get_viewProfileLink().getAttribute("href"));
+					logger.info("href: " + homePageUi.get_viewProfileLink().getAttribute("href"));
 					driver.navigate().to(homePageUi.get_viewProfileLink().getAttribute("href"));
 				}
 		}

@@ -14,7 +14,7 @@ public class UserHomePageFixture extends HomePageFixture {
 		Assert.assertTrue(isDisplayed(userHomePageUi.get_clientPanelSection()), "Problems in Client Panel section");
 		Assert.assertTrue(isDisplayed(userHomePageUi.get_clientContentSection()), "Problems in Client Content section");
 		Reporter.log("User home page loaded correctly...");
-		System.out.println("No problems in loading home page for the user...");
+		logger.info("No problems in loading home page for the user...");
 		return true;
 	}
 	
@@ -43,7 +43,7 @@ public class UserHomePageFixture extends HomePageFixture {
 			Utilities.explicitWait(driver);
 		}
 		
-		System.out.println("Size of list in client panel:- "+userHomePageUi.get_clientQuickLinks().size());
+		logger.info("Size of list in client panel:- "+userHomePageUi.get_clientQuickLinks().size());
 		
 		for(int i=1;i<=userHomePageUi.get_clientQuickLinks().size();i++){
 			Assert.assertTrue(isDisplayed(userHomePageUi.get_clientQuickLinks().get(i-1)), "Link "+i+" is not visible under Showcase My Reviews");
@@ -52,16 +52,16 @@ public class UserHomePageFixture extends HomePageFixture {
 			String url=driver.getCurrentUrl();
 			if(i==1){
 				Assert.assertTrue(url.equalsIgnoreCase(websiteURl), "On My Website link not redirecting to correct page!!");
-				System.out.println("Link 1 clicked");
+				logger.info("Link 1 clicked");
 			}else if(i==2){
 				Assert.assertTrue(url.equalsIgnoreCase(emailURL), "In My Email link not redirecting to correct page!!");
-				System.out.println("Link 2 clicked");
+				logger.info("Link 2 clicked");
 			}else if(i==3){
 				Assert.assertTrue(url.equalsIgnoreCase(fbPageURL), "On Facebook Page link not redirecting to correct page!!");
-				System.out.println("Link 3 clicked");
+				logger.info("Link 3 clicked");
 			}else{
 				Assert.assertTrue(url.equalsIgnoreCase(fbProfileURL), "On Facebook profile link not redirecting to correct page!!");
-				System.out.println("Link 4 clicked");
+				logger.info("Link 4 clicked");
 			}
 			homePageUi.get_stiklogo1().click();
 			Utilities.explicitWait(driver);
@@ -115,7 +115,7 @@ public class UserHomePageFixture extends HomePageFixture {
 		Utilities.hardWait(5);
 		for(int i=0;i<userHomePageUi.get_latestReviewList().size();i++){
 			Assert.assertTrue(isDisplayed(userHomePageUi.get_latestReview(i+1)), "Review Is not Displayed");
-			System.out.println(userHomePageUi.get_latestReview(i+1).getText());
+			logger.info(userHomePageUi.get_latestReview(i+1).getText());
 			System.out.println(i);
 			userHomePageUi.get_latestReviewsRightArrow().click();
 		}

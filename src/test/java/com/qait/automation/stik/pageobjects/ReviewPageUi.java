@@ -181,6 +181,9 @@ public class ReviewPageUi extends BaseUi{
 	@FindBy(css = ".privacy-instructions>a")
 	private WebElement uiVerificationTermsOfUseLink;
 	
+	@FindBy(css = ".row>p>a")
+	private WebElement contactUsLinkOnTermsOfUsePage;
+	
 	@FindBy(css = ".row>h1")
 	private WebElement termsOfUseWindowHeading;
 	
@@ -426,6 +429,10 @@ public class ReviewPageUi extends BaseUi{
 	
 	public WebElement get_uiVerificationTermsOfUseLink(){
 		return uiVerificationTermsOfUseLink;
+	}
+	
+	public WebElement get_contactUsLinkOnTermsOfUsePage(){
+		return contactUsLinkOnTermsOfUsePage;
 	}
 	
 	public WebElement get_termsOfUseWindowHeading(){

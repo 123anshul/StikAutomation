@@ -45,7 +45,7 @@ public class DemoUi extends BaseUi{
 			
 		@FindBy(xpath="//form[@id='roiForm']/fieldset[@class='revenue']/input")
 		private WebElement revenueInputOnROIPage;
-		
+				
 		@FindBy(xpath="//a[@href='/demo/pricing']")
 		private WebElement pricingTab;
 		
@@ -456,4 +456,9 @@ public class DemoUi extends BaseUi{
 		public WebElement get_pricingTable() {
 			return pricingTable;
 		}
-}
+		
+		public WebElement get_SuccessMessageVisible(){
+			return waitForElementToBeVisible(By.xpath("//p[@class='title']"));
+		}
+		
+		}

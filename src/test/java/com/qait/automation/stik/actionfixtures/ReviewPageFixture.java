@@ -69,7 +69,7 @@ public class ReviewPageFixture  extends ProfilePageFixture{
 
 	public boolean verifyEmptyStarsOnRecommendPageAndGiveRatingsForInlineReview(int rating){
 		localStarRating = rating;
-		System.out.println("Count stars on recommend page...");
+		logger.info("Count stars on recommend page...");
 		reviewPageUi.waitForElementToAppear(reviewPageUi.get_starForInlineReview(1));
 		int countStar = reviewPageUi.count_starsOnInlineReviewPage();
 		logger.info("Counted stars on recommend page...");
@@ -114,7 +114,7 @@ public class ReviewPageFixture  extends ProfilePageFixture{
 
 	public boolean verifyEmptyStarsOnRecommendPageAndGiveRatingsForRecommend(int rating){
 		localStarRating = rating;		
-		System.out.println("Count stars on recommend page...");
+		logger.info("Count stars on recommend page...");
 		reviewPageUi.waitForElementToAppear(reviewPageUi.get_starXPath(1));
 		int countStar = reviewPageUi.count_starsOnRecommendPage();
 		logger.info("Counted stars on recommend page...");
@@ -150,15 +150,15 @@ public class ReviewPageFixture  extends ProfilePageFixture{
 			ifYesNoButttonPresent= size>0;
 			if(ifYesNoButttonPresent){
 				Reporter.log("Yes and No Buttons Present on Recommend Page- Step 3");
-				System.out.println("Yes and No Buttons Present on Recommend Page- Step 3");
+				logger.info("Yes and No Buttons Present on Recommend Page- Step 3");
 				reviewPageUi.get_recommendYesButton().click();
 				homePageUi.waitForElementToAppear(reviewPageUi.get_recommendReviewerSection());
 			}else{
-				System.out.println("Recommend Page did not appear");
+				logger.info("Recommend Page did not appear");
 				Reporter.log("Would you recommend Screen did not appear");
 			}
 		}catch(Exception ex){
-			System.out.println("Recommend Yes/No screen did not appear");
+			logger.error("Recommend Yes/No screen did not appear");
 		}
 	}
 
@@ -214,14 +214,14 @@ public class ReviewPageFixture  extends ProfilePageFixture{
 		reviewPageUi.waitForElementToAppear(reviewPageUi.get_faceBookButton());
 		Utilities.hardWait(1);
 		reviewPageUi.get_faceBookButton().click();
-		System.out.println("Clicked Facebook Button for Recommend Review..");
+		logger.info("Clicked Facebook Button for Recommend Review..");
 		return true;
 	}
 
 	public boolean clickFacebookAuthenticateButtonForInlineReview(){
 		reviewPageUi.waitForElementToAppear(reviewPageUi.get_facebookButtonForInlineReview());
 		reviewPageUi.get_facebookButtonForInlineReview().click();
-		System.out.println("Clicked Facebook Button for Inline Review..");
+		logger.info("Clicked Facebook Button for Inline Review..");
 		return true;
 	}
 
@@ -229,14 +229,14 @@ public class ReviewPageFixture  extends ProfilePageFixture{
 		try{
 			homePageUi.handleAlert();
 		}catch(Exception e){
-			System.out.println("No Alert Present");
+			logger.error("No Alert Present");
 		}
 		String url= getYamlVal("appUrl")+"/"+getYamlVal("otherprofile.username");
 		driver.navigate().to(url);
 		try{
 			homePageUi.handleAlert();
 		}catch(Exception e){
-			System.out.println("No Alert Present");
+			logger.error("No Alert Present");
 		}
 		Reporter.log("Navigate to User Profile");
 		return true;
@@ -248,7 +248,7 @@ public class ReviewPageFixture  extends ProfilePageFixture{
 		boolean flag = true;
 		int countReview=0;
 		int count = reviewPageUi.get_reviewCount();
-		System.out.println("Review count on profile page:-"+count);
+		logger.info("Review count on profile page:-"+count);
 		Reporter.log("There are "+ count + " reviews on profile page");
 		for(int i=1; i<=count;i++){
 			String reviewText = reviewPageUi.get_reviewText(i).getText().replaceAll("\"", "").replaceAll(" ", "");
@@ -276,7 +276,7 @@ public class ReviewPageFixture  extends ProfilePageFixture{
 		int countReview=0;
 		localStarRating=1;
 		int count = reviewPageUi.get_reviewCount();
-		System.out.println("Review count on profile page:-"+count);
+		logger.info("Review count on profile page:-"+count);
 		Reporter.log("There are "+ count + " reviews on profile page");
 		for(int i=1; i<=count;i++){
 			String reviewText = reviewPageUi.get_reviewText(i).getText().replaceAll("\"", "").replaceAll(" ", "");
@@ -381,7 +381,7 @@ public class ReviewPageFixture  extends ProfilePageFixture{
 		String[] arrayOfEmailSavedOnRecommedPage=getEmailIdsSavedOnRecommendPage();
 		String[] ymlEmailList={util.getYamlValue("recommendFriendList.email1"),util.getYamlValue("recommendFriendList.email2"),util.getYamlValue("recommendFriendList.email3")};
 		FLAG=compareArrays(ymlEmailList, arrayOfEmailSavedOnRecommedPage);
-		if(FLAG){System.out.println("Contacts Matched...");}
+		if(FLAG){logger.info("Contacts Matched...");}
 		return FLAG;
 	}
 
@@ -390,7 +390,7 @@ public class ReviewPageFixture  extends ProfilePageFixture{
 		String array[]=new String[size];
 		for(int i=1;i<=size;i++){
 			array[i-1]=reviewPageUi.get_recommendSavedEmailContacts().get(i-1).getText().trim();
-			System.out.println("Email Contact Added:- "+array[i-1]);
+			logger.info("Email Contact Added:- "+array[i-1]);
 		}
 		return array;
 	}
@@ -413,7 +413,7 @@ public class ReviewPageFixture  extends ProfilePageFixture{
 			Assert.assertTrue(reviewPageUi.get_progressMeter().getAttribute("class").contains("perc-6"), "Progress Meter does not move on Adding an email contact");
 		}
 		catch(Exception e){
-			System.out.println("Progress meter does not move on Adding an email contact " +e);
+			logger.error("Progress meter does not move on Adding an email contact " +e);
 		}
 		Assert.assertTrue(isDisplayed(reviewPageUi.get_recommendContinueButton()), "Continue button not present after adding any Email on Recommend Page!!");
 		reviewPageUi.get_recommendEmailTextArea().click();
@@ -505,6 +505,8 @@ public class ReviewPageFixture  extends ProfilePageFixture{
 		reviewPageUi.get_uiVerificationTermsOfUseLink().click();
 		Utilities.explicitWait(driver);
 		homePageUi.changeWindow(1);
+		Utilities.explicitWait(driver);
+		homePageUi.waitForElementToAppear(reviewPageUi.get_contactUsLinkOnTermsOfUsePage());
 		Assert.assertTrue(driver.getCurrentUrl().contains("terms"), "Clicking on Terms of use doesn't navigate to correct url");
 		Assert.assertTrue(isDisplayed(reviewPageUi.get_termsOfUseWindowHeading()), "Heading is not displayed on Terms of Use page");
 		driver.close();
