@@ -16,7 +16,7 @@ public class DemoUI_Temp extends BaseUi {
 		super(driver, sizzle);
 	}
 
-	/*****************WEB UI defined *****************************/
+	/*****************WEB UI defined for directory page *****************************/
 	
 	@FindBy(css = ".content-bar>nav>h1")
 	private WebElement directoryPageHeading;
