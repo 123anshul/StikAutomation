@@ -7,6 +7,7 @@ import org.openqa.selenium.ElementNotVisibleException;
 import com.gargoylesoftware.htmlunit.ElementNotFoundException;
 import com.qait.automation.stik.util.Utilities;
 
+//comment
 public class ClientsPageFixture extends SearchPageFixture{
 
 	public boolean navigateToClientsMailPage(){
